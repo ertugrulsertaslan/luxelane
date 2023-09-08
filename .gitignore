@@ -8,7 +8,6 @@
 # img 
 *.jpg
 *.png
-logo.jpg
 img/
 
 # videos
@@ -21,3 +20,11 @@ img/
 
 *.log
 
+# node.js
+
+node_modules
+build
+npm-debug.log
+.nyc
+.env
+.DS_Store
