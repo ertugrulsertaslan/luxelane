@@ -4,7 +4,12 @@
 {{/section}}
 <a href="/">Go to Home Page</a>
 <h1>{{brand}} - {{model}}</h1>
-<img height="200px" src="{{img}}">
+<img height="200px" src="{{thumbnail}}">
+<div>
+        <span style="float:left; margin: 0 1rem">Price (1 Day) </span>
+        <h3  >${{dailyPrice}}</h3>
+
+</div>
 <h4>Specs</h4>
 <table>
     <tr>
@@ -24,8 +29,31 @@
         <td>{{seats}}</td>
     </tr>
     <tr>
-        <th>Price (1 Day) </th>
-        <td>${{dailyPrice}}</td>
-
+        <th>Fuel </th>
+        <td>{{fuel}}</td>
+    </tr>
+    <tr>
+        <th>Transmission </th>
+        <td>{{transmission}}</td>
+    </tr>
+    <tr>
+        <th>Body Type </th>
+        <td>{{bodyType}}</td>
+    </tr>
+    <tr>
+        <th>Doors </th>
+        <td>{{doors}}</td>
+    </tr>
+    <tr>
+        <th>Required Driver Age </th>
+        <td>{{minDriverAge}}</td>
+    </tr>
+     <tr>
+        <th>Required License Age </th>
+        <td>{{minLicenseAge}}</td>
+    </tr>
+     <tr>
+        <th>0-100 (km/h)</th>
+        <td>{{zeroToHundredKmh}}</td>
     </tr>
 </table> 

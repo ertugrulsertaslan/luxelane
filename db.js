@@ -1,3 +1,21 @@
+const FuelType = {
+    DIESEL: 'DIESEL',
+    GASOLINE: 'GASOLINE',
+    ELECTRIC: 'ELECTRIC',
+    HYBRID: 'HYBRID'
+};
+const TransmissionType = {
+    AUTOMATIC : 'AUTOMATIC',
+    MANUAL : 'MANUAL',
+}
+const BodyType = {
+    COUPE : 'COUPE',
+    SUV: 'SUV',
+    SEDAN: 'SEDAN',
+    CABRIO: 'CABRIO',
+    STATION_WAGON: 'STATION_WAGON',
+}
+
 module.exports = {
     cars: [
         {
@@ -7,7 +25,16 @@ module.exports = {
             hp: 562,
             seats: 2,
             dailyPrice: 1000,
-            img: '/img/ferrari.png',
+            thumbnail: '/img/ferrari.png',
+            img: [],
+            fuel : FuelType.GASOLINE,
+            transmission : TransmissionType.AUTOMATIC,
+            bodyType : BodyType.COUPE,
+            doors : 2,
+            minDriverAge:22,
+            minLicenseAge :5,
+            zeroToHundredKmh: 3.4, 
+            
         },
         {
             id :'lamborghini',
@@ -16,7 +43,15 @@ module.exports = {
             hp: 769,
             seats: 2,
             dailyPrice: 1100,
-            img: '/img/lamborghini.png'
+            thumbnail: '/img/lamborghini.png',
+            img: [],
+            fuel : FuelType.GASOLINE,
+            transmission : TransmissionType.AUTOMATIC,
+            bodyType : BodyType.COUPE,
+            doors : 2,
+            minDriverAge:22,
+            minLicenseAge :5,
+            zeroToHundredKmh: 2.9, 
 
         },
         {
@@ -26,7 +61,15 @@ module.exports = {
             hp: 523,
             seats: 2,
             dailyPrice: 900,
-            img: '/img/mercedes.png'
+            thumbnail: '/img/mercedes.png',
+            img: [],
+            fuel : FuelType.GASOLINE,
+            transmission : TransmissionType.AUTOMATIC,
+            bodyType : BodyType.COUPE,
+            doors : 2,
+            minDriverAge:22,
+            minLicenseAge :5,
+            zeroToHundredKmh: 4, 
 
         },
         {
@@ -36,7 +79,15 @@ module.exports = {
             hp: 300,
             seats: 2,
             dailyPrice: 600,
-            img: '/img/porsche.png'
+            thumbnail: '/img/porsche.png', 
+            img: [],
+            fuel : FuelType.GASOLINE,
+            transmission : TransmissionType.AUTOMATIC,
+            bodyType : BodyType.COUPE,
+            doors : 2,
+            minDriverAge:22,
+            minLicenseAge :5,
+            zeroToHundredKmh: 4.7, 
 
         }
         
