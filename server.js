@@ -2,9 +2,21 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
+const db = require('./db');
 
 
-app.engine('handlebars', exphbs.engine({ defaultLayout:'main' }));
+app.engine('handlebars', exphbs.engine({ 
+    defaultLayout:'main', 
+    helpers: {
+        section: function(name, options){
+            if(!this._sections) {
+                this._sections = {}
+            };
+            this._sections[name] = options.fn(this);
+            return null;
+        }
+    }
+}));
 app.set('view engine', 'handlebars');
 
 
@@ -12,7 +24,7 @@ app.use(express.static('public'))
 
 // Routing 
 app.get('/', (req,res) => {
-    res.render("index");
+    res.render("index", { cars: db.cars });
 });
 app.get('/about', (req,res) => {
     res.render("about");
@@ -32,19 +44,17 @@ app.get('/sign', (req,res) => {
 
 
 
+app.get('/cars/:id', (req,res) => {
+    const carId = req.params.id;
+    const car = db.cars.find((car)=>car.id == carId);
+    if (car) {
+        res.render("carDetail", car);
+    } else {
+        res.render("404");
+    }
+    
+});
 
-app.get('/cars/ferrari', (req,res) => {
-    res.render("cars/ferrari");
-});
-app.get('/cars/lamborghini', (req,res) => {
-    res.render("cars/lamborghini");
-});
-app.get('/cars/mercedes', (req,res) => {
-    res.render("cars/mercedes");
-});
-app.get('/cars/porsche', (req,res) => {
-    res.render("cars/porsche");
-});
 
 
 
