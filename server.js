@@ -1,8 +1,17 @@
 
+/*
 const express = require('express');
-const app = express();
 const exphbs = require('express-handlebars');
 const db = require('./db');
+*/
+
+import express from 'express';
+import exphbs from 'express-handlebars';
+//import db from './db.js';
+
+import {db} from './db.js';
+
+const app = express();
 
 
 app.engine('handlebars', exphbs.engine({ 

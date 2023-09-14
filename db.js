@@ -1,3 +1,5 @@
+
+
 const FuelType = {
     DIESEL: 'DIESEL',
     GASOLINE: 'GASOLINE',
@@ -15,8 +17,8 @@ const BodyType = {
     CABRIO: 'CABRIO',
     STATION_WAGON: 'STATION_WAGON',
 }
-
-module.exports = {
+//module.exports
+export const db = {
     cars: [
         {
             id: 'ferrari',
