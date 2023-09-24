@@ -1,4 +1,4 @@
-
+import sqlite3 from 'sqlite3';
 
 const FuelType = {
     DIESEL: 'DIESEL',
@@ -17,81 +17,15 @@ const BodyType = {
     CABRIO: 'CABRIO',
     STATION_WAGON: 'STATION_WAGON',
 }
-//module.exports
-export const db = {
-    cars: [
-        {
-            id: 'ferrari',
-            brand: 'Ferrari',
-            model: '458',
-            hp: 562,
-            seats: 2,
-            dailyPrice: 1000,
-            thumbnail: '/img/ferrari.png',
-            img: [],
-            fuel : FuelType.GASOLINE,
-            transmission : TransmissionType.AUTOMATIC,
-            bodyType : BodyType.COUPE,
-            doors : 2,
-            minDriverAge:22,
-            minLicenseAge :5,
-            zeroToHundredKmh: 3.4, 
-            
-        },
-        {
-            id :'lamborghini',
-            brand : 'Lamborghini',
-            model: 'Aventador',
-            hp: 769,
-            seats: 2,
-            dailyPrice: 1100,
-            thumbnail: '/img/lamborghini.png',
-            img: [],
-            fuel : FuelType.GASOLINE,
-            transmission : TransmissionType.AUTOMATIC,
-            bodyType : BodyType.COUPE,
-            doors : 2,
-            minDriverAge:22,
-            minLicenseAge :5,
-            zeroToHundredKmh: 2.9, 
 
-        },
-        {
-            id :'mercedes',
-            brand : 'Mercedes',
-            model: 'AMG GT',
-            hp: 523,
-            seats: 2,
-            dailyPrice: 900,
-            thumbnail: '/img/mercedes.png',
-            img: [],
-            fuel : FuelType.GASOLINE,
-            transmission : TransmissionType.AUTOMATIC,
-            bodyType : BodyType.COUPE,
-            doors : 2,
-            minDriverAge:22,
-            minLicenseAge :5,
-            zeroToHundredKmh: 4, 
+const db = new sqlite3.Database('./app.db', (err) => {
+    if (err) {
+        return console.error('❌', err.message);
+    }
+    console.log('✅ Connected to the SQlite database.');
+});
 
-        },
-        {
-            id :'porsche',
-            brand : 'Porsche',
-            model: '718',
-            hp: 300,
-            seats: 2,
-            dailyPrice: 600,
-            thumbnail: '/img/porsche.png', 
-            img: [],
-            fuel : FuelType.GASOLINE,
-            transmission : TransmissionType.AUTOMATIC,
-            bodyType : BodyType.COUPE,
-            doors : 2,
-            minDriverAge:22,
-            minLicenseAge :5,
-            zeroToHundredKmh: 4.7, 
-
-        }
-        
-    ]
+export {
+    db
 }
+
