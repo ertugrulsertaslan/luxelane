@@ -1,15 +1,12 @@
-
-/*
-const express = require('express');
-const exphbs = require('express-handlebars');
-const db = require('./db');
-*/
-
 import express from 'express';
 import exphbs from 'express-handlebars';
-//import db from './db.js';
 
-import {db} from './db.js';
+import { getHomePage } from './controllers/home.controller.js';
+import { getAboutPage } from './controllers/about.controller.js';
+import { getCarDetailPage } from './controllers/carDetail.controller.js';
+import { getContactPage } from './controllers/contact.controller.js';
+import { getSignPage } from './controllers/sign.controller.js';
+import { getLoginPage } from './controllers/login.controller.js';
 
 const app = express();
 
@@ -28,46 +25,15 @@ app.engine('handlebars', exphbs.engine({
 }));
 app.set('view engine', 'handlebars');
 
-
 app.use(express.static('public'))
 
 // Routing 
-app.get('/', (req,res) => {
-    res.render("index", { cars: db.cars });
-});
-app.get('/about', (req,res) => {
-    res.render("about");
-});
-
-app.get('/contact', (req,res) => {
-    res.render("contact");
-});
-
-app.get('/login', (req,res) => {
-    res.render("login");
-});
-
-app.get('/sign', (req,res) => {
-    res.render("sign");
-});
-
-
-
-app.get('/cars/:id', (req,res) => {
-    const carId = req.params.id;
-    const car = db.cars.find((car)=>car.id == carId);
-    if (car) {
-        res.render("carDetail", car);
-    } else {
-        res.render("404");
-    }
-    
-});
-
-
-
-
-
+app.get('/', getHomePage);
+app.get('/about',getAboutPage);
+app.get('/contact',getContactPage);
+app.get('/login',getLoginPage);
+app.get('/sign', getSignPage);
+app.get('/cars/:id', getCarDetailPage);
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);
