@@ -1,0 +1,65 @@
+
+{{#section 'head'}}
+    <title>LuxeLane - {{brand}}</title>
+{{/section}}
+<a href="/">Go to Home Page</a>
+   
+   
+   {{#each cars}}
+ <div  style="float:left; margin: 0 1rem" >
+        <h2>{{brand}} - {{model}}</h2>
+        <img height="100px" src="{{thumbnail}}">
+        <div>
+                <span style="float:left; margin: 0 1rem">Price (1 Hours) </span>
+                <h3  >${{hourlyPrice}}</h3>
+
+        </div>
+        <h4>Specs</h4>
+        <table >
+            <tr>
+                <th>Brand</th>
+                <td>{{brand}}</td>
+            </tr>
+            <tr>
+                <th>Model</th>
+                <td>{{model}}</td>
+            </tr>
+            <tr>
+                <th>Horse Power</th>
+                <td>{{hp}}</td>
+            </tr>
+            <tr>
+                <th>No. of seats</th>
+                <td>{{seats}}</td>
+            </tr>
+            <tr>
+                <th>Fuel </th>
+                <td>{{fuel}}</td>
+            </tr>
+            <tr>
+                <th>Transmission </th>
+                <td>{{transmission}}</td>
+            </tr>
+            <tr>
+                <th>Body Type </th>
+                <td>{{bodyType}}</td>
+            </tr>
+            <tr>
+                <th>Doors </th>
+                <td>{{doors}}</td>
+            </tr>
+            <tr>
+                <th>Required Driver Age </th>
+                <td>{{minDriverAge}}</td>
+            </tr>
+            <tr>
+                <th>Required License Age </th>
+                <td>{{minLicenseAge}}</td>
+            </tr>
+            <tr>
+                <th>0-100 (km/h)</th>
+                <td>{{zeroToHundredKmh}}</td>
+            </tr>
+        </table> 
+    </div>
+{{/each}}

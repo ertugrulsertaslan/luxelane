@@ -1,9 +1,9 @@
 import { getAllCars } from "../models/getAllCars.js";
 
-async function getHomePage (req,res) {
+async function getcarListPage (req,res) {
     const cars = await getAllCars();
-    res.render("index", { cars: cars });
+    res.render("carList", { cars: cars });
 }
 export {
-    getHomePage
+    getcarListPage
 }
