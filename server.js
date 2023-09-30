@@ -9,9 +9,11 @@ import { getContactPage } from './controllers/contact.controller.js';
 import { getSignPage } from './controllers/sign.controller.js';
 import { getLoginPage } from './controllers/login.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
-import { getCarAddPage } from './controllers/carAdd.controller.js'; 
-import { getCar } from './controllers/carAdd.controller.js';
 
+
+import { getCarAddPage } from './controllers/carAdd.controller.js';
+import { CarDataPost } from './controllers/carAdd.controller.js';
+import bodyParser from 'body-parser';
 
 
 app.engine('handlebars', exphbs.engine({ 
@@ -40,16 +42,12 @@ app.get('/cars/:id', getCarDetailPage);
 app.get('/carList', getcarListPage);
 app.get('/carAdd',getCarAddPage);
 
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
-app.post('/carAdd',getCar );
+app.post('/carAdd',CarDataPost);
     
-
-
-
-
-
-
 
 
 

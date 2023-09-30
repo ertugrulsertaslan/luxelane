@@ -1,23 +1,26 @@
 import { db } from "../db.js";
 
 
-function addCars() {
-        // Query db
-        const sql = "INSERT INTO car ('brand','model','hp','seats','hourlyPrice','thumbnail','fuel','transmission','bodyType','doors','minDriverAge','minLicenseAge','zeroToHundredKmh') VALUES ('Mercedes','Cls63','565','2','150','/img/cls63.png','GASOLINE','AUTOMATIC','COUPE','2','22','5','3.0')";
-
-        db.run(sql, (err, rows) => {
-            if (err) {
-                reject(err);
-                
-            }
-            console.log(rows);
-            
-        });         
+function CarData(data) {
+    return new Promise((resolve, reject) => {
+      // Query db
+      const sql = `INSERT INTO car ('brand','model','hp','seats','hourlyPrice','thumbnail','fuel','transmission','bodyType','doors','minDriverAge','minLicenseAge','zeroToHundredKmh') 
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`;
+     
+      db.run(sql,[data.brand,data.model,data.hp,data.seats,data.hourlyPrice,data.thumbnail,data.fuel,data.transmission,data.bodyType,data.doors,data.minDriverAge,data.minLicenseAge,data.zeroToHundredKmh],(err, rows) => {
+          if (err) {
+              reject(err);
+          }
   
-};
+          resolve(rows);
+      });
+  });
+  
+  }
+
 
 export {
-    addCars
+    CarData
 }
 
 
