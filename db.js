@@ -25,6 +25,18 @@ const db = new sqlite3.Database('./app.db', (err) => {
     console.log('✅ Connected to the SQlite database.');
 });
 
+function dbClose() {
+    db.close((err) => {
+        if (err) {
+            return console.error('❌', err.message);
+        }
+        console.log('✅ Disconnected from SQlite database.');
+    })
+}
+
+process.on('exit', dbClose);
+
+
 export {
     db
 }
