@@ -6,8 +6,11 @@ function getCarAddPage (req,res) {
 }
 async function CarDataPost(req,res){
     const data = req.body;
-   await CarData(data);
-    res.send(data);
+    await CarData(data);
+
+    res.render('carAdd', {
+        message: 'Car successfully added!'
+    });
 }
 
 
