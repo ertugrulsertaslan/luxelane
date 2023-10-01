@@ -1,0 +1,10 @@
+<div style="color:green">
+    <h1>Successful</h1>
+    <h5>{{message}}</h5>
+</div>
+<script>
+    const REDIRECT_DELAY = {{delay}} || 5000;
+    setTimeout(() => {
+        window.location.replace('{{redirect}}');
+    }, REDIRECT_DELAY);
+</script>

@@ -8,6 +8,10 @@
    {{#each cars}}
  <div  style="float:left; margin: 0 1rem" >
         <h2>{{brand}} - {{model}}</h2>
+        <form method="post" action="/car-list/{{id}}">
+            <button type="submit">Delete</button>
+        </form>
+        
         <img height="100px" src="{{thumbnail}}">
         <div>
                 <span style="float:left; margin: 0 1rem">Price (1 Hours) </span>

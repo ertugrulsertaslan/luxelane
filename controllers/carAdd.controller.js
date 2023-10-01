@@ -7,10 +7,7 @@ function getCarAddPage (req,res) {
 async function CarDataPost(req,res){
     const data = req.body;
     await CarData(data);
-
-    res.render('carAdd', {
-        message: 'Car successfully added!'
-    });
+    res.render('success', {message: 'Car Added', redirect: '/car-add', delay: 2000});
 }
 
 
