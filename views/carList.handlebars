@@ -2,7 +2,7 @@
 {{#section 'head'}}
     <title>LuxeLane - {{brand}}</title>
 {{/section}}
-<a href="/">Go to Home Page</a>
+ <a href="/admin-dashboard">Go to Dashboard</a>
    
    
    {{#each cars}}
@@ -10,6 +10,9 @@
         <h2>{{brand}} - {{model}}</h2>
         <form method="post" action="/car-list/{{id}}">
             <button type="submit">Delete</button>
+        </form>
+         <form method="get" action="/car-edit/{{id}}">
+            <button type="submit">Edit</button>
         </form>
         
         <img height="100px" src="{{thumbnail}}">

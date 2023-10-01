@@ -16,7 +16,8 @@ import { CarDataPost } from './controllers/carAdd.controller.js';
 import bodyParser from 'body-parser';
 import { getAdminPage } from './controllers/admin.Dashboard.controller.js';
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
-
+import { CarEdithandler } from './controllers/carEdit.controller.js';
+import { getCarEditPage } from './controllers/carEdit.controller.js';
 app.engine('handlebars', exphbs.engine({ 
     defaultLayout:'main', 
     helpers: {
@@ -43,17 +44,16 @@ app.get('/cars/:id', getCarDetailPage);
 app.get('/car-list', getcarListPage);
 app.get('/car-add',getCarAddPage);
 app.get('/admin-dashboard',getAdminPage);
+app.get ('/car-edit/:id',getCarEditPage);
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 app.post('/car-add', CarDataPost);
-    
+app.post('/car-edit/:id',CarEdithandler);
+
 app.post('/car-list/:id', deleteCarHandler);
-
-
-
 
 
 
