@@ -1,6 +1,6 @@
 
       <a href="/admin-dashboard">Go to Dashboard</a>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <h3>Brand</h3>
         <input type="text" name="brand" id="brand"/>
         <h3>Model</h3>
@@ -12,7 +12,7 @@
         <h3>HourlyPrice</h3>
         <input type="number" name="hourlyPrice" id="hourlyPrice"/>
         <h3>Thumbnail</h3>
-        <input type="text" name="thumbnail" id="thumbnail"/>
+        <input type="file" name="uploaded_file" id="file" />
          <h3>Fuel</h3>
         <input type="text" name="fuel" id="fuel"/>
          <h3>Transmission</h3>
