@@ -1,20 +1,33 @@
 
-    <div>
-        <span>
-            <h1 style="display: inline;">LuxeLane</h1>
-        </span>
-        <span style="float:right">
-            <a href="contact"><h3>Contact</h3></a>
-        </span>
-    </div>
-    <a href="sign"> <h2>Sign in</h2> </a>
-    <a href="login"> <h2>Login</h2> </a>
-    <h2>About</h2>
-    <p>At LuxeLane, we believe that every journey should be an unforgettable experience. We specialize in providing the epitome of luxury car rentals, ensuring that our clients not only reach their destinations but also indulge in a heightened sense of style, comfort, and elegance.</p>
-    <a href="/about"> Read More </a>
-    <h2>Our Cars</h2>
-    
-    {{#each cars}}
-        <a href="cars/{{this.id}}"> <img height="200px" src="{{this.thumbnail}}"> </a>
-    {{/each}}
+    <div class="container">
+            <div class="col">
+                <span >
+                    <h1 style="display: inline;" >LuxeLane</h1>
+                </span>
+            </div>
+            <div class="col">
+                <span style="float:right" >
+                    <a href="contact" class="link-offset-2 link-underline link-underline-opacity-0"><h3>Contact</h3></a>
+                </span>   
+            </div> 
+            <div class="col mt-5">
+                <a href="sign" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Sign in</h2> </a>
+            </div>
+            <div class="col mt-2">
+                <a href="login" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Login</h2> </a>
+            </div>
+            <div class="col mt-2">
+                <h2>About</h2>
+                <p class="col-2 text-truncate" >At LuxeLane, we believe that every journey should be an unforgettable experience. We specialize in providing the epitome of luxury car rentals, ensuring that our clients not only reach their destinations but also indulge in a heightened sense of style, comfort, and elegance.</p>
+                <a href="/about"> Read More </a>          
+            </div>
+            <div class="col m-3">
+                <h2 class="text-center m-5" >Our Cars</h2>  
+                {{#each cars}}
+                    <a class="col" href="cars/{{this.id}}"> <img  class="w-25"  src="{{this.thumbnail}}"> </a>
+                {{/each}}
+            </div>
+      
+    </div> 
+   
     
