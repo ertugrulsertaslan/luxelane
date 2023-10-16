@@ -3,6 +3,13 @@ import exphbs from 'express-handlebars';
 const app = express();
 import bodyParser from 'body-parser';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
+
 
 import { getHomePage } from './controllers/home.controller.js';
 import { getAboutPage } from './controllers/about.controller.js';
@@ -22,8 +29,9 @@ import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
 
-
-
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
+app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 app.engine('handlebars', exphbs.engine({ 
     defaultLayout:'main', 
     helpers: {
