@@ -1,62 +1,69 @@
 {{#section 'head'}}
     <title>LuxeLane - {{brand}}</title>
 {{/section}}
-    <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
-  <div>
-    <h1 class="m-3">{{brand}}-{{model}}</h1>
-    <img class="card-img-top w-25" src="{{thumbnail}}" alt="Card image cap">
-    <div class="d-flex"> 
-         <p class="mx-5">Price (1 Hours)</p>  
-        <h5>${{hourlyPrice}}</h5>      
-    </div>                                                                                
-    <div class="card-body">
-        <div class="d-flex">
-            <h4 class="m-3">Specs</h4>      
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Brand</h5>      
-            <p>{{brand}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5 w-10">Model</h5>
-            <p class="w-25">{{model}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Horse Power</h5>
-            <p>{{hp}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">No. of seats</h5>
-            <p>{{seats}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Fuel</h5>
-            <p>{{fuel}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Transmission</h5>
-            <p>{{transmission}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Body Type</h5>
-            <p>{{bodyType}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Doors</h5>
-            <p>{{doors}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Required Driver Age</h5>
-            <p>{{minDriverAge}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">Required License Age	</h5>
-            <p>{{minLicenseAge}}</p>
-        </div>
-        <div class="d-flex">
-            <h5 class="mx-5">0-100 (km/h)</h5>
-            <p>{{zeroToHundredKmh}}</p>
+<div>
+    <div class="p-3">
+        <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
+    </div> 
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col float-start">
+            <div class="card align-items-center justify-content-center text-center w-50 mt-3 border-0">
+                <h2>{{brand}} - {{model}}</h2>
+                <img src="{{thumbnail}}" class="card-img-top w-75 p-3" alt="...">
+                    <div class="card-car-price d-flex">
+                        <span class="mx-3 mt-1">Price (1 Hours) </span>
+                        <h3>${{hourlyPrice}}</h3>
+                    </div>
+                <div class="card-body">
+                    <h4>Specs</h4>
+                    <table>
+                        <tr>
+                            <th>Brand</th>
+                            <td>{{brand}}</td>
+                        </tr>
+                        <tr>
+                            <th>Model</th>
+                            <td>{{model}}</td>
+                        </tr>
+                        <tr>
+                            <th>Horse Power</th>
+                            <td>{{hp}}</td>
+                        </tr>
+                        <tr>
+                            <th>No. of seats</th>
+                            <td>{{seats}}</td>
+                        </tr>
+                        <tr>
+                            <th>Fuel </th>
+                            <td>{{fuel}}</td>
+                        </tr>
+                        <tr>
+                            <th>Transmission </th>
+                            <td>{{transmission}}</td>
+                        </tr>
+                        <tr>
+                            <th>Body Type </th>
+                            <td>{{bodyType}}</td>
+                        </tr>
+                        <tr>
+                            <th>Doors </th>
+                            <td>{{doors}}</td>
+                        </tr>
+                        <tr>
+                            <th>Required Driver Age </th>
+                            <td>{{minDriverAge}}</td>
+                        </tr>
+                        <tr>
+                            <th>Required License Age </th>
+                            <td>{{minLicenseAge}}</td>
+                        </tr>
+                        <tr>
+                            <th>0-100 (km/h)</th>
+                            <td>{{zeroToHundredKmh}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
- 
+</div>
