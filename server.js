@@ -67,7 +67,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 app.post('/car-add' ,upload.single('uploaded_file'),CarDataPost);
-app.post('/car-edit/:id',CarEdithandler);
+app.post('/car-edit/:id',upload.single('uploaded_file'),CarEdithandler);
 app.post('/car-list/:id', deleteCarHandler);
 
 

@@ -1,7 +1,23 @@
 import { CarEdit } from "../models/editCar.js";
 import { getCarById } from "../models/getCarById.js";
 
-async function getCarEditPage(req,res)  {
+import multer from 'multer';
+
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/img/')
+    },
+    filename: function (req, file, cb) {
+     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null,file.originalname  )//file.fieldname+ '-' + uniqueSuffix
+    }
+  })
+  
+  const upload = multer({ storage: storage })
+
+async function getCarEditPage(req,res)  { 
     const carId = req.params.id;
     const car = await getCarById(carId);
     if (car) {
@@ -13,15 +29,13 @@ async function getCarEditPage(req,res)  {
 
 }
 
-
-
 async function CarEdithandler(req,res){
     const carId = req.params.id;
     const data = req.body;
-    await CarEdit(carId,data);
+    const thumbnail = '/img/' + req.file.originalname;
+    await CarEdit(carId,data,thumbnail);
     res.render('success', {message: 'Car Edited', redirect: '/car-list', delay: 2000});
 }
-
 
 export {
     getCarEditPage,
