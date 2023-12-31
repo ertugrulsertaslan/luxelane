@@ -10,77 +10,77 @@
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="brand" id="brand" placeholder="Brand" value="{{brand}}"/>  
+              <input type="text" class="form-control" name="brand" id="brand" placeholder="Brand" value="{{brand}}" required/>  
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="model" id="model" placeholder="Model" value="{{model}}"/>
+              <input type="text" class="form-control" name="model" id="model" placeholder="Model" value="{{model}}" required/>
             </div>
           </div>
         </div>
        <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="hp" id="hp" placeholder="Hp" value="{{hp}}"/> 
+              <input type="number" class="form-control" name="hp" id="hp" placeholder="Hp" value="{{hp}}" required/> 
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="seats" id="seats" placeholder="Seats" value="{{seats}}"/>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price" value="{{hourlyPrice}}"/>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh" value="{{zeroToHundredKmh}}"/>
+              <input type="number" class="form-control" name="seats" id="seats" placeholder="Seats" value="{{seats}}" required/>
             </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="fuel" id="fuel" placeholder="Fuel" value="{{fuel}}"/>
+              <input type="number" class="form-control" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price" value="{{hourlyPrice}}" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="transmission" id="transmission" placeholder="Transmission" value="{{transmission}}"/>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" class="form-control" name="bodyType" id="bodyType" placeholder="Body Type" value="{{bodyType}}"/>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="doors" id="doors" placeholder="Doors" value="{{doors}}"/>
+              <input type="number" class="form-control" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh" value="{{zeroToHundredKmh}}" required/>
             </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age" value="{{minDriverAge}}"/>
+              <input type="text" class="form-control" name="fuel" id="fuel" placeholder="Fuel" value="{{fuel}}" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age" value="{{minLicenseAge}}"/>
+              <input type="text" class="form-control" name="transmission" id="transmission" placeholder="Transmission" value="{{transmission}}" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" class="form-control" name="bodyType" id="bodyType" placeholder="Body Type" value="{{bodyType}}" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="doors" id="doors" placeholder="Doors" value="{{doors}}" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age" value="{{minDriverAge}}" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age" value="{{minLicenseAge}}" required/>
             </div>
           </div>
         </div>
         <div class="form-outline mb-4">
-          <input type="file" class="form-control" name="uploaded_file" id="file" placeholder="File" value="{{thumbnail}}"/>
+          <input type="file" class="form-control" name="uploaded_file" id="file" placeholder="File" value="{{thumbnail}}" required/>
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Save</button> 
       </form>

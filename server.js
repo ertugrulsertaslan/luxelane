@@ -2,14 +2,13 @@ import express from 'express';
 import exphbs from 'express-handlebars';
 const app = express();
 import bodyParser from 'body-parser';
-
 import path from 'path';
 import { fileURLToPath } from 'url';
-
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = path.dirname(__filename);
 
+import validator from 'express-validator'
+const { check, validationResult } = validator
 
 import { getHomePage } from './controllers/home.controller.js';
 import { getAboutPage } from './controllers/about.controller.js';
@@ -18,16 +17,15 @@ import { getContactPage } from './controllers/contact.controller.js';
 import { getSignPage } from './controllers/sign.controller.js';
 import { getLoginPage } from './controllers/login.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
-import { getCarAddPage } from './controllers/carAdd.controller.js';
+import { carValidationPost, getCarAddPage } from './controllers/carAdd.controller.js';
 import { getAdminPage } from './controllers/admin.Dashboard.controller.js';
 import { CarDataPost } from './controllers/carAdd.controller.js';
 import { getCarEditPage } from './controllers/carEdit.controller.js';
 
-
-
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
+import { carValidation } from './carValidation.js';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
@@ -64,13 +62,50 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
+app.post('/car-add',upload.single('uploaded_file'),carValidation,carValidationPost,CarDataPost);
+//CarDataPost,
 
 
-app.post('/car-add' ,upload.single('uploaded_file'),CarDataPost);
+
+
+
+
+
+
+
+
+
+
+
+
+//const CarDataPost = bodyParser.urlencoded({extended:false});
+
+/*
+app.post('/car-add',upload.single('uploaded_file'),CarDataPost,[
+    check('brand','This brand must me 3+ characters long')
+    .isLength({ min:3 })
+],
+ ,(req,res)=>{
+        const data = req.body;
+        const thumbnail = '/img/' + req.file.originalname;
+        //await CarData(data,thumbnail);
+        const errors = validationResult(req);
+        console.log(errors);
+        if(!errors.isEmpty()){
+        const alert = errors.array();
+        //return res.status(422).jsonp(errors.array());
+        res.render('carAdd',{  alert });
+        // res.render('/carAdd', { alert: alert });
+        
+        }/*else {
+        res.render('success', {message: 'Car Added', redirect: '/car-add', delay: 2000});
+        } 
+    }
+ 
+    );
+ */
 app.post('/car-edit/:id',upload.single('uploaded_file'),CarEdithandler);
 app.post('/car-list/:id', deleteCarHandler);
-
-
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);

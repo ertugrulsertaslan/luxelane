@@ -1,83 +1,92 @@
 <div class="container">
    <div>
     <a href="/admin-dashboard" class="link-offset-2 link-underline link-underline-opacity-0">Go to Dashboard</a>
-   </div>   
+  </div>
+
+  {{#if alert }}
+    {{#each alert}}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> {{this.msg}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {{/each}}
+  {{/if}}
     <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
       <form method="post" enctype="multipart/form-data">
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="brand" id="brand" placeholder="Brand"/>  
+              <input type="text" class="form-control" name="brand" id="brand" placeholder="Brand" required/> 
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="model" id="model" placeholder="Model"/>
+              <input type="text" class="form-control" name="model" id="model" placeholder="Model" required/>
             </div>
           </div>
         </div>
        <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="hp" id="hp" placeholder="Hp"/> 
+              <input type="number" class="form-control" name="hp" id="hp" placeholder="Hp" required/> 
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="seats" id="seats" placeholder="Seats"/>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price"/>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh"/>
+              <input type="number" class="form-control" name="seats" id="seats" placeholder="Seats" required/>
             </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="fuel" id="fuel" placeholder="Fuel"/>
+              <input type="number" class="form-control" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="text" class="form-control" name="transmission" id="transmission" placeholder="Transmission"/>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input type="text" class="form-control" name="bodyType" id="bodyType" placeholder="Body Type"/>
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input type="number" class="form-control" name="doors" id="doors" placeholder="Doors"/>
+              <input type="number" class="form-control" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh" required/>
             </div>
           </div>
         </div>
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age"/>
+              <input type="text" class="form-control" name="fuel" id="fuel" placeholder="Fuel" required/>
             </div>
           </div>
           <div class="col">
             <div class="form-outline">
-              <input type="number" class="form-control" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age"/>
+              <input type="text" class="form-control" name="transmission" id="transmission" placeholder="Transmission" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="text" class="form-control" name="bodyType" id="bodyType" placeholder="Body Type" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="doors" id="doors" placeholder="Doors" required/>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age" required/>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-outline">
+              <input type="number" class="form-control" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age" required/>
             </div>
           </div>
         </div>
         <div class="form-outline mb-4">
-          <input type="file" class="form-control" name="uploaded_file" id="file" placeholder="File"/>
+          <input type="file" class="form-control" name="uploaded_file" id="file" placeholder="File" required/>
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
       </form>
