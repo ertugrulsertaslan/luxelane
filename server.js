@@ -1,5 +1,6 @@
 import express from 'express';
 import exphbs from 'express-handlebars';
+import Handlebars from 'handlebars';
 const app = express();
 import bodyParser from 'body-parser';
 import path from 'path';
@@ -7,8 +8,9 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import validator from 'express-validator'
-const { check, validationResult } = validator
+import { body } from 'express-validator'
+import errorValidation from './middlewares/errorValidation.js';
+
 
 import { getHomePage } from './controllers/home.controller.js';
 import { getAboutPage } from './controllers/about.controller.js';
@@ -17,15 +19,12 @@ import { getContactPage } from './controllers/contact.controller.js';
 import { getSignPage } from './controllers/sign.controller.js';
 import { getLoginPage } from './controllers/login.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
-import { carValidationPost, getCarAddPage } from './controllers/carAdd.controller.js';
 import { getAdminPage } from './controllers/admin.Dashboard.controller.js';
-import { CarDataPost } from './controllers/carAdd.controller.js';
+import { CarDataPost, getCarAddPage } from './controllers/carAdd.controller.js';
 import { getCarEditPage } from './controllers/carEdit.controller.js';
-
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
-import { carValidation } from './carValidation.js';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
@@ -39,8 +38,29 @@ app.engine('handlebars', exphbs.engine({
             };
             this._sections[name] = options.fn(this);
             return null;
-        }
-    }
+        },
+        validationFeedback: function(name, options) {
+            const fieldFeedback = options.data?.root?.errors?.find((error) => {
+                return name === error.path
+            });
+
+            if (fieldFeedback) {
+                return new Handlebars.SafeString(`<div class="invalid-feedback">${fieldFeedback.msg}</div>`);
+            }
+            return '';
+        },
+        validateInput: function(name, options) {
+            const fieldFeedback = options.data?.root?.errors?.find((error) => {
+                return name === error.path
+            });
+
+            if (fieldFeedback) {
+                return `is-invalid`
+            }
+
+            return '';
+        },
+    },
 }));
 app.set('view engine', 'handlebars');
 
@@ -62,48 +82,27 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
-app.post('/car-add',upload.single('uploaded_file'),carValidation,carValidationPost,CarDataPost);
-//CarDataPost,
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const CarDataPost = bodyParser.urlencoded({extended:false});
-
-/*
-app.post('/car-add',upload.single('uploaded_file'),CarDataPost,[
-    check('brand','This brand must me 3+ characters long')
-    .isLength({ min:3 })
-],
- ,(req,res)=>{
-        const data = req.body;
-        const thumbnail = '/img/' + req.file.originalname;
-        //await CarData(data,thumbnail);
-        const errors = validationResult(req);
-        console.log(errors);
-        if(!errors.isEmpty()){
-        const alert = errors.array();
-        //return res.status(422).jsonp(errors.array());
-        res.render('carAdd',{  alert });
-        // res.render('/carAdd', { alert: alert });
-        
-        }/*else {
-        res.render('success', {message: 'Car Added', redirect: '/car-add', delay: 2000});
-        } 
-    }
- 
-    );
- */
+app.post('/car-add',
+    upload.single('uploaded_file'),
+    [
+        body('brand').isString().withMessage('Brand must be string'),
+        body('model').isString(),
+        body('hp').isString().isNumeric(),
+        body('seats').isString().isNumeric(),
+        body('hourlyPrice').isString().isNumeric(),
+        body('zeroToHundredKmh').toFloat().isFloat(),
+        body('fuel').isIn(['GASOLINE', 'DIESEL', 'HYBRID', 'ELECTRIC']),
+        body('transmission').isIn(['MANUAL', 'AUTOMATIC']),
+        body('bodyType').isIn(['COUPE', 'CABRIO', 'SEDAN', 'HATCHBACK', 'SUV', 'STATION_WAGON']),
+        body('doors').toInt().isInt({ min: 1, max: 7 }),
+        body('minDriverAge').toInt().isInt({ min: 18, max: 65 }),
+        body('minLicenseAge').toInt().isInt({ min: 0 }),
+        body('status').isIn(['ACTIVE', 'MAINTENANCE', 'PRIVATE']),
+        body('uploaded_file').notEmpty()
+    ],
+    errorValidation('carAdd'),
+    CarDataPost
+);
 app.post('/car-edit/:id',upload.single('uploaded_file'),CarEdithandler);
 app.post('/car-list/:id', deleteCarHandler);
 
