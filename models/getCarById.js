@@ -9,7 +9,6 @@ function getCarById(id) {
             if (err) {
                 reject(err);
             }
-            
             resolve(rows[0]);
         });
     });

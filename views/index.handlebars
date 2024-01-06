@@ -1,60 +1,57 @@
-
-    <div class="container">
-            <div class="col">
-                <span >
-                    <h1 style="display: inline;" >LuxeLane</h1>
-                </span>
-            </div>
-            <div class="col">
-                <span style="float:right" >
-                    <a href="contact" class="link-offset-2 link-underline link-underline-opacity-0"><h3>Contact</h3></a>
-                </span>   
-            </div> 
-            <div class="col m-1">
-                <a href="sign" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Sign in</h2> </a>
-            </div>
-            <div class="col m-3">
-                <a href="login" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Login</h2> </a>
-            </div>
-            <div class="col m-3">
-                <h2>About</h2>
-                <p class="col  text-truncate" >At LuxeLane, we believe that every journey should be an unforgettable experience. We specialize in providing the epitome of luxury car rentals, ensuring that our clients not only reach their destinations but also indulge in a heightened sense of style, comfort, and elegance.</p>
-                <a href="/about"> Read More </a>          
-            </div>
-            <div class="col m-5 ">
-                <h2 class="text-center m-5" >Our Cars</h2>
-                {{#each cars}}
-                 <div class="card d-flex flex-row mx-3 align-items-center justify-content-center text-center" style="width:60rem;">        
-                    <a class="col" href="cars/{{this.id}}"><img class="w-100" src="{{this.thumbnail}}"></a>
-                        <div class="car-body bd-highlight align-items-center justify-content-center mx-3 p-2">
-                            
-                            <h5 class="card-title">Brand</h5>
-                            <p>{{this.brand}}</p>
-                        </div>
-                        <div class="mx-3 p-2">
-                            <h5 class="card-title">Model</h5>
-                            <p>{{this.model}}</p>
-                        </div>
-                         <div class="mx-3 p-2">
-                            <h5 class="card-title">Hp</h5>
-                            <p>{{this.hp}}</p>
-                        </div>
-                         <div class="mx-3 p-2">
-                            <h5 class="card-title">Seats</h5>
-                            <p>{{this.seats}}</p>
-                        </div>
-
-                        <div class="mx-3 p-2">
-                            <h5 class="card-title">Hourly Price</h5>
-                            <p>${{this.hourlyPrice}}</p>
-                        </div>
-                        <div class="mx-3 p-2">
-                            <h5 class="card-title">Body Type</h5>
-                            <p>{{this.bodyType}}</p>
-                        </div>
-                 </div>
-                {{/each}}
-            </div>
+<div class="container">
+    <div class="col">
+        <span >
+            <h1 style="display: inline;" >LuxeLane</h1>
+        </span>
+    </div>
+    <div class="col">
+        <span style="float:right" >
+            <a href="contact" class="link-offset-2 link-underline link-underline-opacity-0"><h3>Contact</h3></a>
+        </span>   
     </div> 
-   
-    
+    <div class="col m-1">
+        <a href="sign" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Sign in</h2> </a>
+    </div>
+    <div class="col m-3">
+        <a href="login" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Login</h2> </a>
+    </div>
+    <div class="col m-3">
+        <h2>About</h2>
+        <p class="col  text-truncate" >At LuxeLane, we believe that every journey should be an unforgettable experience. We specialize in providing the epitome of luxury car rentals, ensuring that our clients not only reach their destinations but also indulge in a heightened sense of style, comfort, and elegance.</p>
+        <a href="/about"> Read More </a>          
+    </div>
+    <div class="col m-5 ">
+        <h2 class="text-center m-5" >Our Cars</h2>
+        {{#each cars}}
+            <div class="card d-flex flex-row mx-3 align-items-center justify-content-center text-center" style="width:60rem;">        
+            <a class="col" href="cars/{{this.id}}"><img class="w-100" src="{{this.thumbnail}}"></a>
+                <div class="car-body bd-highlight align-items-center justify-content-center mx-3 p-2">           
+                    <h5 class="card-title">Brand</h5>
+                    <p>{{this.brand}}</p>
+                </div>
+                <div class="mx-3 p-2">
+                    <h5 class="card-title">Model</h5>
+                    <p>{{this.model}}</p>
+                </div>
+                    <div class="mx-3 p-2">
+                    <h5 class="card-title">Hp</h5>
+                    <p>{{this.hp}}</p>
+                </div>
+                    <div class="mx-3 p-2">
+                    <h5 class="card-title">Seats</h5>
+                    <p>{{this.seats}}</p>
+                </div>
+                <div class="mx-3 p-2">
+                    <h5 class="card-title">Hourly Price</h5>
+                    <p>${{this.hourlyPrice}}</p>
+                </div>
+                <div class="mx-3 p-2">
+                    <h5 class="card-title">Body Type</h5>
+                    <p>{{this.bodyType}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div> 
+
+

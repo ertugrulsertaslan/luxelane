@@ -1,11 +1,9 @@
 import { db } from "../db.js";
-//
+
 function CarData(data,thumbnail) {
-    return new Promise((resolve, reject) => {
-    // Query db
+    return new Promise((resolve, reject) => { 
     const sql = `INSERT INTO car ('brand','model','hp','seats','hourlyPrice','thumbnail','fuel','transmission','bodyType','doors','minDriverAge','minLicenseAge','zeroToHundredKmh', 'status', 'branchId') 
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?, ?)`;
-    
     // !!! TODO: GET THIS VALUE FROM data PARAMETER
     const branchId = 1;
 
@@ -16,9 +14,7 @@ function CarData(data,thumbnail) {
         resolve(rows);
     });
   });
-  
-  }
-
+}
 
 export {
     CarData

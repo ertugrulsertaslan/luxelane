@@ -25,6 +25,7 @@ import { getCarEditPage } from './controllers/carEdit.controller.js';
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
+import { SignDataPost } from './controllers/sign.controller.js';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
@@ -65,8 +66,9 @@ app.engine('handlebars', exphbs.engine({
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'))
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
 
-// Routing 
 app.get('/', getHomePage);
 app.get('/about',getAboutPage);
 app.get('/contact',getContactPage);
@@ -78,8 +80,7 @@ app.get('/car-add',getCarAddPage);
 app.get('/admin-dashboard',getAdminPage);
 app.get ('/car-edit/:id',getCarEditPage);
 
-app.use(bodyParser.json()); // support json encoded bodies
-app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 
 
 app.post('/car-add',
@@ -98,13 +99,37 @@ app.post('/car-add',
         body('minDriverAge').toInt().isInt({ min: 18, max: 65 }),
         body('minLicenseAge').toInt().isInt({ min: 0 }),
         body('status').isIn(['ACTIVE', 'MAINTENANCE', 'PRIVATE']),
-        body('uploaded_file').notEmpty()
+        //body('uploaded_file').notEmpty()
     ],
     errorValidation('carAdd'),
     CarDataPost
 );
-app.post('/car-edit/:id',upload.single('uploaded_file'),CarEdithandler);
+
+app.post('/car-edit/:id',
+    upload.single('uploaded_file'),
+    [
+        body('brand').isString().withMessage('Brand must be string'),
+        body('model').isString(),
+        body('hp').isString().isNumeric(),
+        body('seats').isString().isNumeric(),
+        body('hourlyPrice').isString().isNumeric(),
+        body('zeroToHundredKmh').toFloat().isFloat(),
+        body('fuel').isIn(['GASOLINE', 'DIESEL', 'HYBRID', 'ELECTRIC']),
+        body('transmission').isIn(['MANUAL', 'AUTOMATIC']),
+        body('bodyType').isIn(['COUPE', 'CABRIO', 'SEDAN', 'HATCHBACK', 'SUV', 'STATION_WAGON']),
+        body('doors').toInt().isInt({ min: 1, max: 7 }),
+        body('minDriverAge').toInt().isInt({ min: 18, max: 65 }),
+        body('minLicenseAge').toInt().isInt({ min: 0 }),
+        body('status').isIn(['ACTIVE', 'MAINTENANCE', 'PRIVATE']),
+       // body('uploaded_file').notEmpty()
+    ],
+    errorValidation('car-edit/:id'),
+    CarEdithandler
+);
+
 app.post('/car-list/:id', deleteCarHandler);
+
+app.post('/sign',upload.single('uploaded_file'),SignDataPost);
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);

@@ -54,7 +54,7 @@
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <select value="GASOLINE" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
+              <select value="{{values.fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
                 <option value="" selected="" disabled="">Select Fuel</option>
                 <option value="GASOLINE">Gasoline</option>
                 <option value="DIESEL">Diesel</option>
@@ -66,7 +66,7 @@
           </div>
           <div class="col">
             <div class="form-outline">
-               <select class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
+               <select value="{{values.transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
                 <option value="" selected="" disabled="">Select Transmission</option>
                 <option value="MANUAL">Manual</option>
                 <option value="AUTOMATIC">Automatic</option>
@@ -78,7 +78,7 @@
         <div class="row mb-4">
           <div class="col">
             <div class="form-outline">
-              <select class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
+              <select value="{{values.bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
                 <option value="" selected="" disabled="">Select Body Type</option>
                 <option value="COUPE">Coupe</option>
                 <option value="CABRIO">Cabrio</option>
@@ -112,7 +112,7 @@
           </div>
         </div>
          <div class="form-outline mb-4">
-          <select name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
+          <select value="{{values.status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
             <option value="" selected="" disabled="">Select Status</option>
             <option value="ACTIVE">Active</option>
             <option value="MAINTENANCE">Maintenance</option>
@@ -121,7 +121,7 @@
           {{validationFeedback 'status'}}
         </div>
         <div class="form-outline mb-4">
-          <input type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
+          <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 

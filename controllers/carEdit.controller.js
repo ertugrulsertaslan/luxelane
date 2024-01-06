@@ -1,21 +1,16 @@
 import { CarEdit } from "../models/editCar.js";
 import { getCarById } from "../models/getCarById.js";
-
 import multer from 'multer';
-
-
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './public/img/')
     },
     filename: function (req, file, cb) {
-     // const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-      cb(null,file.originalname  )//file.fieldname+ '-' + uniqueSuffix
+      cb(null,file.originalname  )
     }
-  })
-  
-  const upload = multer({ storage: storage })
+  }) 
+const upload = multer({ storage: storage })
 
 async function getCarEditPage(req,res)  { 
     const carId = req.params.id;
@@ -25,8 +20,6 @@ async function getCarEditPage(req,res)  {
     } else {
         res.render("404");
     }
-
-
 }
 
 async function CarEdithandler(req,res){
@@ -39,5 +32,5 @@ async function CarEdithandler(req,res){
 
 export {
     getCarEditPage,
-    CarEdithandler
+    CarEdithandler,
 }

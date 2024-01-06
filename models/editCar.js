@@ -3,7 +3,6 @@ import { db } from "../db.js";
 
 function CarEdit(id,data,thumbnail) {
     return new Promise((resolve, reject) => {
-      // Query db
       const sql = `UPDATE car  SET brand = ?,  model = ?,hp = ?,seats = ?,hourlyPrice = ?,thumbnail = ?,fuel = ?,
       transmission = ?,bodyType = ?,doors = ?,minDriverAge = ?,minLicenseAge = ?,zeroToHundredKmh = ?
       WHERE id=?`;
@@ -15,10 +14,8 @@ function CarEdit(id,data,thumbnail) {
   
           resolve(rows);
       });
-  });
-  
-  }
-
+  }); 
+}
 
 export {
     CarEdit

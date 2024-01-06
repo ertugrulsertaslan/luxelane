@@ -1,7 +1,5 @@
 import { deleteCar } from "../models/deleteCar.js";
 
-
-
 async function deleteCarHandler(req,res)  {
     const carId = req.params.id;
     await deleteCar(carId);
