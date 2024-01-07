@@ -1,0 +1,73 @@
+Table car {
+  id integer [primary key]
+  brand text
+  model text
+  hp integer
+  seats integer
+  hourylPrice integer
+  thumbnail text
+  fuel text
+  transmission text
+  bodyType text
+  doors integer
+  minDriverAge integer
+  minLicenseAge integer
+  zeroToHundredKmh real
+  status text
+  branchId integer
+}
+
+Table user {
+  id integer [primary key]
+  firstName string
+  lastName string
+  email string
+  password string
+}
+
+Table admin {
+  id integer [primary key]
+  userId integer
+}
+
+Table customer {
+  id integer [primary key]
+  userId integer
+  tc string
+  tcPhoto string
+  status string
+}
+
+Table order {
+  id integer [primary key]
+  customerId integer
+  carId integer
+  pickUpBranchId integer
+  dropOffBranchId integer
+  startDate date
+  endDate date
+  price integer
+}
+
+Table branch {
+  id integer [primary key]
+  name string
+  address string
+  phone string
+}
+
+
+
+Ref: "car"."id" < "order"."carId"
+
+Ref: "customer"."id" < "order"."customerId"
+
+Ref: "branch"."id" < "order"."pickUpBranchId"
+
+Ref: "branch"."id" < "order"."dropOffBranchId"
+
+Ref: "user"."id" < "customer"."userId"
+
+Ref: "user"."id" < "admin"."userId"
+
+Ref: "car"."branchId" < "branch"."id"
