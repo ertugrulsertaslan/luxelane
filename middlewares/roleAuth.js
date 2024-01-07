@@ -1,8 +1,14 @@
-export default async function (req, res, next) {
-    console.log(req.session);
-    if (req.session.user) {
-        next();
-    } else {
-        res.redirect('/users/login');
+export default function(role) {
+    return async function (req, res, next) {
+
+        if (!req.session.user) {
+            return res.redirect('/users/login');
+        }
+
+        if (req.session.user.role === role) {
+            next();
+        } else {
+            return res.render('404');
+        }
     }
 }

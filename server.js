@@ -12,6 +12,7 @@ import { body } from 'express-validator'
 import errorValidation from './middlewares/errorValidation.js';
 
 import controllers from './controllers/index.js';
+import roleAuth from './middlewares/roleAuth.js';
 import { getHomePage } from './controllers/home.controller.js';
 import { getCarDetailPage } from './controllers/carDetail.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
@@ -21,10 +22,17 @@ import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
 import renderView from './utils/renderView.js';
+import session from 'express-session';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
+app.use(session({
+    secret: 'UUIbYreIo4xPsSyreNxXbF5iqZguhZH6',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  }));
 app.engine('handlebars', exphbs.engine({ 
     defaultLayout:'main', 
     helpers: {
@@ -73,7 +81,7 @@ app.get('/cars', getcarListPage);
 app.get('/cars/upsert',renderView("cars/carAdd"));
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/upsert/:id',getCarEditPage);
-app.get('/cars/:id', getCarDetailPage);
+app.get('/cars/:id', roleAuth("ADMIN"), getCarDetailPage);
 
 
 
@@ -124,6 +132,7 @@ app.post('/car-edit/:id',
 
 app.delete('cars/:id', deleteCarHandler);
 
+app.post('/users/login', controllers.users.login); 
 app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);
 
 app.listen(8080, () => {

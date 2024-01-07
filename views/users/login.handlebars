@@ -1,5 +1,11 @@
 <div class="container">
-  <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a> 
+  <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
+  {{#if errorMessage }}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong> {{errorMessage}} </strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {{/if}} 
     <div class="d-flex flex-row bd-highlight align-items-center justify-content-center  ">
         <div class="m-5 pb-1 bd-highlight ">
           <a href="/users/login" class="link-offset-2 link-underline link-underline-opacity-0" >
@@ -13,12 +19,12 @@
         </div>
       </div>
       <div class="mt-2 h-100 d-flex align-items-center justify-content-center">   
-        <form>
+        <form method="post" action="/users/login">
           <div class="form-outline mb-4">
-            <input type="email"  class="form-control" placeholder="Email or username" required/>
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email or username" required/>
           </div>
           <div class="form-outline mb-4">
-            <input type="password"  class="form-control" placeholder="Password" required/>
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required/>
           </div>
           <div class="form-outline mb-4">
               <button type="submit" class="form-control btn btn-info">Login</button>
