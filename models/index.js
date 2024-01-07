@@ -17,7 +17,4 @@ export default {
         // create: createCarModel,
         // update: updateCarModel,
     },
-    users: {
-        //
-    }
 }
