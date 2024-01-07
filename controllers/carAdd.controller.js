@@ -17,7 +17,7 @@ async function CarDataPost(req,res){
      const data = req.body;
      const thumbnail = '/img/' + req.file.originalname;
      await CarData(data,thumbnail);
-     res.render('success', {message: 'Car Added', redirect: '/car-add', delay: 2000});   
+     res.render('success', {message: 'Car Added', redirect: '/cars/upsert', delay: 2000});   
 }
  
 export {

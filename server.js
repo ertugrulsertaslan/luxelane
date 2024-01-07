@@ -67,18 +67,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', getHomePage);
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
-app.get('/login',renderView("login"));
-app.get('/sign',renderView("sign"));
+app.get('/users/login',renderView("users/login"));
+app.get('/users/sign-up',renderView("users/signUp"));
+app.get('/cars', getcarListPage);
+app.get('/cars/upsert',renderView("cars/carAdd"));
+app.get('/admin-dashboard',renderView("adminDashboard"));
+app.get('/cars/upsert/:id',getCarEditPage);
 app.get('/cars/:id', getCarDetailPage);
-app.get('/car-list', getcarListPage);
-app.get('/car-add',renderView("car-add"));
-app.get('/admin-dashboard',renderView("admin-dashboard"));
-app.get('/car-edit/:id',getCarEditPage);
 
 
 
 
-app.post('/car-add',
+app.post('/cars/upsert',
     upload.single('uploaded_file'),
     [
         body('brand').isString().withMessage('Brand must be string'),
@@ -122,9 +122,9 @@ app.post('/car-edit/:id',
     CarEdithandler
 );
 
-app.post('/car-list/:id', deleteCarHandler);
+app.delete('cars/:id', deleteCarHandler);
 
-app.post('/sign',upload.single('uploaded_file'), controllers.customers.signUp);
+app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);
