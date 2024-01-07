@@ -11,9 +11,7 @@ const storage = multer.diskStorage({
   })
 const upload = multer({ storage: storage })
 
-function getCarAddPage (req,res) { 
-    res.render("carAdd");
-}
+
 
 async function CarDataPost(req,res){
      const data = req.body;
@@ -24,6 +22,5 @@ async function CarDataPost(req,res){
  
 export {
     CarDataPost,
-    getCarAddPage,
-    upload,
+    upload
 }

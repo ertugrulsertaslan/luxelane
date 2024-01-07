@@ -11,21 +11,16 @@ const __dirname = path.dirname(__filename);
 import { body } from 'express-validator'
 import errorValidation from './middlewares/errorValidation.js';
 
-
+import controllers from './controllers/index.js';
 import { getHomePage } from './controllers/home.controller.js';
-import { getAboutPage } from './controllers/about.controller.js';
 import { getCarDetailPage } from './controllers/carDetail.controller.js';
-import { getContactPage } from './controllers/contact.controller.js';
-import { getSignPage } from './controllers/sign.controller.js';
-import { getLoginPage } from './controllers/login.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
-import { getAdminPage } from './controllers/admin.Dashboard.controller.js';
-import { CarDataPost, getCarAddPage } from './controllers/carAdd.controller.js';
+import { CarDataPost} from './controllers/carAdd.controller.js';
 import { getCarEditPage } from './controllers/carEdit.controller.js';
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/carAdd.controller.js';
-import { SignDataPost } from './controllers/sign.controller.js';
+import renderView from './utils/renderView.js';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
@@ -70,15 +65,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.get('/', getHomePage);
-app.get('/about',getAboutPage);
-app.get('/contact',getContactPage);
-app.get('/login',getLoginPage);
-app.get('/sign', getSignPage);
+app.get('/about', renderView("about"));
+app.get('/contact',renderView("contact"));
+app.get('/login',renderView("login"));
+app.get('/sign',renderView("sign"));
 app.get('/cars/:id', getCarDetailPage);
 app.get('/car-list', getcarListPage);
-app.get('/car-add',getCarAddPage);
-app.get('/admin-dashboard',getAdminPage);
-app.get ('/car-edit/:id',getCarEditPage);
+app.get('/car-add',renderView("car-add"));
+app.get('/admin-dashboard',renderView("admin-dashboard"));
+app.get('/car-edit/:id',getCarEditPage);
 
 
 
@@ -129,7 +124,7 @@ app.post('/car-edit/:id',
 
 app.post('/car-list/:id', deleteCarHandler);
 
-app.post('/sign',upload.single('uploaded_file'),SignDataPost);
+app.post('/sign',upload.single('uploaded_file'), controllers.customers.signUp);
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);
