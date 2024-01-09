@@ -16,7 +16,7 @@ async function CarEdithandler(req,res){
     const data = req.body;
     const thumbnail = '/img/' + req.file.originalname;
     await CarEdit(carId,data,thumbnail);
-    res.render('success', {message: 'Car Edited', redirect: 'cars/car-list', delay: 2000});
+    res.render('success', {message: 'Car Edited', redirect: '/cars', delay: 2000});
 }
 
 export {

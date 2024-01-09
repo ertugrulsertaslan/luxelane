@@ -1,4 +1,4 @@
-import { CarData } from "../models/addCar.js";
+import models from '../../models/index.js';
 import multer from 'multer';
 
 const storage = multer.diskStorage({
@@ -11,16 +11,13 @@ const storage = multer.diskStorage({
   })
 const upload = multer({ storage: storage })
 
-
-
-async function CarDataPost(req,res){
+export default async function(req,res){
      const data = req.body;
      const thumbnail = '/img/' + req.file.originalname;
-     await CarData(data,thumbnail);
-     res.render('success', {message: 'Car Added', redirect: '/cars/upsert', delay: 2000});   
+     await models.cars.create(data,thumbnail);
+     res.render('success', {message: 'Car Added', redirect: '/cars/', delay: 2000});   
 }
  
 export {
-    CarDataPost,
-    upload
+    upload,
 }

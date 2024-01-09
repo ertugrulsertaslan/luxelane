@@ -62,10 +62,10 @@
             </tr>
         </table>
            <div class="car-edit d-flex align-items-center justify-content-center">         
-                <form method="get" action="/cars/upsert/{{id}}">
+                <form method="post" action="/cars/update/{{id}}">
                     <button type="submit" class="btn btn-primary mx-3 mt-3">Edit</button>
                 </form>    
-                <form method="delete" action="/cars/{{id}}">
+                <form method="post" action="/cars/delete/{{id}}">
                     <button type="submit" class="btn btn-danger mx-3 mt-3">Delete</button>
                 </form>
             </div>  

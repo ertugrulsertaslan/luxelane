@@ -16,11 +16,10 @@ import roleAuth from './middlewares/roleAuth.js';
 import { getHomePage } from './controllers/home.controller.js';
 import { getCarDetailPage } from './controllers/carDetail.controller.js';
 import { getcarListPage } from './controllers/carList.controller.js';
-import { CarDataPost} from './controllers/carAdd.controller.js';
 import { getCarEditPage } from './controllers/carEdit.controller.js';
 import { deleteCarHandler } from './controllers/deleteCar.controller.js';
 import { CarEdithandler } from './controllers/carEdit.controller.js';
-import { upload } from './controllers/carAdd.controller.js';
+import { upload } from './controllers/cars/carAdd.controller.js';
 import renderView from './utils/renderView.js';
 import session from 'express-session';
 
@@ -78,15 +77,15 @@ app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
 app.get('/cars', getcarListPage);
-app.get('/cars/upsert',renderView("cars/carAdd"));
+app.get('/cars/create',renderView("cars/carAdd"));
 app.get('/admin-dashboard',renderView("adminDashboard"));
-app.get('/cars/upsert/:id',getCarEditPage);
-app.get('/cars/:id', roleAuth("ADMIN"), getCarDetailPage);
+app.get('/cars/update/:id',getCarEditPage);
+app.get('/cars/:id', getCarDetailPage);//roleAuth("ADMIN"),
 
 
 
 
-app.post('/cars/upsert',
+app.post('/cars/create',
     upload.single('uploaded_file'),
     [
         body('brand').isString().withMessage('Brand must be string'),
@@ -105,11 +104,12 @@ app.post('/cars/upsert',
         //body('uploaded_file').notEmpty()
     ],
     errorValidation('carAdd'),
-    CarDataPost
+    controllers.cars.create
 );
 
-app.post('/car-edit/:id',
+app.post('/cars/update/:id',
     upload.single('uploaded_file'),
+    /*
     [
         body('brand').isString().withMessage('Brand must be string'),
         body('model').isString(),
@@ -126,11 +126,12 @@ app.post('/car-edit/:id',
         body('status').isIn(['ACTIVE', 'MAINTENANCE', 'PRIVATE']),
        // body('uploaded_file').notEmpty()
     ],
-    errorValidation('car-edit/:id'),
+    errorValidation('/carList'),
+    */
     CarEdithandler
 );
 
-app.delete('cars/:id', deleteCarHandler);
+app.post('/cars/delete/:id', deleteCarHandler);
 
 app.post('/users/login', controllers.users.login); 
 app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);
