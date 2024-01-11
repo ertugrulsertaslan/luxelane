@@ -1,6 +1,6 @@
-import { db } from "../db.js";
+import { db } from "../../db.js";
 
-function getAllCars() {
+export default function(){
     return new Promise((resolve, reject) => {
         const sql = `SELECT * FROM car `;
 
@@ -13,6 +13,3 @@ function getAllCars() {
         });
     });
 };
-export {
-    getAllCars
-}

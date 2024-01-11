@@ -13,15 +13,10 @@ import errorValidation from './middlewares/errorValidation.js';
 
 import controllers from './controllers/index.js';
 import roleAuth from './middlewares/roleAuth.js';
-import { getHomePage } from './controllers/home.controller.js';
-import { getCarDetailPage } from './controllers/carDetail.controller.js';
-import { getcarListPage } from './controllers/carList.controller.js';
-import { getCarEditPage } from './controllers/carEdit.controller.js';
-import { deleteCarHandler } from './controllers/deleteCar.controller.js';
-import { CarEdithandler } from './controllers/carEdit.controller.js';
 import { upload } from './controllers/cars/carAdd.controller.js';
 import renderView from './utils/renderView.js';
 import session from 'express-session';
+import models from './models/index.js';
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
@@ -71,16 +66,16 @@ app.use(express.static('public'))
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.get('/', getHomePage);
+app.get('/', controllers.cars.getAllCarsHome);
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
-app.get('/cars', getcarListPage);
+app.get('/cars', controllers.cars.getAllCars);
 app.get('/cars/create',renderView("cars/carAdd"));
 app.get('/admin-dashboard',renderView("adminDashboard"));
-app.get('/cars/update/:id',getCarEditPage);
-app.get('/cars/:id', getCarDetailPage);//roleAuth("ADMIN"),
+app.get('/cars/update/:id',controllers.cars.getByIdEdit);
+app.get('/cars/:id', controllers.cars.getByIdDetail);//roleAuth("ADMIN"),
 
 
 
@@ -128,10 +123,10 @@ app.post('/cars/update/:id',
     ],
     errorValidation('/carList'),
     */
-    CarEdithandler
+    controllers.cars.update
 );
 
-app.post('/cars/delete/:id', deleteCarHandler);
+app.post('/cars/delete/:id', controllers.cars.delete);
 
 app.post('/users/login', controllers.users.login); 
 app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);

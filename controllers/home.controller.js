@@ -1,9 +1,6 @@
-import { getAllCars } from "../models/getAllCars.js";
+import models from "../models/index.js";
 
-async function getHomePage (req,res) {
-    const cars = await getAllCars();
+export default async function(req,res) {
+    const cars = await models.cars.getAllCars();
     res.render("index", { cars: cars });
-}
-export {
-    getHomePage
 }

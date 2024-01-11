@@ -1,6 +1,6 @@
-import { db } from "../db.js";
+import { db } from "../../db.js";
 
-function deleteCar(id) {
+export default function(id) {
     return new Promise((resolve, reject) => {
         
         const sql = `DELETE FROM car WHERE id=?`;
@@ -13,6 +13,3 @@ function deleteCar(id) {
         });
     });
 };
-export {
-    deleteCar
-}

@@ -5,6 +5,10 @@ import createCustomerModel from './customers/createCustomer.model.js';
 import getUserByEmailModel from './users/getUserByEmail.js';
 // Car models
 import createCarModel from './cars/createCar.model.js';
+import updateCarModel from './cars/updateCar.model.js';
+import getCarByIdModel from './cars/getCarById.model.js';
+import deleteCarModel from './cars/deleteCar.model.js';
+import getAllCarsModel from './cars/getAllCars.model.js';
 // ..
 
 export default {
@@ -16,7 +20,9 @@ export default {
     },
     cars: {
         create: createCarModel,
-        // create: createCarModel,
-        // update: updateCarModel,
+        update: updateCarModel,
+        getById: getCarByIdModel,
+        delete : deleteCarModel,
+        getAllCars : getAllCarsModel,
     },
 }

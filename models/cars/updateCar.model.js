@@ -1,7 +1,6 @@
-import { db } from "../db.js";
+import { db } from "../../db.js";
 
-
-function CarEdit(id,data,thumbnail) {
+export default function(id,data,thumbnail) {
     return new Promise((resolve, reject) => {
       const sql = `UPDATE car  SET brand = ?,  model = ?,hp = ?,seats = ?,hourlyPrice = ?,thumbnail = ?,fuel = ?,
       transmission = ?,bodyType = ?,doors = ?,minDriverAge = ?,minLicenseAge = ?,zeroToHundredKmh = ?
@@ -15,10 +14,6 @@ function CarEdit(id,data,thumbnail) {
           resolve(rows);
       });
   }); 
-}
-
-export {
-    CarEdit
 }
 
 

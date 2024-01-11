@@ -1,8 +1,7 @@
-import { db } from "../db.js";
+import { db } from "../../db.js";
 
-function getCarById(id) {
+export default function(id) {
     return new Promise((resolve, reject) => {
-        // Query db
         const sql = `SELECT * FROM car WHERE id=?`;
 
         db.all(sql,[id],(err, rows) => {
@@ -13,7 +12,4 @@ function getCarById(id) {
         });
     });
 };
-export {
-    getCarById
-}
 
