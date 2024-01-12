@@ -3,6 +3,9 @@ import createCustomerModel from './customers/createCustomer.model.js';
 
 // User models
 import getUserByEmailModel from './users/getUserByEmail.js';
+import getUserByPasswordModel from './users/getUserByPassword.js';
+import passwordEncryptionModel from './users/passwordEncryption.js';
+
 // Car models
 import createCarModel from './cars/createCar.model.js';
 import updateCarModel from './cars/updateCar.model.js';
@@ -17,6 +20,8 @@ export default {
     },
     users: {
         getByEmail: getUserByEmailModel,
+        getByPassword: getUserByPasswordModel,
+        passwordEncryption:passwordEncryptionModel,
     },
     cars: {
         create: createCarModel,
