@@ -98,7 +98,7 @@ app.post('/cars/create',
         body('status').isIn(['ACTIVE', 'MAINTENANCE', 'PRIVATE']),
         //body('uploaded_file').notEmpty()
     ],
-    errorValidation('carAdd'),
+    errorValidation('cars/carAdd'),
     controllers.cars.create
 );
 
@@ -128,7 +128,14 @@ app.post('/cars/update/:id',
 
 app.post('/cars/delete/:id', controllers.cars.delete);
 
-app.post('/users/login', controllers.users.login); 
+app.post('/users/login',
+    [
+        body('email').isString().isEmail().withMessage('Brand must be email format'),
+        body('password').isString()
+    ],
+    errorValidation('users/login'),
+    controllers.users.login
+); 
 app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);
 
 app.listen(8080, () => {
