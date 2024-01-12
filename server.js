@@ -71,11 +71,11 @@ app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
-app.get('/cars', controllers.cars.getAllCars);
-app.get('/cars/create',renderView("cars/carAdd"));
-app.get('/admin-dashboard',renderView("adminDashboard"));
-app.get('/cars/update/:id',controllers.cars.getByIdEdit);
-app.get('/cars/:id', controllers.cars.getByIdDetail);//roleAuth("ADMIN"),
+app.get('/cars',roleAuth("ADMIN"), controllers.cars.getAllCars);
+app.get('/cars/create',roleAuth("ADMIN"),renderView("cars/carAdd"));
+app.get('/admin-dashboard',roleAuth("ADMIN"),renderView("adminDashboard"));
+app.get('/cars/update/:id',roleAuth("ADMIN"),controllers.cars.getByIdEdit);
+app.get('/cars/:id',roleAuth("ADMIN"), controllers.cars.getByIdDetail);//,
 
 
 
