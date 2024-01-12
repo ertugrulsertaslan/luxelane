@@ -26,12 +26,12 @@ export default async function(data, tcPhoto) {
         });
     });
 
-
+    const status = "NOT_APPROVED";
     // insert customer with user id
     return new Promise((resolve, reject) => { 
         const sql = `INSERT INTO customer ('tc','tcPhoto','status','userId') 
         VALUES (?,?,?,?)`;
-        db.run(sql, [data.tc, tcPhoto, data.status, insertedUserId], (err, rows) => {
+        db.run(sql, [data.tc, tcPhoto, status, insertedUserId], (err, rows) => {
             if (err) {
                 reject(err);
             }
