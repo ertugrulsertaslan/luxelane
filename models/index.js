@@ -5,6 +5,7 @@ import createCustomerModel from './customers/createCustomer.model.js';
 import getUserByEmailModel from './users/getUserByEmail.js';
 import getUserByPasswordModel from './users/getUserByPassword.js';
 import passwordEncryptionModel from './users/passwordEncryption.js';
+import passwordCompareModel from './users/passwordCompare.js';
 
 // Car models
 import createCarModel from './cars/createCar.model.js';
@@ -22,6 +23,7 @@ export default {
         getByEmail: getUserByEmailModel,
         getByPassword: getUserByPasswordModel,
         passwordEncryption:passwordEncryptionModel,
+        passwordCompare:passwordCompareModel,
     },
     cars: {
         create: createCarModel,
