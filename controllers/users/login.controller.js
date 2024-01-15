@@ -1,17 +1,16 @@
 import models from "../../models/index.js";
-import bcrypt from "bcrypt";
 
 export default async function (req, res) {
-    const { email, password } = req.body;
 
+    const { email, password } = req.body;
     const user = await models.users.getByEmail(email);
 
-    let passwordsEqual = models.users.passwordCompare(password,user.password);
-
-   if(!passwordsEqual){
-    res.send("wrong");
-   }else{
     if (user) {
+        let passwordsEqual = await models.users.passwordCompare(password,user.password);
+
+        if(!passwordsEqual){
+            res.render('users/login', { errorMessage: 'Email or password incorrect' });
+        }else{
         req.session.user = {
             role: 'CUSTOMER',
             id: user.id,
@@ -24,14 +23,8 @@ export default async function (req, res) {
             redirect: '/',
             delay: 2000,
         });
-    }else {
+    }
+    }else{
         res.render('users/login', { errorMessage: 'Email or password incorrect' });
     }
-
-
-
-
-
-   }
-    
-}
+} 

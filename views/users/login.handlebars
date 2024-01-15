@@ -1,8 +1,8 @@
 <div class="container">
   <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
-  {{#if errors }}
+  {{#if errorMessage }}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong> Fix errors </strong> 
+      <strong> {{errorMessage}} </strong> 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   {{/if}}

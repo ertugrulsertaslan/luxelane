@@ -1,5 +1,11 @@
 <div class="container">
-   <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a> 
+   <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
+     {{#if errorMessage }}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong> {{errorMessage}} </strong> 
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}} 
     <div class="d-flex flex-row bd-highlight align-items-center justify-content-center  ">
         <div class="m-5 pb-1 bd-highlight ">
             <a href="/users/login" class="link-offset-2 link-underline link-underline-opacity-0" >
@@ -27,7 +33,8 @@
           </div>
         </div>
         <div class="form-outline mb-4">
-          <input type="email" id="form3Example3" class="form-control" placeholder="Email address" name="email" id="email" required/>
+          <input value="{{values.email}}" type="email" id="form3Example3" class="form-control {{validateInput 'email'}}" placeholder="Email address" name="email" id="email" required/>
+          {{validationFeedback 'email'}}
         </div>
         <div class="form-outline mb-4">
           <input type="password" id="form3Example4" class="form-control" placeholder="Password" name="password" id="password" required/>

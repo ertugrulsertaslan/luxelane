@@ -65,7 +65,6 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'))
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
-
 app.get('/', controllers.cars.getAllCarsHome);
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
@@ -136,7 +135,13 @@ app.post('/users/login',
     errorValidation('users/login'),
     controllers.users.login
 ); 
-app.post('/users/sign-up',upload.single('uploaded_file'), controllers.customers.signUp);
+app.post('/users/sign-up',
+    upload.single('uploaded_file'),  
+    [
+        body('email').isString().isEmail().withMessage('Brand must be email format')
+    ],
+    errorValidation('users/signUp'),
+    controllers.customers.signUp);
 
 app.listen(8080, () => {
     console.log('Server is starting at port ', 8080);

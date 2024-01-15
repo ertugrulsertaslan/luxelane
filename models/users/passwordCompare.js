@@ -1,10 +1,10 @@
 import bcrypt from "bcrypt";
 
-export default async function(password) {
+export default async function(password,userPassword) {
  
     const saltRounds = 10;
     const myPlaintextPassword = 's0/\/\P4$$w0rD';
     
-    return bcrypt.compareSync(`${myPlaintextPassword}${txtPure}`,txtHash)
+    return bcrypt.compareSync(`${myPlaintextPassword}${password}`,userPassword)
     
 }
