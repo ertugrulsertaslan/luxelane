@@ -1,0 +1,37 @@
+.car_photo {
+    height: 90%;
+}
+.rent_btn {
+    width: 50%;
+    height: 50%;
+}
+.brands {
+    width: 35%;
+}
+.brands:last-child {
+    width: 20%;
+}
+.car_photo_background {
+    background-color: #b7a08c;
+    height: 110%;
+    position: relative;
+}
+.car_photo {
+    position: absolute;
+    top: 5%;
+    margin: 0;
+    padding: 0;
+}
+.menu_btn {
+    width: 80%;
+    height: 80%;
+}
+.exprience_text {
+    width: 60%;
+}
+.luxury_car_text {
+    margin-top: 15%;
+}
+.luxury_car_text h6{
+    width: 30%;
+}

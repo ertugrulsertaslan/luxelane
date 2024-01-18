@@ -1,56 +1,73 @@
-<div class="container">
-    <div class="col">
-        <span >
-            <h1 style="display: inline;" >LuxeLane</h1>
-        </span>
-    </div>
-    <div class="col">
-        <span style="float:right" >
-            <a href="contact" class="link-offset-2 link-underline link-underline-opacity-0"><h3>Contact</h3></a>
-        </span>   
-    </div> 
-    <div class="col m-1">
-        <a href="/users/sign-up" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Sign in</h2> </a>
-    </div>
-    <div class="col m-3">
-        <a href="/users/login" class="row link-offset-2 link-underline link-underline-opacity-0"> <h2>Login</h2> </a>
-    </div>
-    <div class="col m-3">
-        <h2>About</h2>
-        <p class="col  text-truncate" >At LuxeLane, we believe that every journey should be an unforgettable experience. We specialize in providing the epitome of luxury car rentals, ensuring that our clients not only reach their destinations but also indulge in a heightened sense of style, comfort, and elegance.</p>
-        <a href="/about"> Read More </a>          
-    </div>
-    <div class="col m-5 ">
-        <h2 class="text-center m-5" >Our Cars</h2>
-        {{#each cars}}
-            <div class="card d-flex flex-row mx-3 align-items-center justify-content-center text-center" style="width:60rem;">        
-            <a class="col" href="cars/{{this.id}}"><img class="w-100" src="{{this.thumbnail}}"></a>
-                <div class="car-body bd-highlight align-items-center justify-content-center mx-3 p-2">           
-                    <h5 class="card-title">Brand</h5>
-                    <p>{{this.brand}}</p>
+<div class="container" style="background-color: #738659;">
+    <div class="row w-100 mt-5">
+        <div class="col-4">
+           <div class="row mb-3 mt-5 h-15">
+                <div class="col">
+                    <h2 class="text-light ">LuxeLane</h2>
                 </div>
-                <div class="mx-3 p-2">
-                    <h5 class="card-title">Model</h5>
-                    <p>{{this.model}}</p>
-                </div>
-                    <div class="mx-3 p-2">
-                    <h5 class="card-title">Hp</h5>
-                    <p>{{this.hp}}</p>
-                </div>
-                    <div class="mx-3 p-2">
-                    <h5 class="card-title">Seats</h5>
-                    <p>{{this.seats}}</p>
-                </div>
-                <div class="mx-3 p-2">
-                    <h5 class="card-title">Hourly Price</h5>
-                    <p>${{this.hourlyPrice}}</p>
-                </div>
-                <div class="mx-3 p-2">
-                    <h5 class="card-title">Body Type</h5>
-                    <p>{{this.bodyType}}</p>
+           </div>
+           <div class="row mb-5 mt-5 h-25">
+                <div class="col">
+                    <h1 class="display-2 text-light fw-bold col-12">Luxury</h1>
+                    <h1 class="display-2 text-light fw-bold col-12"> On The Go</h1>
                 </div>
             </div>
-        {{/each}}
+           <div class="row w-100 mb-3 h-25">
+            <div class="col">
+                <button type="button" class="btn text-light rent_btn ms-4 mb-5 mt-3 " style="background-color:  #f16613;">
+                    <h6>START RENTING</h6>
+                </button>
+            </div>
+           </div>
+           <div class="row mb-5">
+                <div class="col-12">
+                    <h6 class="ms-4 text-white">Our Brands</h6>
+                </div>
+                <div class="col-12 h-25  mb-5">
+                    <img class="brands" src="./img/mercedeslogo.png" alt="">
+                    <img class="brands" src="./img/Bentley-Logo.png" alt="">
+                    <img class="brands" src="./img/Rolls-Royce-Logo.png" alt="">
+                </div>
+           </div>
+        </div>
+        <div class="col-4">
+            <div class="row car_photo_background ms-4">
+                <div class="col">
+                    <img class="car_photo" src="./img/ferrari_photoo.png" alt="" >
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row mt-5">
+                <div class="col-8 menu_text">
+                    <p class="float-end mt-3 text-white">MENU</p>
+                </div>
+                <div class="col-4">
+                    <button class="menu_btn btn">
+                        <img src="./img/menu_img.png" width="100%" height="100%" alt="">
+                    </button>
+                </div>       
+            </div>
+            <div class="row w-75 mt-5 ms-3 mb-5">
+                <div class="col">
+                    <p class="text-wrap exprience_text text-white">Exprience Peace of Mind with Our Customer Protection Services.</p>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-12 ">
+                    <h6 class="float-end text-light">Read JUSTINS</h6>    
+                </div>
+                <div class="col-12 mb-5">
+                    <img class="float-end" width="30%" src="./img/mercedeslogo.png" alt=""> 
+                </div>
+            </div>
+            <div class="row luxury_car_text ms-3">
+                <div class="col">
+                    <h2 class="display-6 text-light ">1.5k</h2>
+                    <h6 class="text-wrap text-light ">LUXURY CARS AVALIABLE</h6>
+                </div>
+            </div>
+        </div>
     </div>
 </div> 
 
