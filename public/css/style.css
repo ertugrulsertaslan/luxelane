@@ -1,37 +1,94 @@
-.car_photo {
-    height: 90%;
+.body {
+    background-color: #f0f6fe;
 }
-.rent_btn {
-    width: 50%;
-    height: 50%;
+.car_content {
+    background-color: #3e5ae5;
 }
-.brands {
-    width: 35%;
+.car_content_footer {
+    width: 55%;
+    margin-left: 25%;
+    font-size: small;
+    margin-bottom: 20%;
 }
-.brands:last-child {
+.car_content_header {
+    margin-top: 15%;
+}
+.login {
     width: 20%;
+    height: 30%;
 }
-.car_photo_background {
-    background-color: #b7a08c;
-    height: 110%;
+.signup {
+    width: 20%;
+    height: 30%;
+}
+
+.date_content {
+    background-color: antiquewhite;
+}
+.search_content {
+    align-items: center;
+}
+.search_btn {
+    background-color: #3e5ae5;
+    height: 40%;
+    width: 50%;
+}
+.date_btn {
+    height: 40%;
+}
+.background_space {
+    background-color: #f0f6fe;
+}
+.car_content_p {
+    margin-top: 350px;
+}
+.car_content {
     position: relative;
 }
 .car_photo {
     position: absolute;
-    top: 5%;
+    top: 20%;
+    width: 130%;
+    left: -16% ;
+}
+.question {
+    margin-top: 10%;
+}
+.safety_first_text {
+    width: 75%;
+}
+.rental_detail {
+    margin-top: 5%;
+}
+.fast_easy_booking {
+    width: 75%;
+    margin-top: 55%;
+}
+.many_pickup_location {
+    width: 75%;
+}
+.experience {
+    margin-top: 10%;
+}
+.exprience_content {
+    margin-top: 10%;
+}
+.experience_btn{
+    width: 20%;
+}
+.exprience_photo {
+    height: 90%;
+    width: 80%;
+}
+.car_dentals_title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.car_type {
+    background-color: white;
     margin: 0;
     padding: 0;
 }
-.menu_btn {
-    width: 80%;
-    height: 80%;
-}
-.exprience_text {
-    width: 60%;
-}
-.luxury_car_text {
-    margin-top: 15%;
-}
-.luxury_car_text h6{
-    width: 30%;
+.car_type button {
+    width: 20%;
 }
