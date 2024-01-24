@@ -92,3 +92,45 @@
 .car_type button {
     width: 20%;
 }
+.save_icon {
+    width: 6%;
+    height: 6%;
+    margin-left: 45%;
+}
+.car_card {
+    width: 350px;
+}
+.car_logo_photo {
+    width: 150px;
+    height: 100px;
+}
+.car_logo {
+    margin-top: 10%;
+    background-color: white;
+    margin-bottom: 10%;
+    opacity: 0.5;
+}
+.large_car_card {
+    margin-bottom: 10%;
+}
+.large_car_card_content {
+    position: relative;
+}
+.large_car_card_photo {
+    position: absolute;
+    top: 20%;
+    left: -20%;
+    width: 140%;
+}
+.large_car_card_btn {
+    width: 100%;
+}
+.large_car_card_property {
+    margin-top: 250px;
+}
+.explore_cities{
+ width: 35%;
+}
+.explore_cities_content {
+    width: 100%;
+}
