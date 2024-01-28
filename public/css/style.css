@@ -29,7 +29,6 @@
     align-items: center;
 }
 .search_btn {
-    background-color: #3e5ae5;
     height: 40%;
     width: 50%;
 }
@@ -133,4 +132,22 @@
 }
 .explore_cities_content {
     width: 100%;
+}
+.citys {
+    position: relative;
+    margin-bottom: 10%;
+}
+.citys p {
+    position: absolute;
+    top: 80%;
+    left: 25%;
+}
+.arrow_icon {
+    position: absolute;
+    top: 80%;
+    left: 65%;
+}
+.footer {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
