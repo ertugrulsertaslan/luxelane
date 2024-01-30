@@ -3,11 +3,11 @@
         <h2 class="text-primary">LuxeLane</h2>
     </div>
     <div class="col menu mt-2 ms-5 d-flex">
-        <button class="me-4 btn">Home</button>
-        <button class="me-4 btn">About</button>
-        <button class="me-4 btn">Services</button>
-        <button class="me-4 btn">Vehicles</button>
-        <button class="btn">Contact</button>
+        <a href="/" class="btn mt-3 me-2" role="button">Home</a>
+        <a href="../about" class="btn mt-3 me-2" role="button">About</a>
+        <a href="" class="btn mt-3 me-2" role="button">Services</a>
+        <a href="" class="btn mt-3 me-2" role="button">Vehicles</a>
+        <a href="../contact" class="btn mt-3 me-2" role="button">Contact</a>
     </div>
     <div class="col login text-center d-flex ms-5">
             <a href="/users/login" class="btn login text-primary border border-primary mt-3 me-2" role="button">Log in</a>
@@ -135,108 +135,48 @@
             <button class="btn p-2">Family</button>
         </div>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-3 bg-white me-5 car_card">
+    
+    <div class="row justify-content-center car_card_content mt-5 d-flex">
+        {{#each cars}}
+        <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
-                <h6>Mercedes Cls 63</h6>
-                <img src="./img/save_icon.png" class="save_icon" alt="">              
+                <h6 class="w-75">{{brand}} - {{model}}</h6>
+                <img class="ms-5" src="./img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              
             </div>
             <div class="mt-1">
-                <img src="./img/mercedes_cls_photo_card.png" class="mb-4" width="326px" height="93px" alt="">
-                <h6>$200/day</h6>
+                <img src="{{thumbnail}}" class="mb-4" width="326px" height="93px" alt="">
+                <h6>${{hourlyPrice}}/day</h6>
                 <p>25</p>
             </div>
             <div class="d-flex flex-wrap">
-                <div class="mb-3">
+                <div class="mb-3 w-50">
                     <div class="d-flex me-5 mb-2">
                         <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Seats</p>
+                        <p class="mt-2">{{seats}} Seats</p>
                     </div>
                     <div  class="d-flex  mb-2">
                         <img src="./img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Auto</p>
+                        <p class="mt-2 ">{{transmission}}</p>
                     </div>
                 </div>
-               <div class="mb-3">
+               <div class="mb-3 w-50">
                     <div  class="d-flex me-5 mb-2">
-                        <img src="./img/ac-25-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">AC</p>
+                        <img src="./img/hp-icon.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <p class="mt-2">{{hp}} HP</p>
                     </div>
                     <div class="d-flex mb-2">
                         <img src="./img/fuel-2-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Petrol</p>
+                        <p class="mt-2">{{fuel}}</p>
                     </div>
                </div>  
             </div>
             <button class="btn bg-primary text-white w-100 mb-3">Rent a Car</button>
         </div>
-        <div class="col-3 bg-white me-5 car_card">
-            <div class="d-flex mt-4">
-                <h6>Rolly Royce</h6>
-                <img src="./img/save_icon.png" class=" save_icon " alt="">
-            </div>
-            <div class="mt-1">
-                <img src="./img/rollsroyce_car_photo.png" class="mb-4" width="326px" height="93px" alt="">
-                <h6>$200/day</h6>
-                <p>25</p>
-            </div>
-            <div class="d-flex flex-wrap">
-                <div class="mb-3">
-                    <div class="d-flex me-5 mb-2">
-                        <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Seats</p>
-                    </div>
-                    <div  class="d-flex mb-2">
-                        <img src="./img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Auto</p>
-                    </div>
-                </div>
-               <div class="mb-3">
-                    <div  class="d-flex me-5 mb-2">
-                        <img src="./img/ac-25-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">AC</p>
-                    </div>
-                    <div class="d-flex mb-2">
-                        <img src="./img/fuel-2-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Petrol</p>
-                    </div>
-               </div>  
-            </div>
-            <button class="btn bg-primary text-white w-100 mb-3">Rent a Car</button>
-        </div>
-        <div class="col-3 bg-white car_card">
-            <div class="d-flex mt-4">
-                <h6>Lamborghini Huracan</h6>
-                <img src="./img/save_icon.png" class="save_icon" alt="">
-            </div>
-            <div class="mt-1">
-                <img src="./img/lamborghini_car_photo.png"  class="mb-4" width="326px" height="93px" alt="">
-                <h6>$200/day</h6>
-                <p>25</p>
-            </div>
-            <div class="d-flex flex-wrap">
-                <div class="mb-3">
-                    <div class="d-flex me-5 mb-2">
-                        <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Seats</p>
-                    </div>
-                    <div  class="d-flex mb-2">
-                        <img src="./img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Auto</p>
-                    </div>
-                </div>
-               <div class="mb-3">
-                    <div  class="d-flex me-5 mb-2">
-                        <img src="./img/ac-25-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">AC</p>
-                    </div>
-                    <div class="d-flex mb-2">
-                        <img src="./img/fuel-2-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
-                        <p class="mt-2">Petrol</p>
-                    </div>
-               </div>  
-            </div>
-            <button class="btn bg-primary text-white w-100 mb-3">Rent a Car</button>
+      {{/each}} 
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-2 mt-5 me-5">
+            <a href="/cars" class="btn text-primary border border-primary rounded view_more_btn" role="button"><h6 class="mt-1">View More</h6></a>  
         </div>
     </div>
     <div class="row car_logo p-5">

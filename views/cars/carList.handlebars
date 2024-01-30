@@ -15,7 +15,7 @@
         </div>
       <div class="card-body">
          <h4>Specs</h4>
-        <table >
+        <table>
             <tr>
                 <th>Brand</th>
                 <td>{{brand}}</td>
@@ -67,6 +67,9 @@
                 </form>    
                 <form method="post" action="/cars/delete/{{id}}">
                     <button type="submit" class="btn btn-danger mx-3 mt-3">Delete</button>
+                </form>
+                <form method="get" action="/cars/{{id}}">
+                    <button type="submit" class="btn btn-danger mx-3 mt-3">detail</button>
                 </form>
             </div>  
       </div>
