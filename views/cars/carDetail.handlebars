@@ -1,68 +1,87 @@
-{{#section 'head'}}
-    <title>LuxeLane - {{brand}}</title>
-{{/section}}
-<div>
-    <div class="p-3">
-        <a href="/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Home Page</a>
-    </div> 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col float-start">
-            <div class="card align-items-center justify-content-center text-center w-50 mt-3 border-0">
+<div class="row header">
+    <div class="col logo mt-2 ms-5">
+        <h2 class="text-primary">LuxeLane</h2>
+    </div>
+    <div class="col menu mt-2 d-flex">
+        <a href="/" class="btn mt-3 me-2" role="button">Home</a>
+        <a href="../about" class="btn mt-3 me-2" role="button">About</a>
+        <a href="" class="btn mt-3 me-2" role="button">Services</a>
+        <a href="" class="btn mt-3 me-2" role="button">Vehicles</a>
+        <a href="../contact" class="btn mt-3 me-2" role="button">Contact</a>
+    </div>
+    <div class="col login text-center d-flex ms-5">
+            <a href="/users/login" class="btn login text-primary border border-primary mt-3 me-2" role="button">Log in</a>
+            <a href="/users/sign-up" class="btn signup text-primary border border-primary mt-3 me-2" role="button">Sign Up</a>  
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <div><img class="car_detail_bg rounded mb-5" src="/img/lamborghini_car_photo.png" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="/img/rollsroyce_car_photo.png" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="/img/mercedes_cls_photo.png" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="/img/rollsroyce_car_photo.png" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded" src="{{thumbnail}}" width="120px" height="120px" alt=""></div>
+        </div>
+        <div class="col-6 car_detail_bg rounded text-center">
+            <img src="{{thumbnail}}" class="car_detail_photo" width="600px" alt="">
+        </div>
+        <div class="col-4">
+            <div class="car_detail_car_name text-center">
+                <img src="/img/lamborghini_logo.png" class="mb-3" width="100px" height="60px" alt="">
                 <h2>{{brand}} - {{model}}</h2>
-                <img src="{{thumbnail}}" class="card-img-top w-75 p-3" alt="...">
-                    <div class="card-car-price d-flex">
-                        <span class="mx-3 mt-1">Price (1 Hours) </span>
-                        <h3>${{hourlyPrice}}</h3>
+            </div>
+            <div class="d-flex justify-content-center">
+                <div class="car_features border-end  me-3 w-50 ms-4">
+                    <h5>Car Features</h5>
+                    <div class="d-flex mb-3 mt-4">
+                        <img src="/img/hp-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{hp}} HP</p>
                     </div>
-                <div class="card-body">
-                    <h4>Specs</h4>
-                    <table>
-                        <tr>
-                            <th>Brand</th>
-                            <td>{{brand}}</td>
-                        </tr>
-                        <tr>
-                            <th>Model</th>
-                            <td>{{model}}</td>
-                        </tr>
-                        <tr>
-                            <th>Horse Power</th>
-                            <td>{{hp}}</td>
-                        </tr>
-                        <tr>
-                            <th>No. of seats</th>
-                            <td>{{seats}}</td>
-                        </tr>
-                        <tr>
-                            <th>Fuel </th>
-                            <td>{{fuel}}</td>
-                        </tr>
-                        <tr>
-                            <th>Transmission </th>
-                            <td>{{transmission}}</td>
-                        </tr>
-                        <tr>
-                            <th>Body Type </th>
-                            <td>{{bodyType}}</td>
-                        </tr>
-                        <tr>
-                            <th>Doors </th>
-                            <td>{{doors}}</td>
-                        </tr>
-                        <tr>
-                            <th>Required Driver Age </th>
-                            <td>{{minDriverAge}}</td>
-                        </tr>
-                        <tr>
-                            <th>Required License Age </th>
-                            <td>{{minLicenseAge}}</td>
-                        </tr>
-                        <tr>
-                            <th>0-100 (km/h)</th>
-                            <td>{{zeroToHundredKmh}}</td>
-                        </tr>
-                    </table>
+                    <div class="d-flex mb-3">
+                        <img src="/img/seats-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{seats}} Seats</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/fuel-2-24.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{fuel}}</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/gear_shift-24.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{transmission}}</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/bodyType-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{bodyType}}</p>
+                    </div>
+                    <div class="d-flex text-center">
+                        <img src="/img/speedometer-24.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">{{zeroToHundredKmh}} sn</p>
+                    </div>
                 </div>
+                <div class="rental_conditions ms-3 w-50">
+                    <h5>Rental Conditions</h5>
+                    <div class="d-flex mb-3 mt-4">
+                        <img src="/img/minDriverAge-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">Driving Min Age {{minDriverAge}}</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/minLicenseAge-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">Driving License Age {{minLicenseAge}}</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/credit-card-6-24.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">Credit Card</p>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <img src="/img/hourlyPrice-icon.png" class="me-3" width="24px" height="24px" alt="">
+                        <p class="mb-0">Price ${{hourlyPrice}} / hour</p>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-4">
+                <h2>${{hourlyPrice}}</h2>
+                <a href="../contact" class="btn border bg-primary text-white car_detail_btn text-center" role="button"><p class="mt-1">Rent a Car</p></a>
             </div>
         </div>
     </div>
