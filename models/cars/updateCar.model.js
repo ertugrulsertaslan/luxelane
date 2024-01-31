@@ -10,7 +10,6 @@ export default function(id,data,thumbnail) {
           if (err) {
               reject(err);
           }
-  
           resolve(rows);
       });
   }); 

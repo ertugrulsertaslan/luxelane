@@ -31,5 +31,6 @@ export default {
         getById: getCarByIdModel,
         delete : deleteCarModel,
         getAllCars : getAllCarsModel,
+        getViewCars: getAllCarsModel,
     },
 }

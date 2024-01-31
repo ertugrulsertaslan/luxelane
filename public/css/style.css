@@ -173,10 +173,13 @@
     height: 50px;
     margin-top: 15%;
 }
-.car_card_content {
-    height: 440px;
-    overflow: hidden;
-}
 .view_more_btn {
     width: 180px;
+}
+.car_update_input {
+    width: 230px;
+}
+.car_detail_model_branch {
+    width: 230px;
+    margin-left: 30%;
 }

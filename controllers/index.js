@@ -11,6 +11,7 @@ import carDeleteController from './cars/deleteCar.controller.js';
 import carListController from './cars/carList.controller.js';
 import getCarEditcontroller from './cars/getCarEditcontroller.js';
 import getHomeController from './home.controller.js';
+import getAdminCarlistcontroller from './cars/adminCarlist.controller.js'
 
 // export controllers
 export default {
@@ -25,8 +26,10 @@ export default {
         update : carEditController,
         getByIdDetail: carDetailContoller,
         delete : carDeleteController,
-        getAllCars :carListController,
+        getAllCars : getAdminCarlistcontroller,
+        getViewCars :carListController,
         getByIdEdit: getCarEditcontroller,
         getAllCarsHome:getHomeController,
+        
     }
 }

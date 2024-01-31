@@ -1,129 +1,143 @@
-<div class="container">
-   <div>
-    <a href="/cars/" class="link-offset-2 link-underline link-underline-opacity-0">Go to Car List</a>
-   </div>
-    {{#if errors }}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong> Fix errors </strong> 
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<div class="row header">
+  <div class="col logo mt-2 ms-5">
+      <h2 class="text-primary">LuxeLane</h2>
+  </div>
+  <div class="col menu mt-2 ms-5 d-flex">
+      <a href="/" class="btn mt-3 me-2 ms-5" role="button">Home</a>
+      <a href="../about" class="btn mt-3 me-2" role="button">About</a>
+      <a href="" class="btn mt-3 me-2" role="button">Services</a>
+      <a href="" class="btn mt-3 me-2" role="button">Vehicles</a>
+      <a href="../contact" class="btn mt-3 me-2" role="button">Contact</a>
+  </div>
+  <div class="col login text-center d-flex ms-5">
+          <a href="/users/login" class="btn login text-primary border border-primary mt-3 me-2" role="button">Log in</a>
+          <a href="/users/sign-up" class="btn signup text-primary border border-primary mt-3 me-2" role="button">Sign Up</a>  
+  </div>
     </div>
-  {{/if}}
-    <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
-      <form method="post"   enctype="multipart/form-data">
-        <div class="row mb-4">
-          <div class="col">
-            <input value="{{brand}}" type="text" class="form-control {{validateInput 'brand'}}" name="brand" id="brand" placeholder="Brand" required/> 
-            {{validationFeedback 'brand'}}
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{model}}" type="text" class="form-control {{validateInput 'model'}}" name="model" id="model" placeholder="Model" required/>
-              {{validationFeedback 'model'}}
-            </div>
-          </div>
+<div class="container">
+    <div class="row mt-5">
+      {{#if errors }}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong> Fix errors </strong> 
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-       <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{hp}}" type="number" class="form-control {{validateInput 'hp'}}" name="hp" id="hp" placeholder="Hp" required/>
-              {{validationFeedback 'hp'}} 
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{seats}}" type="number" class="form-control {{validateInput 'seats'}}" name="seats" id="seats" placeholder="Seats" required/>
-              {{validationFeedback 'seats'}}
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{hourlyPrice}}" type="number" class="form-control {{validateInput 'hourlyPrice'}}" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price" required/>
-              {{validationFeedback 'hourlyPrice'}}
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{zeroToHundredKmh}}" type="number" class="form-control {{validateInput 'zeroToHundredKmh'}}" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh" required/>
-              {{validationFeedback 'zeroToHundredKmh'}}
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <select value="{{fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
-                <option value="" selected="" disabled="">Select Fuel</option>
-                <option value="GASOLINE">Gasoline</option>
-                <option value="DIESEL">Diesel</option>
-                <option value="HYBRID">Hybrid</option>
-                <option value="ELECTRIC">Electric</option>
-              </select>
-              {{validationFeedback 'fuel'}}
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-               <select value="{{transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
-                <option value="" selected="" disabled="">Select Transmission</option>
-                <option value="MANUAL">Manual</option>
-                <option value="AUTOMATIC">Automatic</option>
-              </select>
-              {{validationFeedback 'transmission'}}
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <select value="{{bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
-                <option value="" selected="" disabled="">Select Body Type</option>
-                <option value="COUPE">Coupe</option>
-                <option value="CABRIO">Cabrio</option>
-                <option value="SEDAN">Sedan</option>
-                <option value="HATCHBACK">Hatchback</option>
-                <option value="SUV">SUV</option>
-                <option value="STATION_WAGON">Station Wagon</option>
-              </select>
-              {{validationFeedback 'bodyType'}}
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{doors}}" type="number" class="form-control {{validateInput 'doors'}}" name="doors" id="doors" placeholder="Doors" required/>
-              {{validationFeedback 'doors'}}
-            </div>
-          </div>
-        </div>
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{minDriverAge}}" type="number" class="form-control {{validateInput 'minDriverAge'}}" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age" required/>
-              {{validationFeedback 'minDriverAge'}}
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <input value="{{minLicenseAge}}" type="number" class="form-control {{validateInput 'minLicenseAge'}}" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age" required/>
-              {{validationFeedback 'minLicenseAge'}}
-            </div>
-          </div>
-        </div>
-         <div class="form-outline mb-4">
-          <select value="{{status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
-            <option value="" selected="" disabled="">Select Status</option>
-            <option value="ACTIVE">Active</option>
-            <option value="MAINTENANCE">Maintenance</option>
-            <option value="PRIVATE">Private</option>
-          </select>
-          {{validationFeedback 'status'}}
-        </div>
-        <div class="form-outline mb-4">
+      {{/if}}
+      <div class="col-6 car_detail_bg rounded text-center">
+        <form method="post" enctype="multipart/form-data">
+          <img src="{{thumbnail}}" class="car_detail_photo mb-5" width="600px" alt=""> 
           <input value="{{uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}
+      </div>
+      <div class="col-6">
+        <div class="justify-content-center text-center car_detail_model_branch">
+          <img src="/img/lamborghini_logo.png" class="mb-3" width="100px" height="60px" alt="">
+          <h2>
+            <input value="{{brand}}" type="text" class="form-control {{validateInput 'brand'}}" name="brand" id="brand" placeholder="Brand" required/> 
+            {{validationFeedback 'brand'}}
+          -
+            <input value="{{model}}" type="text" class="form-control {{validateInput 'model'}}" name="model" id="model" placeholder="Model" required/>
+            {{validationFeedback 'model'}}
+          </h2>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class=" mt-5 border-end me-3 w-50 ms-4">
+            <h5>Car Features</h5>
+            <div class="d-flex mb-3 mt-4 car_update_input">
+                <img src="/img/hp-icon.png" class="me-3" width="24px" height="24px" alt="">
+                <input value="{{hp}}" type="number" class="form-control {{validateInput 'hp'}}" name="hp" id="hp" placeholder="Hp" required/> 
+                {{validationFeedback 'hp'}}
+            </div>
+            <div class="d-flex mb-3 car_update_input">
+                <img src="/img/seats-icon.png" class="me-3" width="24px" height="24px" alt="">
+                <input value="{{seats}}" type="number" class="form-control {{validateInput 'seats'}}" name="seats" id="seats" placeholder="seats" required/> 
+                {{validationFeedback 'seats'}}
+            </div>
+            <div class="d-flex mb-3 car_update_input">
+                <img src="/img/fuel-2-24.png" class="me-3" width="24px" height="24px" alt="">
+                <select value="{{fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
+                  <option value="" selected="" disabled="">Select Fuel</option>
+                  <option value="GASOLINE">Gasoline</option>
+                  <option value="DIESEL">Diesel</option>
+                  <option value="HYBRID">Hybrid</option>
+                  <option value="ELECTRIC">Electric</option>
+                </select>
+                {{validationFeedback 'fuel'}}
+            </div>
+            <div class="d-flex mb-3 car_update_input">
+                <img src="/img/gear_shift-24.png" class="me-3" width="24px" height="24px" alt="">
+                <select value="{{transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
+                  <option value="" selected="" disabled="">Select Transmission</option>
+                  <option value="MANUAL">Manual</option>
+                  <option value="AUTOMATIC">Automatic</option>
+                </select>
+                {{validationFeedback 'transmission'}}
+            </div>
+            <div class="d-flex mb-3 car_update_input">
+                <img src="/img/bodyType-icon.png" class="me-3" width="24px" height="24px" alt="">
+                <select value="{{bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
+                  <option value="" selected="" disabled="">Select Body Type</option>
+                  <option value="COUPE">Coupe</option>
+                  <option value="CABRIO">Cabrio</option>
+                  <option value="SEDAN">Sedan</option>
+                  <option value="HATCHBACK">Hatchback</option>
+                  <option value="SUV">SUV</option>
+                  <option value="STATION_WAGON">Station Wagon</option>
+                </select>
+                {{validationFeedback 'bodyType'}}
+            </div>
+            <div class="d-flex text-center car_update_input">
+                <img src="/img/speedometer-24.png" class="me-3" width="24px" height="24px" alt="">
+                <input value="{{zeroToHundredKmh}}" type="number" class="form-control {{validateInput 'zeroToHundredKmh'}}" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="zeroToHundredKmh" required/> 
+                {{validationFeedback 'zeroToHundredKmh'}}
+            </div>
         </div>
-        <button type="submit" class="btn-primary form-control mb-4 btn btn-info" >Add Car</button> 
-      </form>
+        <div class="mt-5 ms-3 w-50">
+          <h5>Rental Conditions</h5>
+          <div class="d-flex mb-3 mt-4 car_update_input">
+              <img src="/img/minDriverAge-icon.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{minDriverAge}}" type="number" class="form-control {{validateInput 'minDriverAge'}}" name="minDriverAge" id="minDriverAge" placeholder="minDriverAge" required/> 
+              {{validationFeedback 'minDriverAge'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/minLicenseAge-icon.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{minLicenseAge}}" type="number" class="form-control {{validateInput 'minLicenseAge'}}" name="minLicenseAge" id="minLicenseAge" placeholder="minLicenseAge" required/> 
+              {{validationFeedback 'minLicenseAge'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/door-2-24.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{doors}}" type="number" class="form-control {{validateInput 'doors'}}" name="doors" id="doors" placeholder="Doors" required/>
+              {{validationFeedback 'doors'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+            <img src="/img/hourlyPrice-icon.png" class="me-3" width="24px" height="24px" alt="">
+            <input value="{{hourlyPrice}}" type="number" class="form-control {{validateInput 'hourlyPrice'}}" name="hourlyPrice" id="hourlyPrice" placeholder="hourlyPrice" required/> 
+            {{validationFeedback 'hourlyPrice'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+            <img src="/img/checkmark-24.png" class="me-3" width="24px" height="24px" alt="">
+            <select value="{{status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
+              <option value="" selected="" disabled="">Select Status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="MAINTENANCE">Maintenance</option>
+              <option value="PRIVATE">Private</option>
+            </select>
+            {{validationFeedback 'status'}}
+          </div>
+        </div>
+      </div>
+        <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-50" >Add Car</button>
+        </form>
     </div>
+  </div>
 </div>
+
+
+
+
+
+
+

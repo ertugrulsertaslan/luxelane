@@ -3,7 +3,7 @@
         <h2 class="text-primary">LuxeLane</h2>
     </div>
     <div class="col menu mt-2 ms-5 d-flex">
-        <a href="/" class="btn mt-3 me-2" role="button">Home</a>
+        <a href="/" class="btn mt-3 me-2 ms-5" role="button">Home</a>
         <a href="../about" class="btn mt-3 me-2" role="button">About</a>
         <a href="" class="btn mt-3 me-2" role="button">Services</a>
         <a href="" class="btn mt-3 me-2" role="button">Vehicles</a>
@@ -135,8 +135,7 @@
             <button class="btn p-2">Family</button>
         </div>
     </div>
-    
-    <div class="row justify-content-center car_card_content mt-5 d-flex">
+    <div class="row justify-content-center mt-5 d-flex">
         {{#each cars}}
         <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
@@ -170,7 +169,7 @@
                     </div>
                </div>  
             </div>
-            <button class="btn bg-primary text-white w-100 mb-3">Rent a Car</button>
+            <a href="/cars/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3" role="button"><h6 class="mt-1">Rent a Car</h6></a> 
         </div>
       {{/each}} 
     </div>

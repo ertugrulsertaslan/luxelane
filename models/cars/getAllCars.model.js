@@ -7,10 +7,7 @@ export default function(count = 10){
             if (err) {
                 reject(err);
             }
-            console.log(rows);
-            resolve(rows);
-           
-            
+            resolve(rows);  
         });
     });
 };

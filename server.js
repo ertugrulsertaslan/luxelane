@@ -70,13 +70,12 @@ app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
-app.get('/cars', controllers.cars.getAllCars);
+app.get('/cars', controllers.cars.getViewCars);
+app.get('/admin-cars',controllers.cars.getAllCars); // roleAuth("ADMIN"),
 app.get('/cars/create',renderView("cars/carAdd"));
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/update/:id',controllers.cars.getByIdEdit);
-app.get('/cars/:id', controllers.cars.getByIdDetail);//,
-
-
+app.get('/cars/:id', controllers.cars.getByIdDetail);
 
 
 app.post('/cars/create',
@@ -125,7 +124,7 @@ app.post('/cars/update/:id',
     controllers.cars.update
 );
 
-app.post('/cars/delete/:id', controllers.cars.delete);
+app.get('/cars/delete/:id', controllers.cars.delete);
 
 app.post('/users/login',
     [
