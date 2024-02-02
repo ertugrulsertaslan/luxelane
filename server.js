@@ -73,7 +73,7 @@ app.get('/users/sign-up',renderView("users/signUp"));
 app.get('/cars', controllers.cars.getViewCars);
 app.get('/admin-cars',controllers.cars.getAllCars); // roleAuth("ADMIN"),
 app.get('/cars/brand', renderView("cars/carBrandadd"));
-app.get('/cars/create',renderView("cars/carAdd"));
+app.get('/cars/create',controllers.cars.getBrand);
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/update/:id',controllers.cars.getByIdEdit);
 app.get('/cars/:id', controllers.cars.getByIdDetail);

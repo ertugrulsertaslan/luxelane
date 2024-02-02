@@ -130,14 +130,13 @@
           <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}
         </div>
-        <div class="form-outline mb-4">
-          <select value="{{values.status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
-            <option value="" selected="" disabled="">Select brand</option>
-            <option value="ACTIVE">Active</option>
-            <option value="MAINTENANCE">Maintenance</option>
-            <option value="PRIVATE">Private</option>
+         <div class="form-outline mb-4">
+          <select value="{{values.brandId}}" name="brandId" id="brandId" class="form-select {{validateInput 'brandId'}}" aria-label="Default select example">
+            {{#each brands}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
           </select>
-          {{validationFeedback 'status'}}
+          {{validationFeedback 'brandId'}}
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
       </form>
