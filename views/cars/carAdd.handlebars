@@ -12,11 +12,17 @@
     <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
       <form method="post" enctype="multipart/form-data">
         <div class="row mb-4">
-          <div class="col">
-            <input value="{{values.brand}}" type="text" class="form-control {{validateInput 'brand'}}" name="brand" id="brand" placeholder="Brand" required/> 
-            {{validationFeedback 'brand'}}
-          </div>
-          <div class="col">
+           <div class="form-outline mb-4">
+              <select value="{{values.carType}}" name="carType" id="carType" class="form-select {{validateInput 'carType'}}" aria-label="Default select example">
+                <option value="" selected="" disabled="">Select Car Type</option>
+                <option value="LUXURY">Luxury</option>
+                <option value="BUSINESS">Business</option>
+                <option value="SPRINTER">Sprinter</option>
+                <option value="WEDDING">Wedding</option>
+                <option value="FAMILY">Family</option>
+              </select>
+              {{validationFeedback 'carType'}}
+            </div>
             <div class="form-outline">
               <input value="{{values.model}}" type="text" class="form-control {{validateInput 'model'}}" name="model" id="model" placeholder="Model" required/>
               {{validationFeedback 'model'}}
@@ -123,6 +129,15 @@
         <div class="form-outline mb-4">
           <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}
+        </div>
+        <div class="form-outline mb-4">
+          <select value="{{values.status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
+            <option value="" selected="" disabled="">Select brand</option>
+            <option value="ACTIVE">Active</option>
+            <option value="MAINTENANCE">Maintenance</option>
+            <option value="PRIVATE">Private</option>
+          </select>
+          {{validationFeedback 'status'}}
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
       </form>

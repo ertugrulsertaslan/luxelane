@@ -13,6 +13,7 @@ import updateCarModel from './cars/updateCar.model.js';
 import getCarByIdModel from './cars/getCarById.model.js';
 import deleteCarModel from './cars/deleteCar.model.js';
 import getAllCarsModel from './cars/getAllCars.model.js';
+import createBrandModel from './cars/createBrand.model.js'
 // ..
 
 export default {
@@ -32,5 +33,6 @@ export default {
         delete : deleteCarModel,
         getAllCars : getAllCarsModel,
         getViewCars: getAllCarsModel,
+        createBrand : createBrandModel,
     },
 }

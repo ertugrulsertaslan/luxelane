@@ -14,9 +14,9 @@ const upload = multer({ storage: storage })
 
 export default async function(req,res){
      const data = req.body;
-     const thumbnail = '/img/' + req.file.originalname ;
-     await models.cars.create(data,thumbnail);
-     res.render('success', {message: 'Car Added', redirect: '/cars', delay: 2000});   
+     const logo = '/img/' + req.file.originalname;
+     await models.cars.createBrand(data,logo);
+     res.render('success', {message: 'Brand Added', redirect: '/cars', delay: 2000});   
 }
  
 export {

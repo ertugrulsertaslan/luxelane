@@ -72,16 +72,17 @@ app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
 app.get('/cars', controllers.cars.getViewCars);
 app.get('/admin-cars',controllers.cars.getAllCars); // roleAuth("ADMIN"),
+app.get('/cars/brand', renderView("cars/carBrandadd"));
 app.get('/cars/create',renderView("cars/carAdd"));
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/update/:id',controllers.cars.getByIdEdit);
 app.get('/cars/:id', controllers.cars.getByIdDetail);
 
+app.post('/cars/brand',upload.single('uploaded_file'),controllers.cars.createBrand)
 
 app.post('/cars/create',
     upload.single('uploaded_file'),
     [
-        body('brand').isString().withMessage('Brand must be string'),
         body('model').isString(),
         body('hp').isString().isNumeric(),
         body('seats').isString().isNumeric(),
