@@ -5,6 +5,6 @@ export default async function(req,res){
     const data = req.body;
     const thumbnail = '/img/' + req.file.originalname;
     await models.cars.update(carId,data,thumbnail);
-    res.render('success', {message: 'Car Edited', redirect: '/cars', delay: 2000});
+    res.render('success', {message: 'Car Edited', redirect: '/cars', layout: false, delay: 2000});
 }
 

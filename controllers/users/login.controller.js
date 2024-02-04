@@ -21,6 +21,7 @@ export default async function (req, res) {
         };
         res.render("success", {
             redirect: '/',
+            layout: false,
             delay: 2000,
         });
     }
