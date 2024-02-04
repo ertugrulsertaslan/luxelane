@@ -2,7 +2,6 @@
    <div>
     <a href="/admin-dashboard" class="link-offset-2 link-underline link-underline-opacity-0">Go to Dashboard</a>
   </div>
-
   {{#if errors }}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong> Fix errors </strong> 
@@ -137,6 +136,14 @@
             {{/each}}
           </select>
           {{validationFeedback 'brandId'}}
+        </div>
+        <div class="form-outline mb-4">
+          <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}}" aria-label="Default select example">
+            {{#each branchs}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          {{validationFeedback 'branchId'}}
         </div>
         <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
       </form>
