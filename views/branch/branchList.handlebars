@@ -1,0 +1,32 @@
+<div class="container background_space">
+    <div class="row justify-content-center mt-5 d-flex">
+        {{#each branchs}}
+        <div class="col-3 bg-white me-5 car_card mb-5 mt-5 flex-wrap">
+            <div class="d-flex flex-wrap">
+                <div class="mb-3 w-100">
+                    <div class="d-flex me-5 mb-2 mt-5">
+                        <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <p class="mt-2">{{name}}</p>
+                    </div>
+                    <div  class="d-flex mb-2">
+                        <img src="./img/location-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <p class="mt-2">{{address}}</p>
+                    </div>
+                    <div  class="d-flex mb-2">
+                        <img src="./img/phone-68-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <p class="mt-2">+({{phone}})</p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="d-flex align-items-center justify-content-center mb-5">         
+                    <a href="/branch/update/{{id}}" class="btn btn-primary mx-3 mt-3 w-25" role="button">Edit</a>
+                    <a href="/branch/delete/{{id}}" class="btn btn-danger mx-3 mt-3 w-25" role="button">Delete</a>
+                    <a href="/branch/{{id}}" class="btn btn-success mx-3 mt-3 w-25" role="button">Detail</a>
+            </div>      
+        </div>
+        {{/each}} 
+    </div>
+</div>
+   
+   
