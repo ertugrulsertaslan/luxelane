@@ -15,7 +15,15 @@ import deleteCarModel from './cars/deleteCar.model.js';
 import getAllCarsModel from './cars/getAllCars.model.js';
 import createBrandModel from './cars/createBrand.model.js'
 import getAllBrandModel from './cars/getAllBrand.model.js';
+
+import getCarAndBrandByIdModel from './cars/getCarAndBrandById.model.js';
 // ..
+// Branch models
+import createBranchModel from './branch/createBranch.model.js';
+import getAllBranchModel from './branch/getAllBranch.model.js';
+import deleteBranchModel from './branch/deleteBranch.model.js';
+import updateBranchModel from './branch/updateBranch.model.js';
+import getBranchByIdModel from './branch/getBranchById.model.js';
 
 export default {
     customers: {
@@ -36,5 +44,13 @@ export default {
         getViewCars: getAllCarsModel,
         createBrand : createBrandModel,
         getBrand : getAllBrandModel,
+        getCarAndBrandById : getCarAndBrandByIdModel,
+    },
+    branch: {
+        create: createBranchModel,
+        update: updateBranchModel,
+        getBranch: getAllBranchModel,
+        delete : deleteBranchModel,
+        getById : getBranchByIdModel,
     },
 }
