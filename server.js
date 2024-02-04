@@ -13,7 +13,7 @@ import errorValidation from './middlewares/errorValidation.js';
 
 import controllers from './controllers/index.js';
 import roleAuth from './middlewares/roleAuth.js';
-import { upload } from './controllers/cars/carAdd.controller.js';
+import { upload } from './middlewares/upload_file.js';
 import renderView from './utils/renderView.js';
 import session from 'express-session';
 import models from './models/index.js';
@@ -62,9 +62,11 @@ app.engine('handlebars', exphbs.engine({
 }));
 app.set('view engine', 'handlebars');
 
+
 app.use(express.static('public'))
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
+
 app.get('/', controllers.cars.getAllCarsHome);
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
@@ -73,15 +75,26 @@ app.get('/users/sign-up',renderView("users/signUp"));
 app.get('/cars', controllers.cars.getViewCars);
 app.get('/admin-cars',controllers.cars.getAllCars); // roleAuth("ADMIN"),
 app.get('/cars/brand', renderView("cars/carBrandadd"));
-app.get('/cars/create',controllers.cars.getBrand);
+app.get('/cars/create',controllers.cars.getBrand, controllers.branch.getBranch);
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/update/:id',controllers.cars.getByIdEdit);
-app.get('/cars/:id', controllers.cars.getByIdDetail);
+app.get('/cars/:id', controllers.cars.getCarAndBrandById);
+app.post('/cars/brand',upload.single('uploaded_file'),controllers.cars.createBrand);
 
-app.post('/cars/brand',upload.single('uploaded_file'),controllers.cars.createBrand)
+
+app.get('/branch',controllers.branch.getAllBranch);
+app.get('/branch/create', renderView("branch/branchAdd"));
+app.get('/branch/delete/:id', controllers.branch.delete);
+app.get('/branch/update/:id',controllers.branch.getByIdEdit);
+
+app.post('/branch/create',controllers.branch.create);
+app.post('/branch/update/:id',controllers.branch.update);
+
+
+app.get('/branch/:id', controllers.branch.getByIdDetail);
 
 app.post('/cars/create',
-    upload.single('uploaded_file'),
+    upload.single('uploaded_file'), 
     [
         body('model').isString(),
         body('hp').isString().isNumeric(),

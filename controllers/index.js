@@ -11,10 +11,16 @@ import carDeleteController from './cars/deleteCar.controller.js';
 import carListController from './cars/carList.controller.js';
 import getCarEditcontroller from './cars/getCarEditcontroller.js';
 import getHomeController from './home.controller.js';
-import getAdminCarlistcontroller from './cars/adminCarlist.controller.js'
-import carBrandaddController from './cars/carBrandadd.controller.js';
+import getAdminCarlistcontroller from './cars/adminCarlist.controller.js';
+import carBrandAddController from './cars/carBrandadd.controller.js';
 import getCaraddController from './cars/getCaradd.controller.js';
 
+import branchAddController from './branch/branchAdd.controller.js';
+import branchListController from './branch/branchList.controller.js';
+import deleteBranchController from './branch/deleteBranch.controller.js';
+import getBranchEditController from './branch/getBranchEdit.controller.js';
+import branchEditControler from './branch/branchEdit.controler.js';
+import branchDetailController from './branch/branchDetail.controller.js';
 // export controllers
 export default {
     customers: {
@@ -32,7 +38,17 @@ export default {
         getViewCars :carListController,
         getByIdEdit: getCarEditcontroller,
         getAllCarsHome:getHomeController,
-        createBrand : carBrandaddController,
+        createBrand : carBrandAddController,
         getBrand : getCaraddController,
-    }
+        getCarAndBrandById : carDetailContoller,
+    },
+    branch: {
+        create: branchAddController,
+        getBranch : getCaraddController,
+        getAllBranch : branchListController,
+        delete : deleteBranchController,
+        getByIdEdit : getBranchEditController,
+        update : branchEditControler,
+        getByIdDetail : branchDetailController,
+    },
 }
