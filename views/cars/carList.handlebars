@@ -1,12 +1,12 @@
 <div class="container background_space">
-        <div class="row justify-content-center mt-3">
-        <div class="col-8 car_type d-flex mt-5">
-            <button class="me-5 btn bg-primary p-2 text-white">Luxury</button>
-            <button class="me-5 btn p-2">Business</button>
-            <button class="me-5 btn p-2">Sprinter</button>
-            <button class="me-5 btn p-2">Wedding</button>
-            <button class="btn p-2">Family</button>
-        </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col mt-5 car_type text-center">   
+            <form action="" method="get">
+                {{#each cartypes}}
+                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded  me-5" active  role="button" autocomplete="off">{{name}}</a>
+                {{/each}}        
+            </form>
+        </div>  
     </div>
     <div class="row justify-content-center mt-5 d-flex">
         {{#each cars}}
@@ -18,7 +18,7 @@
             <div class="mt-1">
                 <img src="{{thumbnail}}" class="mb-4" width="326px" height="93px" alt="">
                 <h6>${{hourlyPrice}}/day</h6>
-                <p>25</p>
+                <p><b>{{carTypeId}} carType</b></p>
             </div>
             <div class="d-flex flex-wrap">
                 <div class="mb-3 w-50">
