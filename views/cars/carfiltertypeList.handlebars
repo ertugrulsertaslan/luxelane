@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
 <div class="container background_space">
         <div class="row justify-content-center mt-3">
         <div class="col mt-5 car_type text-center">   
@@ -13,43 +17,37 @@
         <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
                 <h6 class="w-75">{{brand}} - {{model}}</h6>
-                <img class="ms-5" src="./img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              
+                <img class="ms-5" src="/img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              
             </div>
             <div class="mt-1">
                 <img src="{{thumbnail}}" class="mb-4" width="326px" height="93px" alt="">
                 <h6>${{hourlyPrice}}/day</h6>
-                <p>25</p>
+                <p><b>{{carTypeId}} carType</b></p>
             </div>
             <div class="d-flex flex-wrap">
                 <div class="mb-3 w-50">
-                    <div class="d-flex me-5 mb-2">
-                        <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                    <div class="d-flex mb-2">
+                        <img src="/img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                         <p class="mt-2">{{seats}} Seats</p>
                     </div>
                     <div  class="d-flex  mb-2">
-                        <img src="./img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <img src="/img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                         <p class="mt-2 ">{{transmission}}</p>
                     </div>
                 </div>
                 <div class="mb-3 w-50">
                     <div  class="d-flex me-5 mb-2">
-                        <img src="./img/hp-icon.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <img src="/img/hp-icon.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                         <p class="mt-2">{{hp}} HP</p>
                     </div>
                     <div class="d-flex mb-2">
-                        <img src="./img/fuel-2-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
+                        <img src="/img/fuel-2-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                         <p class="mt-2">{{fuel}}</p>
                     </div>
                 </div>  
             </div>
-            <div class="car-edit d-flex align-items-center justify-content-center mb-5">         
-                    <a href="/cars/update/{{id}}" class="btn btn-primary mx-3 mt-3 w-25" role="button">Edit</a>
-                    <a href="/cars/delete/{{id}}" class="btn btn-danger mx-3 mt-3 w-25" role="button">Delete</a>
-                    <a href="/cars/{{id}}" class="btn btn-success mx-3 mt-3 w-25" role="button">Detail</a>
-            </div>      
+            <a href="/cars/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3" role="button"><h6 class="mt-1">Rent a Car</h6></a> 
         </div>
         {{/each}} 
     </div>
 </div>
-   
-   

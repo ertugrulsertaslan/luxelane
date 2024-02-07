@@ -15,6 +15,8 @@ import deleteCarModel from './cars/deleteCar.model.js';
 import getAllCarsModel from './cars/getAllCars.model.js';
 import createBrandModel from './cars/createBrand.model.js'
 import getAllBrandModel from './cars/getAllBrand.model.js';
+import getCarTypeModel from './cars/getCarType.model.js';
+import filterCarModel from './cars/filterCar.model.js';
 
 import getCarAndBrandByIdModel from './cars/getCarAndBrandById.model.js';
 // ..
@@ -45,6 +47,8 @@ export default {
         createBrand : createBrandModel,
         getBrand : getAllBrandModel,
         getCarAndBrandById : getCarAndBrandByIdModel,
+        filterCar : filterCarModel,
+        getCarType : getCarTypeModel,
     },
     branch: {
         create: createBranchModel,

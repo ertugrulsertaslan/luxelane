@@ -67,20 +67,23 @@ app.use(express.static('public'))
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.get('/', controllers.cars.getAllCarsHome);
+app.get('/', controllers.cars.getAllCarsHome , controllers.cars.getAllCarType);
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
-app.get('/cars', controllers.cars.getViewCars);
-app.get('/admin-cars',controllers.cars.getAllCars); // roleAuth("ADMIN"),
+
+app.get('/cars', controllers.cars.getViewCars , controllers.cars.getAllCarType);
+app.get('/admin-cars',controllers.cars.getAllCars,controllers.cars.getAllCarType); // roleAuth("ADMIN"),
 app.get('/cars/brand', renderView("cars/carBrandadd"));
-app.get('/cars/create',controllers.cars.getBrand, controllers.branch.getBranch);
+app.get('/cars/create',controllers.cars.getBrand, controllers.branch.getBranch, controllers.cars.getCarType);
 app.get('/admin-dashboard',renderView("adminDashboard"));
 app.get('/cars/update/:id',controllers.cars.getByIdEdit);
 app.get('/cars/:id', controllers.cars.getCarAndBrandById);
+
 app.post('/cars/brand',upload.single('uploaded_file'),controllers.cars.createBrand);
 
+app.get ('/cars/type/:id', controllers.cars.filterCar,controllers.cars.getAllCarType);
 
 app.get('/branch',controllers.branch.getAllBranch);
 app.get('/branch/create', renderView("branch/branchAdd"));
@@ -91,7 +94,9 @@ app.post('/branch/create',controllers.branch.create);
 app.post('/branch/update/:id',controllers.branch.update);
 
 
+
 app.get('/branch/:id', controllers.branch.getByIdDetail);
+
 
 app.post('/cars/create',
     upload.single('uploaded_file'), 
