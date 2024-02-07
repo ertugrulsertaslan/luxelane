@@ -111,12 +111,12 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-8 car_type d-flex">
-            <button class="me-5 btn bg-primary p-2 text-white">Luxury</button>
-            <button class="me-5 btn p-2">Business</button>
-            <button class="me-5 btn p-2">Sprinter</button>
-            <button class="me-5 btn p-2">Wedding</button>
-            <button class="btn p-2">Family</button>
+        <div class="col car_type text-center">   
+            <form action="" method="get">
+                 {{#each carTypes}}
+                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded p-2 me-5"  role="button">{{name}}</a>
+                 {{/each}}        
+            </form>
         </div>
     </div>
     <div class="row justify-content-center mt-5 d-flex">

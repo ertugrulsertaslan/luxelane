@@ -11,16 +11,13 @@
     <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
       <form method="post" enctype="multipart/form-data">
         <div class="row mb-4">
-           <div class="form-outline mb-4">
-              <select value="{{values.carType}}" name="carType" id="carType" class="form-select {{validateInput 'carType'}}" aria-label="Default select example">
-                <option value="" selected="" disabled="">Select Car Type</option>
-                <option value="LUXURY">Luxury</option>
-                <option value="BUSINESS">Business</option>
-                <option value="SPRINTER">Sprinter</option>
-                <option value="WEDDING">Wedding</option>
-                <option value="FAMILY">Family</option>
+            <div class="form-outline mb-4">
+              <select value="{{values.carTypeId}}" name="carTypeId" id="carTypeId" class="form-select {{validateInput 'carTypeId'}}" aria-label="Default select example">
+                {{#each cartypes}}
+                <option value="{{id}}">{{name}}</option>
+                {{/each}}
               </select>
-              {{validationFeedback 'carType'}}
+              {{validationFeedback 'carTypeId'}}
             </div>
             <div class="form-outline">
               <input value="{{values.model}}" type="text" class="form-control {{validateInput 'model'}}" name="model" id="model" placeholder="Model" required/>
