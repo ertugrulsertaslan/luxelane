@@ -30,10 +30,15 @@
 }
 .search_btn {
     height: 40%;
-    width: 50%;
+    width: 65%;
 }
-.date_btn {
-    height: 40%;
+.location_input {
+    text-align: center;
+    justify-content: center;
+}
+.location_select {
+    width: 130px;
+    height: 25px;
 }
 .background_space {
     background-color: #f0f6fe;

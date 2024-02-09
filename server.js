@@ -3,14 +3,13 @@ import exphbs from 'express-handlebars';
 import Handlebars from 'handlebars';
 const app = express();
 import bodyParser from 'body-parser';
-import path from 'path';
+import path, { format } from 'path';
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import { body } from 'express-validator'
 import errorValidation from './middlewares/errorValidation.js';
-
 import controllers from './controllers/index.js';
 import roleAuth from './middlewares/roleAuth.js';
 import { upload } from './middlewares/upload_file.js';
