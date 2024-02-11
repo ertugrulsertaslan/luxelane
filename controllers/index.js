@@ -15,6 +15,7 @@ import getAdminCarlistcontroller from './cars/adminCarlist.controller.js';
 import carBrandAddController from './cars/carBrandadd.controller.js';
 import getCaraddController from './cars/getCaradd.controller.js';
 import filterCarController from './cars/filterCar.controller.js';
+import dateSessionController from './cars/dateSession.controller.js';
 
 import branchAddController from './branch/branchAdd.controller.js';
 import branchListController from './branch/branchList.controller.js';
@@ -58,5 +59,8 @@ export default {
         getByIdEdit : getBranchEditController,
         update : branchEditControler,
         getByIdDetail : branchDetailController,
+    },
+    session: {
+        session: dateSessionController,
     },
 }
