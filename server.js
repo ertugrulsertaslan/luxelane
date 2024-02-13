@@ -66,14 +66,14 @@ app.use(express.static('public'))
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.get('/',controllers.cars.getAllCarsHome , controllers.cars.getAllCarType);
+app.get('/',controllers.cars.getAllCarsHome , controllers.cars.getAllCarType, controllers.branch.getBranch);
 app.post('/',controllers.session.session)
 app.get('/about', renderView("about"));
 app.get('/contact',renderView("contact"));
 app.get('/users/login',renderView("users/login"));
 app.get('/users/sign-up',renderView("users/signUp"));
 
-app.get('/cars',controllers.cars.getViewCars ,controllers.cars.getAllCarType);
+app.get('/cars',controllers.cars.getViewCarsFilterBranch ,controllers.cars.getAllCarType);
 app.get('/admin-cars',controllers.cars.getAllCars,controllers.cars.getAllCarType); // roleAuth("ADMIN"),
 app.get('/cars/brand', renderView("cars/carBrandadd"));
 app.get('/cars/create',controllers.cars.getBrand, controllers.branch.getBranch, controllers.cars.getCarType);
@@ -96,6 +96,9 @@ app.post('/branch/update/:id',controllers.branch.update);
 
 
 app.get('/branch/:id', controllers.branch.getByIdDetail);
+
+app.get('/cars/order/:id',controllers.order.getOrder)
+app.post('/cars/order/:id',controllers.order.getOrder);
 
 
 app.post('/cars/create',

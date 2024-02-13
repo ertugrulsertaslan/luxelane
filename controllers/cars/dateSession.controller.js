@@ -6,6 +6,7 @@ export default async function(req,res)  {
     req.session.PickUpTime = req.body.startDate;
     req.session.DropOffDate = req.body.datepicker1;
     req.session.DropOffTime = req.body.endDate;
-    
+    req.session.branchId = req.body.branchId;
+
     res.redirect('/cars'); 
 }
