@@ -21,7 +21,13 @@
     width: 20%;
     height: 30%;
 }
-
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
 .date_content {
     background-color: antiquewhite;
 }
@@ -192,4 +198,16 @@
 .car_detail_model_branch {
     width: 230px;
     margin-left: 30%;
+}
+.order_btn {
+    width: 250px;
+    height: 50px;
+    margin-left: 20%;
+}
+.order_greatchoice_photo {
+    margin-left: 30%;
+    margin-top: 5%;
+}
+.branch_select {
+    width: 150px;
 }

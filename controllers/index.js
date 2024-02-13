@@ -24,6 +24,9 @@ import getBranchEditController from './branch/getBranchEdit.controller.js';
 import branchEditControler from './branch/branchEdit.controler.js';
 import branchDetailController from './branch/branchDetail.controller.js';
 import adminCarlistController from './cars/adminCarlist.controller.js';
+
+import orderController from './order.controller.js';
+
 // export controllers
 export default {
     customers: {
@@ -38,7 +41,7 @@ export default {
         getByIdDetail: carDetailContoller,
         delete : carDeleteController,
         getAllCars : getAdminCarlistcontroller,
-        getViewCars :carListController,
+        getViewCarsFilterBranch :carListController,
         getByIdEdit: getCarEditcontroller,
         getAllCarsHome:getHomeController,
         createBrand : carBrandAddController,
@@ -63,4 +66,7 @@ export default {
     session: {
         session: dateSessionController,
     },
+    order: {
+        getOrder: orderController,
+    }
 }
