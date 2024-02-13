@@ -26,6 +26,14 @@
     <div class="row date mt-5 justify-content-center text-center ">
         <div class="col-10 date_content d-flex p-2 bg-white rounded rounded-5">
             <form method="post" class="d-flex w-100"> 
+                <div>
+                    <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}} branch_select" aria-label="Default select example">
+                        {{#each branchs}}
+                        <option value="{{id}}">{{name}}</option>
+                        {{/each}}
+                    </select>
+                    {{validationFeedback 'branchId'}}
+                </div>
                 <div class="col-5 border-end border-dark location_input mt-5 d-flex">
                         <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" width="200" />
                             <select class="ms-5 location_select"  value="{{values.startDate}}" name="startDate" id="startDate" class="form-select {{validateInput 'startDate'}}" aria-label="Default select example">
