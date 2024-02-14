@@ -1,11 +1,12 @@
 <div class="container">
-     {{#if errorMessage }}
+    {{#if errorMessage }}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <strong> {{errorMessage}} </strong> 
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    {{/if}} 
-    <div class="d-flex flex-row bd-highlight align-items-center justify-content-center  ">
+    {{/if}}
+    <div class="row">
+      <div class="d-flex flex-row bd-highlight align-items-center justify-content-center  ">
         <div class="m-5 pb-1 bd-highlight ">
             <a href="/users/login" class="link-offset-2 link-underline link-underline-opacity-0" >
             <h4>Login</h4>
@@ -16,35 +17,36 @@
             <h4 class="text-danger">Sign</h4>
             </a>
         </div>
-    </div>
-    <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
-      <form method="post" enctype="multipart/form-data">
-        <div class="row mb-4">
-          <div class="col">
+      </div>
+    </div> 
+    <div class="row mb-4">
+      <div class="mt-2 h-100 d-flex text-center justify-content-center">
+        <form method="post" enctype="multipart/form-data">
+          <div class="col mb-3">
             <div class="form-outline">
               <input type="text" id="form3Example1" class="form-control" placeholder="First name" name="firstName" id="firstName" required/>
             </div>
           </div>
-          <div class="col">
+          <div class="col mb-3">
             <div class="form-outline">
               <input type="text" id="form3Example2" class="form-control"  placeholder="Last name" name="lastName" id="lastName" required />
             </div>
           </div>
-        </div>
-        <div class="form-outline mb-4">
-          <input value="{{values.email}}" type="email" id="form3Example3" class="form-control {{validateInput 'email'}}" placeholder="Email address" name="email" id="email" required/>
-          {{validationFeedback 'email'}}
-        </div>
-        <div class="form-outline mb-4">
-          <input type="password" id="form3Example4" class="form-control" placeholder="Password" name="password" id="password" required/>
-        </div>
-        <div class="form-outline mb-4">
-          <input type="text" id="form3Example5" class="form-control" placeholder="Tc" name="tc" id="tc" required/>
-        </div>
-        <div class="form-outline mb-4">
-          <input  type="file" class="form-control" name="uploaded_file" id="file" placeholder="File" required/>
-        </div>
-        <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Sign up</button> 
-      </form>
+          <div class="form-outline mb-4">
+            <input value="{{values.email}}" type="email" id="form3Example3" class="form-control {{validateInput 'email'}}" placeholder="Email address" name="email" id="email" required/>
+            {{validationFeedback 'email'}}
+          </div>
+          <div class="form-outline mb-4">
+            <input type="password" id="form3Example4" class="form-control" placeholder="Password" name="password" id="password" required/>
+          </div>
+          <div class="form-outline mb-4">
+            <input type="text" id="form3Example5" class="form-control" placeholder="Tc" name="tc" id="tc" required/>
+          </div>
+          <div class="form-outline mb-4">
+            <input  type="file" class="form-control" name="uploaded_file" id="file" placeholder="File" required/>
+          </div>
+          <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Sign up</button>
+        </form>
+      </div>
     </div>
 </div>

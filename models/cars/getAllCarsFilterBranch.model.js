@@ -7,7 +7,6 @@ export default function(id, count = 10){
             if (err) {
                 reject(err);
             }
-            console.log(rows);
             resolve(rows);  
         });
     });

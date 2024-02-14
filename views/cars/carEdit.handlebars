@@ -10,8 +10,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       {{/if}}
+    <form method="post" enctype="multipart/form-data"></form>
       <div class="col-6 car_detail_bg rounded text-center">
-        <form method="post" enctype="multipart/form-data">
           <img src="{{thumbnail}}" class="car_detail_photo mb-5" width="600px" alt=""> 
           <input value="{{uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}
@@ -29,55 +29,55 @@
       </div>
       <div class="d-flex justify-content-center">
         <div class=" mt-5 border-end me-3 w-50 ms-4">
-            <h5>Car Features</h5>
-            <div class="d-flex mb-3 mt-4 car_update_input">
-                <img src="/img/hp-icon.png" class="me-3" width="24px" height="24px" alt="">
-                <input value="{{hp}}" type="number" class="form-control {{validateInput 'hp'}}" name="hp" id="hp" placeholder="Hp" required/> 
-                {{validationFeedback 'hp'}}
-            </div>
-            <div class="d-flex mb-3 car_update_input">
-                <img src="/img/seats-icon.png" class="me-3" width="24px" height="24px" alt="">
-                <input value="{{seats}}" type="number" class="form-control {{validateInput 'seats'}}" name="seats" id="seats" placeholder="seats" required/> 
-                {{validationFeedback 'seats'}}
-            </div>
-            <div class="d-flex mb-3 car_update_input">
-                <img src="/img/fuel-2-24.png" class="me-3" width="24px" height="24px" alt="">
-                <select value="{{fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
-                  <option value="" selected="" disabled="">Select Fuel</option>
-                  <option value="GASOLINE">Gasoline</option>
-                  <option value="DIESEL">Diesel</option>
-                  <option value="HYBRID">Hybrid</option>
-                  <option value="ELECTRIC">Electric</option>
-                </select>
-                {{validationFeedback 'fuel'}}
-            </div>
-            <div class="d-flex mb-3 car_update_input">
-                <img src="/img/gear_shift-24.png" class="me-3" width="24px" height="24px" alt="">
-                <select value="{{transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
-                  <option value="" selected="" disabled="">Select Transmission</option>
-                  <option value="MANUAL">Manual</option>
-                  <option value="AUTOMATIC">Automatic</option>
-                </select>
-                {{validationFeedback 'transmission'}}
-            </div>
-            <div class="d-flex mb-3 car_update_input">
-                <img src="/img/bodyType-icon.png" class="me-3" width="24px" height="24px" alt="">
-                <select value="{{bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
-                  <option value="" selected="" disabled="">Select Body Type</option>
-                  <option value="COUPE">Coupe</option>
-                  <option value="CABRIO">Cabrio</option>
-                  <option value="SEDAN">Sedan</option>
-                  <option value="HATCHBACK">Hatchback</option>
-                  <option value="SUV">SUV</option>
-                  <option value="STATION_WAGON">Station Wagon</option>
-                </select>
-                {{validationFeedback 'bodyType'}}
-            </div>
-            <div class="d-flex text-center car_update_input">
-                <img src="/img/speedometer-24.png" class="me-3" width="24px" height="24px" alt="">
-                <input value="{{zeroToHundredKmh}}" type="number" class="form-control {{validateInput 'zeroToHundredKmh'}}" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="zeroToHundredKmh" required/> 
-                {{validationFeedback 'zeroToHundredKmh'}}
-            </div>
+          <h5>Car Features</h5>
+          <div class="d-flex mb-3 mt-4 car_update_input">
+              <img src="/img/hp-icon.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{hp}}" type="number" class="form-control {{validateInput 'hp'}}" name="hp" id="hp" placeholder="Hp" required/> 
+              {{validationFeedback 'hp'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/seats-icon.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{seats}}" type="number" class="form-control {{validateInput 'seats'}}" name="seats" id="seats" placeholder="seats" required/> 
+              {{validationFeedback 'seats'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/fuel-2-24.png" class="me-3" width="24px" height="24px" alt="">
+              <select value="{{fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
+                <option value="" selected="" disabled="">Select Fuel</option>
+                <option value="GASOLINE">Gasoline</option>
+                <option value="DIESEL">Diesel</option>
+                <option value="HYBRID">Hybrid</option>
+                <option value="ELECTRIC">Electric</option>
+              </select>
+              {{validationFeedback 'fuel'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/gear_shift-24.png" class="me-3" width="24px" height="24px" alt="">
+              <select value="{{transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
+                <option value="" selected="" disabled="">Select Transmission</option>
+                <option value="MANUAL">Manual</option>
+                <option value="AUTOMATIC">Automatic</option>
+              </select>
+              {{validationFeedback 'transmission'}}
+          </div>
+          <div class="d-flex mb-3 car_update_input">
+              <img src="/img/bodyType-icon.png" class="me-3" width="24px" height="24px" alt="">
+              <select value="{{bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
+                <option value="" selected="" disabled="">Select Body Type</option>
+                <option value="COUPE">Coupe</option>
+                <option value="CABRIO">Cabrio</option>
+                <option value="SEDAN">Sedan</option>
+                <option value="HATCHBACK">Hatchback</option>
+                <option value="SUV">SUV</option>
+                <option value="STATION_WAGON">Station Wagon</option>
+              </select>
+              {{validationFeedback 'bodyType'}}
+          </div>
+          <div class="d-flex text-center car_update_input">
+              <img src="/img/speedometer-24.png" class="me-3" width="24px" height="24px" alt="">
+              <input value="{{zeroToHundredKmh}}" type="number" class="form-control {{validateInput 'zeroToHundredKmh'}}" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="zeroToHundredKmh" required/> 
+              {{validationFeedback 'zeroToHundredKmh'}}
+          </div>
         </div>
         <div class="mt-5 ms-3 w-50">
           <h5>Rental Conditions</h5>
@@ -113,9 +113,9 @@
           </div>
         </div>
       </div>
-        <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-50" >Add Car</button>
-        </form>
+        <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-50" >Add Car</button> 
     </div>
+  </form>
   </div>
 </div>
 

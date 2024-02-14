@@ -7,7 +7,6 @@ export default function (password) {
             if (err) {
                 reject(err);
             }  
-
             resolve(result ||  null);
         });
     });

@@ -7,7 +7,6 @@ export default function (email) {
             if (err) {
                 reject(err);
             }  
-
             resolve(result ||  null);
         });
     });

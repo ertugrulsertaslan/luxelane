@@ -4,7 +4,6 @@ export default function(role) {
         if (!req.session.user) {
             return res.redirect('/users/login');
         }
-
         if (req.session.user.role === role) {
             next();
         } else {
