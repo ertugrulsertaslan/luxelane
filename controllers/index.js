@@ -3,6 +3,7 @@ import signUpCustomerController from './customers/signUp.controller.js';
 
 // import users controllers
 import userLoginController from './users/login.controller.js';
+import profileController from './users/profile.controller.js';
 
 import carAddController from './cars/carAdd.controller.js';
 import carDetailContoller from './cars/carDetail.controller.js';
@@ -27,6 +28,7 @@ import adminCarlistController from './cars/adminCarlist.controller.js';
 
 import orderController from './order.controller.js';
 
+
 // export controllers
 export default {
     customers: {
@@ -34,6 +36,7 @@ export default {
     },
     users: {
         login: userLoginController,
+        profile: profileController,
     },
     cars: {
         create: carAddController,

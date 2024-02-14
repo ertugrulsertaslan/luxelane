@@ -4,7 +4,6 @@ export default async function (req, res) {
 
     const { email, password } = req.body;
     const user = await models.users.getByEmail(email);
-
     if (user) {
         let passwordsEqual = await models.users.passwordCompare(password,user.password);
 
@@ -20,7 +19,7 @@ export default async function (req, res) {
             password:user.password,
         };
         res.render("success", {
-            redirect: '/',
+            redirect: '/users/profile',
             layout: false,
             delay: 2000,
         });
