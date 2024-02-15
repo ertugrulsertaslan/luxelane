@@ -27,6 +27,7 @@ import branchDetailController from './branch/branchDetail.controller.js';
 import adminCarlistController from './cars/adminCarlist.controller.js';
 
 import orderController from './order.controller.js';
+import createOrderController from './createOrder.controller.js';
 
 
 // export controllers
@@ -71,5 +72,6 @@ export default {
     },
     order: {
         getOrder: orderController,
+        create : createOrderController,
     }
 }

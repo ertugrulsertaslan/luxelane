@@ -7,6 +7,7 @@ export default async function(req,res)  {
     req.session.DropOffDate = req.body.datepicker1;
     req.session.DropOffTime = req.body.endDate;
     req.session.branchId = req.body.branchId;
+    req.session.branchId1 = req.body.branchId1;
 
     res.redirect('/cars'); 
 }

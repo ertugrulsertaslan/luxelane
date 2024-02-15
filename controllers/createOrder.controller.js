@@ -3,7 +3,6 @@ import models from "../models/index.js";
 export default async function(req,res)  {
 
     const carId = req.params.id;
-    console.log(req.body);
     const startDate = req.session.PickUpDate +' '+ req.session.PickUpTime;
     const endDate = req.session.DropOffDate +' '+ req.session.DropOffTime;
     const startBranch = req.session.branchId;
