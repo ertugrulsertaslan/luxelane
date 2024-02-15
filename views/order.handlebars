@@ -7,12 +7,13 @@
     <div class="row mt-5">
         <div class="col-8 car_detail_bg rounded text-center">
             <div class="d-flex">
-                <div class="mt-5">
+                <div class="mt-5 w-50">
                     <img src="{{car.thumbnail}}" class="mb-4" width="350px" height="300px" alt="">       
                 </div>
                 <div class="mt-5 ms-5">
+                <form action="post">
                     <div>
-                        <h5 class="mt-5 ms-3">Range-Rover - {{car.model}}</h5>
+                        <h5 class="mt-5 ms-3">{{carBrand.name}} - {{car.model}}</h5>
                     </div>
                     <div class="d-flex mt-4 ms-3">
                         <img src="/img/user-6-24.png" class="me-2 border border-primary rounded p-2" width="36px" height="36px" alt="">
@@ -67,7 +68,7 @@
                         <p class="mb-0 font-monospace">{{startDate}}</p>
                     </div>
                     <div class="ms-4 mt-1">
-                        <p class="mb-1 p-0 fw-bold font-monospace">Branch</p>
+                        <p class="mb-1 p-0 fw-bold font-monospace">{{startBranchName.name}}</p>
                         <p class="mb-5 p-0">View drop-off instructions</p>
                     </div>
                     <div class="mb-3 mt-4 d-flex">
@@ -75,7 +76,7 @@
                         <p class="mb-0 font-monospace">{{endDate}}</p>
                     </div>
                     <div class="ms-4 mt-1">
-                        <p class="mb-1 p-0 fw-bold font-monospace">Branch</p>
+                        <p class="mb-1 p-0 fw-bold font-monospace">{{dropBranchName.name}}</p>
                         <p class="mb-5 p-0">View drop-off instructions</p>
                     </div>
                 </div>
@@ -84,17 +85,19 @@
                     <div class="mt-4">
                         <div class="d-flex">
                             <p class="me-5">Car Hire charge</p>
-                            <p>${{car.hourlyPrice}}</p>
+                            <p>${{carPrice}}</p>
                         </div>
                         <div class="d-flex border-top border-primary">
                             <p class="me-5 mt-3">Price for 3 days</p>
-                            <p class="mt-3">${{car.hourlyPrice}}</p> 
+                            <p class="mt-3">${{carPrice}}</p> 
                         </div>
                     </div>
                 </div>
             </div>
             <div class="ms-4 mt-4">
-                <a href="/" class="btn border bg-primary text-white order_btn text-center" role="button"><p class="mt-1">Rent a Car</p></a>
+                    <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Addd Car</button> 
+                    <a href="/cars/order/create" class="btn border bg-primary text-white order_btn text-center" role="button"><p class="mt-1">Rent a Car</p></a>
+                </form>
             </div>
         </div>
     </div>
