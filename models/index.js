@@ -19,7 +19,11 @@ import getCarTypeModel from './cars/getCarType.model.js';
 import filterCarModel from './cars/filterCar.model.js';
 import getAllCarsFilterBranchModel from './cars/getAllCarsFilterBranch.model.js';
 
+import getBrandByIdModel from './brand/getBrandById.model.js';
+
 import getCarAndBrandByIdModel from './cars/getCarAndBrandById.model.js';
+
+import createOrderModel from './order/createOrder.model.js';
 
 // ..
 // Branch models
@@ -63,5 +67,10 @@ export default {
     },
     order: {
         getOrder : getCarAndBrandByIdModel,
-    }
+        create: createOrderModel,
+        getBranch : getBranchByIdModel,
+    },
+    brand: {
+        getBrandById : getBrandByIdModel,
+    },
 }

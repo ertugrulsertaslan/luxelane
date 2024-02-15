@@ -98,6 +98,7 @@ app.post('/branch/update/:id',controllers.branch.update);
 app.get('/branch/:id', controllers.branch.getByIdDetail);
 
 app.get('/cars/order/:id',controllers.order.getOrder);
+app.post('/cars/order/create',controllers.order.create);
 
 app.get('/users/profile',controllers.users.profile);
 
