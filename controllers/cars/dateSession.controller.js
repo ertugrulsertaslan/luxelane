@@ -6,8 +6,8 @@ export default async function(req,res)  {
     req.session.PickUpTime = req.body.startDate;
     req.session.DropOffDate = req.body.datepicker1;
     req.session.DropOffTime = req.body.endDate;
-    req.session.branchId = req.body.branchId;
-    req.session.branchId1 = req.body.branchId1;
-
+    req.session.pickBranchId = req.body.pickBranchId;
+    req.session.dropBranchId = req.body.dropBranchId;
+    
     res.redirect('/cars'); 
 }

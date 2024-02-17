@@ -28,12 +28,12 @@
             <form method="post" class="d-flex w-100"> 
                 <div class="col-5 border-end border-dark location_input p-2">
                     <div class="mb-4">
-                        <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}} branch_select" aria-label="Default select example">
+                        <select value="{{values.pickBranchId}}" name="pickBranchId" id="pickBranchId" class="form-select {{validateInput 'pickBranchId'}} branch_select" aria-label="Default select example">
                         {{#each branchs}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
-                    {{validationFeedback 'branchId'}} 
+                    {{validationFeedback 'pickBranchId'}} 
                     </div>
                     <div class="d-flex">
                         <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" width="200" />
@@ -70,12 +70,12 @@
                 </div>
                 <div class="col-5 border-end border-dark location_input p-2">
                     <div class="mb-4">
-                        <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}} branch_select" aria-label="Default select example">
+                        <select value="{{values.dropBranchId}}" name="dropBranchId" id="dropBranchId" class="form-select {{validateInput 'dropBranchId'}} branch_select" aria-label="Default select example">
                         {{#each branchs}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
                     </select>
-                    {{validationFeedback 'branchId'}} 
+                    {{validationFeedback 'dropBranchId'}} 
                     </div>
                     <div class="d-flex">
                         <input class="mb-4" placeholder="Drop-off date" id="datepicker1" name="datepicker1" width="200" />
