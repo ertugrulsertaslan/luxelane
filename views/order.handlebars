@@ -1,4 +1,4 @@
-<head>
+l<head>
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
 </head>
@@ -10,8 +10,8 @@
                 <div class="mt-5 w-50">
                     <img src="{{car.thumbnail}}" class="mb-4" width="350px" height="300px" alt="">       
                 </div>
+                <form method="post">
                 <div class="mt-5 ms-5">
-                <form action="post">
                     <div>
                         <h5 class="mt-5 ms-3">{{carBrand.name}} - {{car.model}}</h5>
                     </div>
@@ -95,10 +95,9 @@
                 </div>
             </div>
             <div class="ms-4 mt-4">
-                    <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Addd Car</button> 
-                    <a href="/cars/order/create" class="btn border bg-primary text-white order_btn text-center" role="button"><p class="mt-1">Rent a Car</p></a>
-                </form>
-            </div>
+                <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Addd Car</button>
+                </form>       
+            </div>    
         </div>
     </div>
 </div>

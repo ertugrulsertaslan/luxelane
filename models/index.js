@@ -24,6 +24,7 @@ import getBrandByIdModel from './brand/getBrandById.model.js';
 import getCarAndBrandByIdModel from './cars/getCarAndBrandById.model.js';
 
 import createOrderModel from './order/createOrder.model.js';
+import getOrderModel from './order/getOrder.model.js';
 
 // ..
 // Branch models
@@ -69,6 +70,7 @@ export default {
         getOrder : getCarAndBrandByIdModel,
         create: createOrderModel,
         getBranch : getBranchByIdModel,
+        getOrderProfilePage: getOrderModel,
     },
     brand: {
         getBrandById : getBrandByIdModel,

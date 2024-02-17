@@ -1,8 +1,25 @@
 <div class="container">
     <div class="row">
         <div class="col-12 text-center mt-5">
-            <h2>WELCOME ! {{firstName}} - {{lastName}}</h2>
+            <h2>WELCOME ! {{user.firstName}} - {{user.lastName}}</h2>
         </div>
     </div>
+    {{#each orders}}
+    <div class="row g-0 mt-3 mb-3 d-flex" style="max-width: 900px;">
+        <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+                <h5 class="card-title">carId : {{carId}}</h5>
+                <p class="card-text">Pick Up Branch {{pickUpBranchId}}</p>
+                <p class="card-text">dropOffBranchId : {{dropOffBranchId}}</p>
+                <p class="card-text">startDate : {{startDate}}</p>
+                <p class="card-text">endDate : {{endDate}}</p>
+                <p class="card-text"><small class="text-muted">Price : {{price}}</small></p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </div>
 

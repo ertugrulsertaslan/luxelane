@@ -4,7 +4,7 @@ export default async function(req,res)  {
 
     const startDate = req.session.startDate;
     const endDate = req.session.endDate;
-    const branchId =  req.session.branchId;
+    const branchId =  req.session.pickBranchId;
     const carId = req.params.id;
     const cars = await models.cars.filterCar(carId,branchId);
     const cartypes = await models.cars.getCarType();
