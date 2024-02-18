@@ -3,23 +3,24 @@
         <div class="col-12 text-center mt-5">
             <h2>WELCOME ! {{user.firstName}} - {{user.lastName}}</h2>
         </div>
-    </div>
-    {{#each orders}}
+    </div>      
+        {{#if order}}
     <div class="row g-0 mt-3 mb-3 d-flex" style="max-width: 900px;">
-        <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
+        <div class="col-md-4 mt-5 ">
+            <img src="{{car.thumbnail}}" class="img-fluid rounded-start" width="326px" height="326px">
         </div>
         <div class="col-md-8">
-        <div class="card-body">
-                <h5 class="card-title">carId : {{carId}}</h5>
-                <p class="card-text">Pick Up Branch {{pickUpBranchId}}</p>
-                <p class="card-text">dropOffBranchId : {{dropOffBranchId}}</p>
-                <p class="card-text">startDate : {{startDate}}</p>
-                <p class="card-text">endDate : {{endDate}}</p>
-                <p class="card-text"><small class="text-muted">Price : {{price}}</small></p>
+            <div class="card-body ms-5">
+                <h5 class="card-title mb-5 mt-5">Car  {{car.name }} - {{car.model}}</h5>
+                <p class="card-text">Pick Up Branch : {{pickUpBranch.name}}</p>
+                <p class="card-text">dropOffBranchId : {{dropOffBranch.name}}</p>
+                <p class="card-text">startDate : {{order.startDate}}</p>
+                <p class="card-text">endDate : {{order.endDate}}</p>
+                <p class="card-text"><small class="text-muted">Price : {{order.price}}</small></p>
             </div>
         </div>
     </div>
-    {{/each}}
+        {{/if}}
+
 </div>
 

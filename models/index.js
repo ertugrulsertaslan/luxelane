@@ -13,15 +13,17 @@ import updateCarModel from './cars/updateCar.model.js';
 import getCarByIdModel from './cars/getCarById.model.js';
 import deleteCarModel from './cars/deleteCar.model.js';
 import getAllCarsModel from './cars/getAllCars.model.js';
-import createBrandModel from './cars/createBrand.model.js'
-import getAllBrandModel from './cars/getAllBrand.model.js';
 import getCarTypeModel from './cars/getCarType.model.js';
 import filterCarModel from './cars/filterCar.model.js';
 import getAllCarsFilterBranchModel from './cars/getAllCarsFilterBranch.model.js';
 
-import getBrandByIdModel from './brand/getBrandById.model.js';
 
+//Brand models
+import getBrandByIdModel from './brand/getBrandById.model.js';
 import getCarAndBrandByIdModel from './cars/getCarAndBrandById.model.js';
+import createBrandModel from './cars/createBrand.model.js'
+import getAllBrandModel from './cars/getAllBrand.model.js';
+//Order models
 
 import createOrderModel from './order/createOrder.model.js';
 import getOrderModel from './order/getOrder.model.js';

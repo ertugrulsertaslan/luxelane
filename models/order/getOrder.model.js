@@ -7,7 +7,7 @@ export default function(id) {
             if (err) {
                 reject(err);
             }
-            resolve(rows);
+            resolve(rows[0]);
         });
     });
 };
