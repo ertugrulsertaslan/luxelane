@@ -107,8 +107,7 @@
                             <option value="23.00" >23.00</option>
                         </select>
                         {{validationFeedback 'endDate'}}
-                    </div>
-                    
+                    </div> 
                 </div>
                 <div class="col-2 search_content justify-content-center d-flex">
                     <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-75">Rent A Car</button>
@@ -408,7 +407,7 @@
     </div>
 </div>
 
-    <script>
-            $('#datepicker').datepicker();
-            $('#datepicker1').datepicker();
-    </script>
+<script>
+        $('#datepicker1').datepicker({ format: 'dd/mm/yyyy-' });
+        $('#datepicker').datepicker({ format: 'dd/mm/yyyy-' });
+</script>
