@@ -10,8 +10,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       {{/if}}
-    <form method="post" enctype="multipart/form-data"></form>
+    
       <div class="col-6 car_detail_bg rounded text-center">
+        <form method="post" enctype="multipart/form-data">
           <img src="{{thumbnail}}" class="car_detail_photo mb-5" width="600px" alt=""> 
           <input value="{{uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
           {{validationFeedback 'uploaded_file'}}

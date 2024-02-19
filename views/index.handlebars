@@ -28,7 +28,7 @@
             <form method="post" class="d-flex w-100"> 
                 <div class="col-5 border-end border-dark location_input p-2">
                     <div class="mb-4">
-                        <select value="{{values.pickBranchId}}" name="pickBranchId" id="pickBranchId" class="form-select {{validateInput 'pickBranchId'}} branch_select" aria-label="Default select example">
+                        <select value="{{values.pickBranchId}}" name="pickBranchId" id="pickBranchId" class="form-select {{validateInput 'pickBranchId'}} branch_select" aria-label="Default select example" required>
                         {{#each branchs}}
                         <option value="{{id}}">{{name}}</option>
                         {{/each}}
@@ -36,8 +36,8 @@
                     {{validationFeedback 'pickBranchId'}} 
                     </div>
                     <div class="d-flex">
-                        <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" width="200" />
-                        <select class="ms-5 location_select"  value="{{values.startDate}}" name="startDate" id="startDate" class="form-select {{validateInput 'startDate'}}" aria-label="Default select example">
+                        <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" width="200" required/>
+                        <select class="ms-5 location_select"  value="{{values.startDate}}" name="startDate" id="startDate" class="form-select {{validateInput 'startDate'}}" aria-label="Default select example" required>
                             <option value="" selected="" disabled="">Time</option>
                             <option value="00.00">00.00</option>
                             <option value="01.00" >01.00</option>
@@ -78,7 +78,7 @@
                     {{validationFeedback 'dropBranchId'}} 
                     </div>
                     <div class="d-flex">
-                        <input class="mb-4" placeholder="Drop-off date" id="datepicker1" name="datepicker1" width="200" />
+                        <input class="mb-4" placeholder="Drop-off date" id="datepicker1" name="datepicker1" width="200" required/>
                         <select class="ms-5 location_select"  value="{{values.endDate}}" name="endDate" id="endDate" class="form-select {{validateInput 'endDate'}}" aria-label="Default select example">
                             <option value="" selected="" disabled="">Time</option>
                             <option value="00.00">00.00</option>
