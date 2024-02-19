@@ -36,6 +36,10 @@ import deleteBranchModel from './branch/deleteBranch.model.js';
 import updateBranchModel from './branch/updateBranch.model.js';
 import getBranchByIdModel from './branch/getBranchById.model.js';
 
+import tempTableModel from './tempData/tempTable.model.js';
+import createTempTableModel from './tempData/createTempTable.model.js';
+import getTempTableModel from './tempData/getTempTable.model.js';
+
 
 export default {
     customers: {
@@ -76,5 +80,10 @@ export default {
     },
     brand: {
         getBrandById : getBrandByIdModel,
+    },
+    tempmemory : {
+        create : tempTableModel,
+        insert : createTempTableModel,
+        getByMemory : getTempTableModel,
     },
 }
