@@ -5,10 +5,11 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {{/if}}
-  <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
-    <form method="post" enctype="multipart/form-data">
-      <div class="row mb-4">
-          <div class="form-outline mb-4">
+
+  <div class="row mt-2 h-100 d-flex align-items-center justify-content-center" >
+      <div class="col-12 mb-4 mt-5 w-25">
+        <form method="post" enctype="multipart/form-data">
+          <div class="form-outline mb-4 col">
             <select value="{{values.carTypeId}}" name="carTypeId" id="carTypeId" class="form-select {{validateInput 'carTypeId'}}" aria-label="Default select example">
               {{#each cartypes}}
               <option value="{{id}}">{{name}}</option>
@@ -16,43 +17,38 @@
             </select>
             {{validationFeedback 'carTypeId'}}
           </div>
-          <div class="form-outline">
+          <div class="form-outline col">
             <input value="{{values.model}}" type="text" class="form-control {{validateInput 'model'}}" name="model" id="model" placeholder="Model" required/>
             {{validationFeedback 'model'}}
           </div>
         </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
+      <div class="d-flex col-12 justify-content-center">
+        <div>
+          <div class="form-outline me-3 mb-3">
             <input value="{{values.hp}}" type="number" class="form-control {{validateInput 'hp'}}" name="hp" id="hp" placeholder="Hp" required/>
             {{validationFeedback 'hp'}} 
           </div>
         </div>
-        <div class="col">
+        <div>
           <div class="form-outline">
             <input value="{{values.seats}}" type="number" class="form-control {{validateInput 'seats'}}" name="seats" id="seats" placeholder="Seats" required/>
             {{validationFeedback 'seats'}}
           </div>
         </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
+      <div class="col-12 d-flex mb-4 justify-content-center">
+          <div class="form-outline me-3 mb-3">
             <input value="{{values.hourlyPrice}}" type="number" class="form-control {{validateInput 'hourlyPrice'}}" name="hourlyPrice" id="hourlyPrice" placeholder="Hourly Price" required/>
             {{validationFeedback 'hourlyPrice'}}
           </div>
-        </div>
-        <div class="col">
           <div class="form-outline">
             <input value="{{values.zeroToHundredKmh}}" type="number" class="form-control {{validateInput 'zeroToHundredKmh'}}" name="zeroToHundredKmh" id="zeroToHundredKmh" placeholder="Zero To Hundred Kmh" required/>
             {{validationFeedback 'zeroToHundredKmh'}}
           </div>
-        </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
+      <div class="col-12 d-flex mb-4 justify-content-center">
+          <div class="form-outline me-3 mb-3">
             <select value="{{values.fuel}}" class="form-select {{validateInput 'fuel'}}" name="fuel" id="fuel">
               <option value="" selected="" disabled="">Select Fuel</option>
               <option value="GASOLINE">Gasoline</option>
@@ -62,8 +58,6 @@
             </select>
             {{validationFeedback 'fuel'}}
           </div>
-        </div>
-        <div class="col">
           <div class="form-outline">
               <select value="{{values.transmission}}" class="form-select {{validateInput 'transmission'}}" name="transmission" id="transmission">
               <option value="" selected="" disabled="">Select Transmission</option>
@@ -72,11 +66,9 @@
             </select>
             {{validationFeedback 'transmission'}}
           </div>
-        </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
+      <div class="col-12 d-flex mb-4 justify-content-center">
+          <div class="form-outline me-3 mb-3">
             <select value="{{values.bodyType}}" class="form-select {{validateInput 'bodyType'}}" name="bodyType" id="bodyType">
               <option value="" selected="" disabled="">Select Body Type</option>
               <option value="COUPE">Coupe</option>
@@ -88,57 +80,58 @@
             </select>
             {{validationFeedback 'bodyType'}}
           </div>
-        </div>
-        <div class="col">
           <div class="form-outline">
             <input value="{{values.doors}}" type="number" class="form-control {{validateInput 'doors'}}" name="doors" id="doors" placeholder="Doors" required/>
             {{validationFeedback 'doors'}}
           </div>
-        </div>
       </div>
-      <div class="row mb-4">
-        <div class="col">
-          <div class="form-outline">
+      <div class="col-12 d-flex mb-4 justify-content-center">
+          <div class="form-outline me-3 mb-3">
             <input value="{{values.minDriverAge}}" type="number" class="form-control {{validateInput 'minDriverAge'}}" name="minDriverAge" id="minDriverAge" placeholder="Min Driver Age" required/>
             {{validationFeedback 'minDriverAge'}}
           </div>
-        </div>
-        <div class="col">
           <div class="form-outline">
             <input value="{{values.minLicenseAge}}" type="number" class="form-control {{validateInput 'minLicenseAge'}}" name="minLicenseAge" id="minLicenseAge" placeholder="Min License Age" required/>
             {{validationFeedback 'minLicenseAge'}}
           </div>
+      </div>
+      <div class="col-12 mb-4 justify-content-center">
+        <div class="form-outline mb-4 ">
+          <select value="{{values.status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
+            <option value="" selected="" disabled="">Select Status</option>
+            <option value="ACTIVE">Active</option>
+            <option value="MAINTENANCE">Maintenance</option>
+            <option value="PRIVATE">Private</option>
+          </select>
+          {{validationFeedback 'status'}}
         </div>
       </div>
-      <div class="form-outline mb-4">
-        <select value="{{values.status}}" name="status" id="status" class="form-select {{validateInput 'status'}}" aria-label="Default select example">
-          <option value="" selected="" disabled="">Select Status</option>
-          <option value="ACTIVE">Active</option>
-          <option value="MAINTENANCE">Maintenance</option>
-          <option value="PRIVATE">Private</option>
-        </select>
-        {{validationFeedback 'status'}}
+      <div class="col-12 mb-4 justify-content-center">
+        <div class="form-outline mb-4">
+          <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
+          {{validationFeedback 'uploaded_file'}}
+        </div>
       </div>
-      <div class="form-outline mb-4">
-        <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
-        {{validationFeedback 'uploaded_file'}}
+      <div class="col-12 mb-4 justify-content-center">
+        <div class="form-outline mb-4">
+          <select value="{{values.brandId}}" name="brandId" id="brandId" class="form-select {{validateInput 'brandId'}}" aria-label="Default select example">
+            {{#each brands}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          {{validationFeedback 'brandId'}}
       </div>
-      <div class="form-outline mb-4">
-        <select value="{{values.brandId}}" name="brandId" id="brandId" class="form-select {{validateInput 'brandId'}}" aria-label="Default select example">
-          {{#each brands}}
-          <option value="{{id}}">{{name}}</option>
-          {{/each}}
-        </select>
-        {{validationFeedback 'brandId'}}
       </div>
-      <div class="form-outline mb-4">
-        <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}}" aria-label="Default select example">
-          {{#each branchs}}
-          <option value="{{id}}">{{name}}</option>
-          {{/each}}
-        </select>
-        {{validationFeedback 'branchId'}}
+      <div class="col-12 mb-4 justify-content-center">
+        <div class="form-outline mb-4">
+          <select value="{{values.branchId}}" name="branchId" id="branchId" class="form-select {{validateInput 'branchId'}}" aria-label="Default select example">
+            {{#each branchs}}
+            <option value="{{id}}">{{name}}</option>
+            {{/each}}
+          </select>
+          {{validationFeedback 'branchId'}}
       </div>
+      </div>  
       <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
     </form>
   </div>
