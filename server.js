@@ -24,7 +24,10 @@ app.use(session({
     secret: 'UUIbYreIo4xPsSyreNxXbF5iqZguhZH6',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: { 
+        secure: false,
+        maxAge: 60000 * 1000 
+    }
   }));
 app.engine('handlebars', exphbs.engine({ 
     defaultLayout:'main', 

@@ -3,8 +3,10 @@ import models from "../../models/index.js";
 export default async function (req, res) {
         
         if(req.session.user){
-                const user = req.session.user; 
+
+                const user = req.session.user;
                 const order = await models.order.getOrderProfilePage(user.id);
+                
                 if(order){
 
                         const car = await models.cars.getCarAndBrandById(order.carId);
@@ -26,9 +28,8 @@ export default async function (req, res) {
                         const dmin = d[11] + d[12];
                         const dsec = d[14] + d[15];
 
-                        
-                        const startDate = pday + '/' + pmonth + '/' + pyear + ' ' + pmin + ":" + psec ;
-                        const endDate = dday + '/' + dmonth + '/' + dyear + ' ' + dmin + ":" + dsec ;
+                        const startDate = pday + '/' + pmonth + '/' + pyear + ' ' + pmin + "." + psec ;
+                        const endDate = dday + '/' + dmonth + '/' + dyear + ' ' + dmin + "." + dsec ;
 
                 res.render('users/userProfile', { user : user, order , car , pickUpBranch , dropOffBranch , startDate, endDate });
                 }else{
