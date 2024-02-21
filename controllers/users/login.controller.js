@@ -18,11 +18,8 @@ export default async function (req, res) {
             lastName: user.lastName,
             password:user.password,
         };
-        res.render("success", {
-            redirect: '/users/profile',
-            layout: false,
-            delay: 2000,
-        });
+        const userSession = req.session.user;
+        res.render("users/UserProfile", {user});
     }
     }else{
         res.render('users/login', { errorMessage: 'Email or password incorrect' });

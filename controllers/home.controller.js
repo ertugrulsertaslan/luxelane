@@ -6,6 +6,6 @@ export default async function(req,res) {
     const branchs = await models.branch.getBranch();
     const cars = await models.cars.getAllCars(count);
     const carTypes = await models.cars.getCarType();
-    
-    res.render("index", { cars: cars , carTypes : carTypes , branchs : branchs});
+    const user = req.session.user;
+    res.render("index", { cars: cars , carTypes : carTypes , branchs : branchs,user});
 }
