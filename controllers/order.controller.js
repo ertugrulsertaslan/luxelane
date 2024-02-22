@@ -2,8 +2,11 @@ import models from "../models/index.js";
 
 export default async function(req,res)  {
 
+    const user = req.session.user;
+
     const startDate = req.session.startDate;
     const endDate = req.session.endDate;
+
     if(req.session.startDate){
         const p = req.session.startDate; // PickOffDate
         const pyear = p[6]+ p[7]+ p[8] + p[9];
@@ -25,9 +28,11 @@ export default async function(req,res)  {
         const startBranchName = await models.order.getBranch(req.session.PickUpbranchId );
         const dropBranchName = await models.order.getBranch(req.session.DropOffbranchId);
 
+        
         const carId = req.params.id;
-        const car = await models.order.getOrder(carId);
-
+        //const car = await models.order.getOrder(carId);
+        const car = await models.cars.getCarAndBrandById(carId);
+        console.log(carId);
         const carBrand = await models.brand.getBrandById(car.brandId);
 
 
@@ -38,10 +43,10 @@ export default async function(req,res)  {
 
         if(req.session.user){
             const userId = req.session.user.id;
-            res.render("order", { car, startDate, endDate, startBranchName, dropBranchName, userId, carPrice, carBrand });
+            res.render("order", { car, startDate, endDate, startBranchName, dropBranchName, userId, carPrice, carBrand ,user });
         }
         else{
-            res.render("order", { car, startDate, endDate, startBranchName ,dropBranchName ,carPrice ,carBrand });
+            res.render("order", { car, startDate, endDate, startBranchName ,dropBranchName ,carPrice ,carBrand ,user });
         }
     }else{
         res.redirect("/cars");

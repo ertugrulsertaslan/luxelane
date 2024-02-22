@@ -2,6 +2,8 @@ import models from "../../models/index.js";
 
 export default async function(req,res)  {
 
+    const user = req.session.user;
+
     const startDate = req.session.startDate;
     const endDate = req.session.endDate;
    
@@ -10,7 +12,7 @@ export default async function(req,res)  {
     const cartypes = await models.cars.getCarType();
     
     if (cars) {
-        res.render("cars/carfiltertypeList", {cars: cars ,cartypes : cartypes , startDate, endDate});
+        res.render("cars/carfiltertypeList", {cars: cars ,cartypes : cartypes , startDate, endDate , user });
     } else {
         res.render("404");
     } 

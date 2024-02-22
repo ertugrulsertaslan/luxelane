@@ -1,5 +1,3 @@
-import models from "../../models/index.js";
-
 export default async function(req,res)  {
     
 

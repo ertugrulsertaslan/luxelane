@@ -5,7 +5,6 @@ export default async function(req, res) {
     const { email } = req.body;
     const user = await models.users.getByEmail(email);
     const data = req.body;
-
    if(user){
         if(user.email == data.email){
             res.render('users/signUp', { errorMessage: 'Email has a already' });

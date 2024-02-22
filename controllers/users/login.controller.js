@@ -18,7 +18,7 @@ export default async function (req, res) {
             lastName: user.lastName,
             password:user.password,
         };
-        const userSession = req.session.user;
+        
         res.render("users/UserProfile", {user});
     }
     }else{

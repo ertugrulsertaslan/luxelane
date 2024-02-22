@@ -1,10 +1,11 @@
 import models from "../../models/index.js";
 
 export default async function (req,res) {
-
+    const user = req.session.user;
+    
     const startDate = req.session.startDate;
     const endDate = req.session.endDate;
-
+    
     let count = 20;
     const cartypes = await models.cars.getCarType();
 
@@ -12,13 +13,12 @@ export default async function (req,res) {
         
         const cars = await models.cars.getViewCarsFilterBranch(req.session.PickUpbranchId,count);
         //const brand = await models.brand.getBrandById(cars.brandId);
-
-        res.render("cars/carList", { cars: cars , cartypes : cartypes, startDate, endDate });
+        res.render("cars/carList", { cars: cars , cartypes : cartypes, startDate, endDate ,user});
     }else{
         const cars = await models.cars.getAllCars(count);
         //const brand = await models.brand.getBrandById(cars.brandId);
 
-        res.render("cars/carList", { cars: cars , cartypes : cartypes, startDate, endDate });
+        res.render("cars/carList", { cars: cars , cartypes : cartypes, startDate, endDate ,user});
     }
 }
     

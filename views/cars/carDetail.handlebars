@@ -1,57 +1,57 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-2">
-            <div><img class="car_detail_bg rounded mb-5" src="/img/lamborghini_car_photo.png" width="120px" height="120px" alt=""></div>
-            <div><img class="car_detail_bg rounded mb-5" src="/img/rollsroyce_car_photo.png" width="120px" height="120px" alt=""></div>
-            <div><img class="car_detail_bg rounded mb-5" src="/img/mercedes_cls_photo.png" width="120px" height="120px" alt=""></div>
-            <div><img class="car_detail_bg rounded mb-5" src="/img/rollsroyce_car_photo.png" width="120px" height="120px" alt=""></div>
-            <div><img class="car_detail_bg rounded" src="{{thumbnail}}" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
+            <div><img class="car_detail_bg rounded" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
         </div>
         <div class="col-6 car_detail_bg rounded text-center">
-            <img src="{{thumbnail}}" class="car_detail_photo" width="600px" alt="">
+            <img src="{{car.thumbnail}}" class="car_detail_photo" width="600px" alt="">
         </div>
         <div class="col-4">
             <div class="car_detail_car_name text-center">
-                <img src="{{logo}}" class="mb-3" width="100px" height="60px" alt="">
-                <h2>{{name}} - {{model}}</h2>
+                <img src="{{car.logo}}" class="mb-3" width="100px" height="60px" alt="">
+                <h2>{{car.name}} - {{car.model}}</h2>
             </div>
             <div class="d-flex justify-content-center">
                 <div class="car_features border-end  me-3 w-50 ms-4">
                     <h5>Car Features</h5>
                     <div class="d-flex mb-3 mt-4">
                         <img src="/img/hp-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{hp}} HP</p>
+                        <p class="mb-0">{{car.hp}} HP</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/seats-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{seats}} Seats</p>
+                        <p class="mb-0">{{car.seats}} Seats</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/fuel-2-24.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{fuel}}</p>
+                        <p class="mb-0">{{car.fuel}}</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/gear_shift-24.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{transmission}}</p>
+                        <p class="mb-0">{{car.transmission}}</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/bodyType-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{bodyType}}</p>
+                        <p class="mb-0">{{car.bodyType}}</p>
                     </div>
                     <div class="d-flex text-center">
                         <img src="/img/speedometer-24.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">{{zeroToHundredKmh}} sn</p>
+                        <p class="mb-0">{{car.zeroToHundredKmh}} sn</p>
                     </div>
                 </div>
                 <div class="rental_conditions ms-3 w-50">
                     <h5>Rental Conditions</h5>
                     <div class="d-flex mb-3 mt-4">
                         <img src="/img/minDriverAge-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">Driving Min Age {{minDriverAge}}</p>
+                        <p class="mb-0">Driving Min Age {{car.minDriverAge}}</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/minLicenseAge-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">Driving License Age {{minLicenseAge}}</p>
+                        <p class="mb-0">Driving License Age {{car.minLicenseAge}}</p>
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/credit-card-6-24.png" class="me-3" width="24px" height="24px" alt="">
@@ -59,13 +59,13 @@
                     </div>
                     <div class="d-flex mb-3">
                         <img src="/img/hourlyPrice-icon.png" class="me-3" width="24px" height="24px" alt="">
-                        <p class="mb-0">Price ${{hourlyPrice}} / hour</p>
+                        <p class="mb-0">Price ${{car.hourlyPrice}} / hour</p>
                     </div>
                 </div>
             </div>
             <div class="ms-4">
-                <h2>${{hourlyPrice}}</h2>
-                <a href="/cars/order/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3 mt-5" role="button"><h6 class="mt-1">View Deal</h6></a>
+                <h2>${{car.hourlyPrice}}</h2>
+                <a href="/cars/order/{{car.id}}" class="btn w-100 bg-primary text-white rounded mb-3 mt-5" role="button"><h6 class="mt-1">View Deal</h6></a>
             </div>
         </div>
     </div>

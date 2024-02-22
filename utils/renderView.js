@@ -1,5 +1,6 @@
 export default function (view) {
     return async function (req, res) {
-        res.render(view);
+        const user = req.session.user;
+        res.render(view,{  user : user });
     }
 }

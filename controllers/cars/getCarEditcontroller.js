@@ -3,6 +3,8 @@ import models from "../../models/index.js";
 
 export default async function(req,res)  { 
     
+    const user = req.session.user;
+
     const carId = req.params.id;
     const car = await models.cars.getCarAndBrandById(carId);
     const brand = await models.brand.getBrandById(car.brandId);
@@ -10,7 +12,7 @@ export default async function(req,res)  {
     const brands = await models.cars.getBrand();
     const cartypes = await models.cars.getCarType();
     if (car) {
-        res.render("cars/carEdit",{car,brand,branchs,brands,cartypes});
+        res.render("cars/carEdit",{ car, brand, branchs, brands, cartypes, user });
     } else {
         res.render("404");
     }
