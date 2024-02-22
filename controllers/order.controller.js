@@ -30,9 +30,7 @@ export default async function(req,res)  {
 
         
         const carId = req.params.id;
-        //const car = await models.order.getOrder(carId);
         const car = await models.cars.getCarAndBrandById(carId);
-        console.log(carId);
         const carBrand = await models.brand.getBrandById(car.brandId);
 
 
