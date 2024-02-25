@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center mt-3">
-        <div class="col mt-5 car_type text-center">   
+        <div class="col-lg-12 col-sm-5 mt-5 car_type text-center">   
             <form action="" method="get">
                 {{#each cartypes}}
                     <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded me-5 active"  role="button" autocomplete="off">{{name}}</a>
@@ -10,7 +10,7 @@
     </div>
     <div class="row justify-content-center mt-5 d-flex">
         {{#each cars}}
-        <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
+        <div class="col-lg-3 col-sm-3 bg-white car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
                 <h6 class="w-75">{{brand}} - {{model}}</h6>
                 <img class="ms-5" src="./img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              

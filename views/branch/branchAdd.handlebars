@@ -7,20 +7,28 @@
 {{/if}}
   <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
     <form method="post">
-      <div class="row mb-4">
-          <div class="form-outline">
+      <div class="row mb-4 justify-content-center mt-5">
+        <div class="col-lg-8 col-md-10 col-sm-10">
+          <div class="form-outline mb-4">
               <input value="{{values.name}}" type="text" class="form-control {{validateInput 'name'}}" name="name" id="name" placeholder="Branch Name" required/>
               {{validationFeedback 'name'}}
           </div>
-          <div class="form-outline">
+        </div>
+        <div class="col-lg-8 col-md-10 col-sm-10">
+          <div class="form-outline mb-4">
               <input value="{{values.address}}" type="text" class="form-control {{validateInput 'address'}}" name="address" id="address" placeholder="Address" required/>
               {{validationFeedback 'address'}}
           </div>
-          <div class="form-outline">
+        </div>
+        <div class="col-lg-8 col-md-10 col-sm-10">
+          <div class="form-outline mb-4">
               <input value="{{values.phone}}" type="text" class="form-control {{validateInput 'phone'}}" name="phone" id="phone" placeholder="Phone" required/>
               {{validationFeedback 'phone'}}
           </div>   
-      <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
+        </div>
+        <div class="col-lg-8 col-md-10 col-sm-10">
+          <button type="submit" class="btn w-100 bg-primary text-white rounded">Add Branch</button> 
+        </div>    
     </form>
   </div>
 </div>

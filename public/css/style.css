@@ -106,12 +106,6 @@
     margin-left: 45%;
 }
 .rental_detail {
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-}
-.safety_first{
-    align-items: center;
     text-align: center;
     justify-content: center;
 }
@@ -188,6 +182,9 @@
     margin-top: 30%;
     margin-bottom: 20%;
 }
+.car_features_edit {
+    margin-left: 5%;
+}
 .rental_conditions {
     margin-top: 30%;
     margin-bottom: 20%;
@@ -227,6 +224,16 @@
 .choose_car_photo{
     width: 550px;
 }
+.date_edit_btn {
+    float: inline-end;
+}
+.car_photo_order {
+    width: 450px;
+    height: 300px;
+}
+.order_detail {
+    margin-left: 5%;
+}
 
 @media (max-width: 576px) {
     .car_content_p {
@@ -249,7 +256,7 @@
         border: 0!important;
     }
     .location_select {
-        width: 130px;
+        width: 140px;
         height: 30px;
     }
     .exprience_content_text {
@@ -349,6 +356,48 @@
     }
     .profile_btn{
         justify-content: center;
-        
+    }
+    .car_photos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .car_photos div {
+        margin-left: 10px;
+    }
+    .car_detail_photo {
+        width: 350px;
+        margin-bottom: 10%;
+        margin-top: 10%;
+    }
+    .car_update_input {
+        width: auto;
+    }
+    .car_detail_model_branch {
+        margin-left: 20%;
+        margin-top: 10%;
+    }
+    .car_edit_btn {
+        justify-content: center;
+        text-align: center;
+    }
+    .date_edit_btn {
+        text-align: center;
+        float: none;
+    }
+    .car_type a {
+        width: 100px;
+        margin-bottom: 15px;
+    }
+    .car_photo_order {
+        width: 350px;
+        height: 220px;
+    }
+    .order_greatchoice_photo {
+        display: none;
+    }
+    .car_features_edit {
+        margin-left: 0;
     }
   }

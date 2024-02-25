@@ -1,22 +1,22 @@
 <div class="container">
-    <div class="row bg-white mt-5 border border-primary p-2 rounded ms-5 me-5">
-        <div class="col-2 mt-2"><p class="fw-bold p-0 m-0">Pick-Up Date:</p><p>{{startDate}}</p></div>
-        <div class="col-1 mt-3"><p class="fw-bold">></p></div>
-        <div class="col-2 mt-2 float-start"><p class="fw-bold p-0 m-0">Drop-Off Date:</p><p>{{endDate}}</p></div>
-        <div class="col-7"><a href="/" class="btn bg-primary float-end text-white rounded me-5 mt-3"  role="button">Edit</a></div>
+    <div class="row bg-white mt-5 border border-primary p-2 rounded ms-4 me-5">
+        <div class="col-lg-2 col-sm-5 mt-2"><p class="fw-bold p-0 m-0">Pick-Up Date:</p><p>{{startDate}}</p></div>
+        <div class="col-lg-1 col-sm-2 mt-3"><p class="fw-bold">></p></div>
+        <div class="col-lg-2 col-sm-5 mt-2 float-start"><p class="fw-bold p-0 m-0">Drop-Off Date:</p><p>{{endDate}}</p></div>
+        <div class="col-lg-7 col-sm-10"><a href="/" class="btn bg-primary text-white rounded me-5 mt-3 date_edit_btn"  role="button">Edit</a></div>
     </div>
-    <div class="row justify-content-center mt-3">
-        <div class="col mt-5 car_type text-center">   
+    <div class="row mt-3 ms-3">
+        <div class="col-lg-12 col-sm-5 mt-5 car_type text-center">   
             <form action="" method="get">
                 {{#each cartypes}}
-                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded  me-5" active  role="button" autocomplete="off">{{name}}</a>
+                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded  me-5" role="button" autocomplete="off">{{name}}</a>
                 {{/each}}        
             </form>
         </div>  
     </div>
     <div class="row justify-content-center mt-5 d-flex">
         {{#each cars}}
-        <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
+        <div class="col-lg-3 col-sm-3 bg-white car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
                 <h6 class="w-75">{{brand.name}} - {{model}}</h6>
                 <img class="ms-5" src="./img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              
@@ -48,7 +48,7 @@
                     </div>
                 </div>  
             </div>
-            <a href="/cars/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3" role="button"><h6 class="mt-1">Rent a Car</h6></a>
+            <a href="/cars/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3" role="button"><h6 class="mt-1">Car Detail</h6></a>
             <a href="/cars/order/{{id}}" class="btn w-100 bg-primary text-white rounded mb-3" role="button"><h6 class="mt-1">View Deal</h6></a>  
         </div>
         {{/each}} 

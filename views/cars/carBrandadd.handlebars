@@ -5,18 +5,23 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 {{/if}}
-  <div class="mt-2 h-100 d-flex align-items-center justify-content-center" >
+  <div class="mt-2 h-100 d-flex justify-content-center">
     <form method="post" enctype="multipart/form-data">
-      <div class="row mb-4">
-          <div class="form-outline">
-              <input value="{{values.name}}" type="text" class="form-control {{validateInput 'name'}}" name="name" id="name" placeholder="Brand Name" required/>
-              {{validationFeedback 'name'}}
-          </div>
-          <div class="form-outline mb-4">
-          <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
-          {{validationFeedback 'uploaded_file'}}
-          </div>
-      <button type="submit" class="btn-primary form-control mb-4 btn btn-info">Add Car</button> 
+      <div class="row mb-4 mt-5 justify-content-center text-center">
+        <div class="col-lg-8 col-sm-10">
+          <h4 class="mb-5">Brand Add</h4>
+        </div>
+        <div class="col-lg-8 col-sm-10 form-outline mb-5">
+            <input value="{{values.name}}" type="text" class="form-control {{validateInput 'name'}}" name="name" id="name" placeholder="Brand Name" required/>
+            {{validationFeedback 'name'}}
+        </div>
+        <div class="col-lg-8 col-sm-10 form-outline mb-5">
+        <input value="{{values.uploaded_file}}" type="file" class="form-control {{validateInput 'uploaded_file'}}" name="uploaded_file" id="file" placeholder="File" required/>
+        {{validationFeedback 'uploaded_file'}}
+        </div>
+        <div class="col-lg-8 col-sm-10">
+          <button type="submit" class="btn w-100 bg-primary text-white rounded">Add Brand</button> 
+        </div>
     </form>
   </div>
 </div>

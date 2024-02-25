@@ -4,16 +4,16 @@
 </head>
 <div class="container background_space">
     <div class="row justify-content-center mt-5 d-flex">
-        <div class="col-3 bg-white me-5 car_card mb-5 mt-5 flex-wrap">
+        <div class="col-lg-3 col-md-3 col-sm-3 bg-white me-5 mb-5 mt-5 ms-5 flex-wrap">
             <form method="post">
                 <div class="d-flex flex-wrap">
                     <div class="mb-3 w-100">
-                        <div class="d-flex me-5 mb-2 mt-5 w-100">
+                        <div class="d-flex me-5 mb-4 mt-5 w-100">
                             <img src="/img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                             <input value="{{name}}" type="text" class="form-control {{validateInput 'name'}}" name="name" id="name" placeholder="Branch name" required/> 
                             {{validationFeedback 'name'}}
                         </div>
-                        <div  class="d-flex mb-2 w-100">
+                        <div  class="d-flex mb-4 w-100">
                             <img src="/img/location-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                             <input value="{{address}}" type="text" class="form-control {{validateInput 'address'}}" name="address" id="address" placeholder="Address" required/> 
                             {{validationFeedback 'address'}}
@@ -23,7 +23,7 @@
                             <input value="{{phone}}" type="number" class="form-control {{validateInput 'phone'}}" name="phone" id="phone" placeholder="Phone" required/> 
                             {{validationFeedback 'phone'}}
                         </div>
-                        <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-100" >Edit Branch</button>
+                        <button type="submit" class="btn w-100 bg-primary text-white rounded mt-3 mb-3">Edit Branch</button>
                     </div>
                 </div>
             </form>    

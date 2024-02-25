@@ -1,16 +1,16 @@
 <div class="container">
     <div class="row mt-5">
-        <div class="col-2">
+        <div class="col-lg-2 col-sm-8 car_photos">
             <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
             <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
             <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
             <div><img class="car_detail_bg rounded mb-5" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
             <div><img class="car_detail_bg rounded" src="{{car.thumbnail}}" width="120px" height="120px" alt=""></div>
         </div>
-        <div class="col-6 car_detail_bg rounded text-center">
+        <div class="col-lg-6 col-sm-10 car_detail_bg rounded text-center">
             <img src="{{car.thumbnail}}" class="car_detail_photo" width="600px" alt="">
         </div>
-        <div class="col-4">
+        <div class="col-lg-4">
             <div class="car_detail_car_name text-center">
                 <img src="{{car.logo}}" class="mb-3" width="100px" height="60px" alt="">
                 <h2>{{car.name}} - {{car.model}}</h2>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="ms-4">
+            <div class="mb-5">
                 <h2>${{car.hourlyPrice}}</h2>
                 <a href="/cars/order/{{car.id}}" class="btn w-100 bg-primary text-white rounded mb-3 mt-5" role="button"><h6 class="mt-1">View Deal</h6></a>
             </div>
