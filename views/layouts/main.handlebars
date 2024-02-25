@@ -12,11 +12,11 @@
      {{/if}}
 </head>
 <body>
-   <div class="row header">
-   <div class="col logo mt-2 ms-5">
-         <h2 class="text-primary">LuxeLane</h2>
+   <div class="row header text-center w-100">
+      <div class="col-lg-2 col-sm-3 logo mt-2 ms-5">
+            <h2 class="text-primary">LuxeLane</h2>
       </div>
-      <div class="col menu mt-2 ms-5 d-flex justify-content-center">
+      <div class="col-lg-4 col-sm-12 justify-content-center menu mt-2 d-flex flex-wrap">
          <a href="/" class="btn mt-3 me-2 ms-5" role="button">Home</a>
          <a href="../about" class="btn mt-3 me-2" role="button">About</a>
          <a href="" class="btn mt-3 me-2" role="button">Services</a>
@@ -24,17 +24,17 @@
          <a href="../contact" class="btn mt-3 me-2" role="button">Contact</a>
       </div>
       {{#if user}}
-      <div class="col login text-center d-flex ms-5">
-            <a href="/users/profile" class="btn login text-primary border border-primary mt-3 me-2" role="button">Profile</a> 
+      <div class="col-lg-1 col-sm-10 profile_btn text-center d-flex">
+            <a href="/users/profile" class="btn login text-primary border border-primary mt-3" role="button">Profile</a> 
       </div>
       {{else}}
-      <div class="col login text-center d-flex ms-5">
+      <div class="col-lg-2 col-sm-3 text-center justify-content-center d-flex">
             <a href="/users/login" class="btn login text-primary border border-primary mt-3 me-2" role="button">Log in</a>
-            <a href="/users/sign-up" class="btn signup text-primary border border-primary mt-3 me-2" role="button">Sign Up</a>  
+            <a href="/users/sign-up" class="btn signup text-primary border border-primary mt-3" role="button">Sign Up</a>  
       </div>
       {{/if}}
    </div>
-    {{{ body }}}
+    {{{body}}}
    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

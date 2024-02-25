@@ -3,9 +3,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
-<div class="container background_space">
+<div class="container background_space w-100 h-100">
     <div class="row content mt-3 justify-content-center text-center">
-        <div class="col-6 car_content">
+        <div class="col-6 col-sm-6 car_content">
             <div class="car_content_header">
                 <p class="text-white">Drive with best experience</p>
             </div>
@@ -24,9 +24,9 @@
         </div>
     </div>
     <div class="row date mt-5 justify-content-center text-center ">
-        <div class="col-10 date_content d-flex p-2 bg-white rounded rounded-5">
-            <form method="post" class="d-flex w-100"> 
-                <div class="col-5 border-end border-dark location_input p-2">
+        <div class="col-lg-10 col-sm-12 date_content d-flex p-2 bg-white rounded rounded-5">
+            <form method="post" class="w-100 datepicker_form"> 
+                <div class="col-lg-5 col-sm-3 border-end border-dark location_input p-2">
                     <div class="mb-4">
                         <select value="{{values.pickBranchId}}" name="pickBranchId" id="pickBranchId" class="form-select {{validateInput 'pickBranchId'}} branch_select" aria-label="Default select example" required>
                         {{#each branchs}}
@@ -35,8 +35,8 @@
                     </select>
                     {{validationFeedback 'pickBranchId'}} 
                     </div>
-                    <div class="d-flex">
-                        <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" data-dependent="#datepicker1"  width="200" required/>
+                    <div class="d-flex flex-wrap">
+                        <input class="mb-4" placeholder="Pick-up date" id="datepicker" name="datepicker" data-dependent="#datepicker1"  style="width:150px" required/>
                         <select class="ms-5 location_select"  value="{{values.startDate}}" name="startDate" id="startDate" class="form-select {{validateInput 'startDate'}}" aria-label="Default select example" required>
                             <option value="" selected="" disabled="">Time</option>
                             <option value="00.00">00.00</option>
@@ -66,9 +66,8 @@
                         </select>
                         {{validationFeedback 'startDate'}}
                     </div>
-                    
                 </div>
-                <div class="col-5 border-end border-dark location_input p-2">
+                <div class="col-lg-5 col-sm-3 border-end border-dark location_input p-2">
                     <div class="mb-4">
                         <select value="{{values.dropBranchId}}" name="dropBranchId" id="dropBranchId" class="form-select {{validateInput 'dropBranchId'}} branch_select" aria-label="Default select example">
                         {{#each branchs}}
@@ -77,8 +76,8 @@
                     </select>
                     {{validationFeedback 'dropBranchId'}} 
                     </div>
-                    <div class="d-flex">
-                        <input class="mb-4" placeholder="Drop-off date" id="datepicker1" name="datepicker1" width="200" required/>
+                    <div class="d-flex flex-wrap">
+                        <input class="mb-4" placeholder="Drop-off date" id="datepicker1" name="datepicker1"  style="width:150px" required/>
                         <select class="ms-5 location_select"  value="{{values.endDate}}" name="endDate" id="endDate" class="form-select {{validateInput 'endDate'}}" aria-label="Default select example">
                             <option value="" selected="" disabled="">Time</option>
                             <option value="00.00">00.00</option>
@@ -109,20 +108,20 @@
                         {{validationFeedback 'endDate'}}
                     </div> 
                 </div>
-                <div class="col-2 search_content justify-content-center d-flex">
+                <div class="col-lg-2 col-sm-5 search_content justify-content-center">
                     <button type="submit" class="btn-primary form-control mb-4 mt-5 btn btn-info w-75">Rent A Car</button>
                 </div>
             </form>                       
         </div>
     </div>
-    <div class="row justify-content-center text-center question">
-        <div class="col-6">
+    <div class="row question text-center justify-content-center">
+        <div class="col-lg-6 col-sm-12">
             <p class="text-primary">What we Serve</p>
             <h2 class="display-6 fw-bold">Why Choose Rento</h2>
         </div>
     </div>
-    <div class="row justify-content-center text-center rental_detail mb-5">
-        <div class="col-3 safety_first me-5 text-wrap mb-5">
+    <div class="row rental_detail">
+        <div class="col-lg-3 col-sm-10 safety_first text-wrap me-3">
             <div class="safety_first_text">
                 <img class="rounded-circle border border-primary p-4 mb-3" src="./img/car-4-24.png" alt="">
                 <h5 class="fw-bold">Safety First</h5>
@@ -132,8 +131,8 @@
                 </p>
             </div>
         </div>
-        <div class="col-3 ms-5 text-wrap">
-            <div class="fast_easy_booking justify-content-center text-center mb-5">
+        <div class="col-lg-3 col-sm-10  text-wrap fast_easy_booking_content me-3">
+            <div class="fast_easy_booking ">
                 <img class="rounded-circle border border-primary p-4 mb-3" src="./img/speedometer-24.png" alt="">
                 <h5 class="fw-bold">Fast Easy Booking</h5>
                 <p class="mt-3"> 
@@ -142,8 +141,8 @@
                 </p>
             </div>
         </div>
-        <div class="col-3 ms-5">
-            <div class="many_pickup_location mb-5">
+        <div class="col-lg-3 col-sm-10">
+            <div class="many_pickup_location ">
                 <img class="rounded-circle border border-primary p-4 mb-3" src="./img/car-4-24.png" alt="">
                 <h5 class="fw-bold">Many Pickup Location</h5>
                 <p class="mt-3"> 
@@ -154,11 +153,11 @@
         </div>
     </div>
     <div class="row bg-white experience">
-        <div class="col exprience_content">
+        <div class="col-lg-6 col-sm-12 exprience_content">
             <img class="rounded-4 me-5 exprience_photo" src="./img/car_safari_photo.png" alt="">
         </div>
-        <div class="col exprience_content">
-            <div>
+        <div class="col-lg-6 col-sm-12 exprience_content">
+            <div class="exprience_content_text">
                 <p class="text-primary mt-5 mb-5">Learn about us</p>
                 <h2 class="display-6 fw-bold w-75">Best Experience of Traveling</h2>
                 <p class="w-75 mt-5 mb-5">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat
@@ -166,28 +165,28 @@
                     Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.Velit officia consequat
                     duis enim velit mollit.Exercition veniam consequat sunt nostrud amet.Amet minim mollit non deserunt
                 </p>
-                <button class="btn bg-primary text-white experience_btn p-2">Learn More</button>
+                <button class="btn bg-primary text-white experience_btn mb-5 p-2">Learn More</button>
             </div>
         </div>
     </div>
     <div class="row justify-content-center text-center car_dentals_title">
-        <div class="col-12">
+        <div class="col-12 col-sm-12 text-center">
             <p>Explore out cars you might like!</p>
             <h2 class="display-6 fw-bold">Car Rental Deals</h2>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col car_type text-center">   
-            <form action="" method="get">
+    <div class="row m-0">
+        <div class="col-lg-12 col-sm-12 car_type justify-content-center text-center">   
+            <form action="" method="get" class="car_type_form">
                  {{#each carTypes}}
-                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded p-2 me-5"  role="button">{{name}}</a>
+                    <a href="/cars/type/{{id}}" class="btn bg-primary text-white rounded p-2 me-4"  role="button">{{name}}</a>
                  {{/each}}        
             </form>
         </div>
     </div>
     <div class="row justify-content-center mt-5 d-flex">
         {{#each cars}}
-        <div class="col-3 bg-white me-5 car_card mb-5 flex-wrap">
+        <div class="col-lg-3 col-sm-3 bg-white car_card mb-5 flex-wrap">
             <div class="d-flex mt-4">
                 <h6 class="w-75">{{brand}} - {{model}}</h6>
                 <img class="ms-5" src="./img/save_icon.png" class="save_icon" width="20px" height="20px" alt="">              
@@ -223,40 +222,40 @@
         </div>
       {{/each}} 
     </div>
-    <div class="row justify-content-center">
-        <div class="col-2 mt-5 me-5">
+    <div class="row justify-content-center text-center">
+        <div class="col-lg-2 col-sm-4 mt-5 cars_button">
             <a href="/cars" class="btn text-primary border border-primary rounded view_more_btn" role="button"><h6 class="mt-1">View More</h6></a>  
         </div>
     </div>
-    <div class="row car_logo p-5">
-        <div class="col">
+    <div class="row car_logo p-5 justify-content-center text-center">
+        <div class="col-lg-2 col-sm-4 mb-5">
             <img src="./img/rollsroyce_logo.png" class="car_logo_photo" alt="">
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-sm-4">
             <img src="./img/ferrari_logo.png" class="car_logo_photo bg-opacity-25" alt="">
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-sm-4">
             <img src="./img/mercedesbenz_logo.png" class="car_logo_photo" alt="">
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-sm-4">
             <img src="./img/lamborghini_logo.png" class="car_logo_photo" alt="">
         </div>
-        <div class="col">
+        <div class="col-lg-2 col-sm-4">
             <img src="./img/audi_logo.png" class="car_logo_photo" alt="">
         </div>
     </div>
     <div class="row mb-5">
-        <div class="col text-center justify-content-center">
+        <div class="col-lg-12 col-sm-12 text-center justify-content-center">
             <p class="text-primary">Exlore out cars you might like!</p>
             <h2 class="display-6 fw-bold">Latest Added</h2>
         </div>
     </div>
     <div class="row large_car_card text-center justify-content-center ">
-        <div class="col-4 large_car_card_content bg-white">
+        <div class="col-lg-4 col-sm-4 large_car_card_content bg-white">
             <h4 class="fw-bold mt-5">Mercedes E-class</h4>
             <p>$200/day</p>
             <img src="./img/mercedes_cls_photo.png" class="large_car_card_photo" width="616px" height="246px" alt="">
-            <div class="large_car_card_property d-flex text-center justify-content-center mb-5 ms-3">
+            <div class="large_car_card_property d-flex flex-wrap text-center justify-content-center mb-5 ms-3">
                     <img src="./img/user-6-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
                     <p class="mt-2 me-3">Seats</p>     
                     <img src="./img/gear_shift-24.png" class="me-2 border border-primary rounded h-25 p-2" alt="">
@@ -269,49 +268,49 @@
             <button class="btn bg-primary text-white large_car_card_btn mb-3">Rent a Car</button>
         </div>     
     </div>
-    <div class="row bg-white text-center justify-content-center ">
-        <div class="col-12 explore_cities text-wrap ">
+    <div class="row bg-white text-center justify-content-center">
+        <div class="col-lg-12 col-sm-12 explore_cities text-wrap">
             <p class="text-primary mt-5">Explore by Cities</p>
             <h2 class="display-6 fw-bold mb-3">Find a Car By City</h2>
             <p class="explore_cities_content mb-5">Amet minim mollit non deserunt ullamco est sit aliqua dolar
             dp aöet sint.Velit officia consequat duis enim velit mollit. 
             </p>
         </div>
-        <div class="col-12 d-flex">
-            <div class="col citys">
+    </div>
+    <div class="row d-flex city_content flex-wrap">
+            <div class="col-lg-2 col-sm-4 citys">
                 <img class="rounded" src="./img/madrid_photo.png" width="150px" height="170px" alt="">
                 <p class="text-white">Madrid</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-            <div class="col citys">
+            <div class="col-lg-2 col-sm-4 citys">
                 <img class="rounded" src="./img/barcelona_photo.png"  width="150px" height="170px" alt="">
                 <p class="text-white">Barcelona</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-            <div class="col citys">
+            <div class="col-lg-2 col-sm-4 citys">
                 <img class="rounded" src="./img/valencia_photo.png"  width="150px" height="170px" alt="">
                 <p class="text-white">Valencia</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-            <div class="col citys">
+            <div class="col-lg-2 citys">
                 <img class="rounded" src="./img/paris_photo.png"  width="150px" height="170px" alt="">
                 <p class="text-white">Paris</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-            <div class="col citys">
+            <div class="col-lg-2 citys">
                 <img class="rounded" src="./img/manali_photo.png"  width="150px" height="170px" alt="">
                 <p class="text-white">Manali</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-            <div class="col citys">
+            <div class="col-lg-2 citys">
                 <img class="rounded" src="./img/budapest_photo.png"  width="150px" height="170px" alt="">
                 <p class="text-white">Budapest</p>
                 <img class="arrow_icon" src="./img/arrow.png" alt="">
             </div>
-        </div>
     </div>
     <div class="row">
-        <div class="col-6 mt-5 mb-5">
+        <div class="col-lg-6 col-sm-8 mt-5 mb-5">
             <div class="ms-3">
                 <p class="text-primary">Why Choose Us</p>
                 <h2 class="display-6 fw-bold">We Offer the best experience with our rental deals</h2>
@@ -350,59 +349,89 @@
                 </div>     
             </div>
         </div>
-        <div class="col-6 mt-5">
-            <img  src="./img/choose_car_photo.png" width="550px" alt="">
+        <div class="col-lg-6 col-sm-10 mt-5">
+            <img  src="./img/choose_car_photo.png" class="choose_car_photo" width="550px" alt="">
         </div>
     </div>
     <div class="row bg-white">
-        <div class="col-4 footer">
+        <div class="col-lg-4 footer">
             <h2 class="text-primary mb-5">LuxeLane</h2>
             <p class="w-75">Amet minim mollit no deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
                 consequat duis enim velit mollit.
             </p>
         </div>
-        <div class="col footer">
-            <h6 class="text-primary mb-5">Product</h6>
-            <p>Overview</p>
-            <p>Features</p>
-            <p>Solution</p>
-            <p>Success Strories</p>
-            <p>Business Licence</p>
+        <div class="col-lg-1 footer">
+            <h6 class="text-primary mb-4">Product</h6>
+            <div class="footer_content">
+                <div class="footer_content_text_first">
+                    <p>Overview</p>
+                    <p>Features</p>
+                    <p>Solution</p>
+                </div>
+                <div class="footer_content_text_second">
+                    <p>Success Strories</p>
+                    <p>Business Licence</p>
+                </div>
+            </div>
         </div>
-        <div class="col footer">
-            <h6 class="text-primary mb-5">Company</h6>
-            <p>About Us</p>
-            <p>Careers</p>
-            <p>Press</p>
-            <p>News</p>
-            <p>Contact</p>
+        <div class="col-lg-1 footer">
+            <h6 class="text-primary mb-4">Company</h6>
+            <div class="footer_content">
+                <div class="footer_content_text_first">
+                    <p>About</p>
+                    <p>Careers</p>
+                    <p>Press</p>
+                </div>
+                <div class="footer_content_text_second">
+                    <p>News</p>
+                    <p>Contact</p>
+                </div>
+            </div>
         </div>
-        <div class="col footer">
-            <h6 class="text-primary mb-5">Resources</h6>
-            <p>Blog</p>
-            <p>Newslatter</p>
-            <p>Assets</p>
-            <p>Help Center</p>
-            <p>Tutorials</p>
-            <p>Support</p>
+        <div class="col-lg-1 col-sm-4 footer">
+            <h6 class="text-primary mb-4">Resources</h6>
+            <div class="footer_content">
+                <div class="footer_content_text_first">
+                    <p>Blog</p>
+                    <p>Newslatter</p>
+                    <p>Assets</p>
+                </div>
+                <div class="footer_content_text_second">
+                    <p>Help Center</p>
+                    <p>Tutorials</p>
+                    <p>Support</p>
+                </div> 
+            </div>
         </div>
-        <div class="col footer">
-            <h6 class="text-primary mb-5">Social</h6>
-            <p>Twitter</p>
-            <p>Linkedin</p>
-            <p>Facebook</p>
-            <p>Behance</p>
-            <p>Instagram</p>
-            <p>Dribbble</p>
+        <div class="col-lg-1 col-sm-4 footer">
+            <h6 class="text-primary mb-4">Social</h6>
+            <div class="footer_content">
+                <div class="footer_content_text_first">
+                    <p>Twitter</p>
+                    <p>Linkedin</p>
+                    <p>Facebook</p>
+                </div>
+                <div class="footer_content_text_second">   
+                    <p>Behance</p>
+                    <p>Instagram</p>
+                    <p>Dribbble</p>
+                </div>
+            </div>  
         </div>
-        <div class="col footer">
-            <h6 class="text-primary mb-5">Legal</h6>
-            <p>Terms</p>
-            <p>Privacy</p>
-            <p>Cookies</p>
-            <p>Licenses</p>
-            <p>Settings</p>
-            <p>Contact</p>
+        <div class="col-lg-1 col-sm-4 footer">
+            <h6 class="text-primary mb-4">Legal</h6>
+            <div class="footer_content">
+                <div class="footer_content_text_first">
+                    <p>Terms</p>
+                    <p>Privacy</p>
+                    <p>Cookies</p>
+                </div>
+                <div class="footer_content_text_second">
+                    <p>Licenses</p>
+                    <p>Settings</p>
+                    <p>Contact</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
