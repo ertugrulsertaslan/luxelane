@@ -104,19 +104,21 @@ app.get(
   controllers.cars.getAllCars,
   controllers.cars.getAllCarType
 ); //
-app.get("/cars/brand", renderView("cars/carBrandadd"));
+app.get("/cars/brand", roleAuth("ADMIN"), renderView("cars/carBrandadd"));
 app.get(
   "/cars/create",
+  roleAuth("ADMIN"),
   controllers.cars.getBrand,
   controllers.branch.getBranch,
   controllers.cars.getCarType
 );
 app.get("/admin-dashboard", roleAuth("ADMIN"), renderView("adminDashboard"));
-app.get("/cars/update/:id", controllers.cars.getByIdEdit);
+app.get("/cars/update/:id", roleAuth("ADMIN"), controllers.cars.getByIdEdit);
 app.get("/cars/:id", controllers.cars.getCarAndBrandById);
 
 app.post(
   "/cars/brand",
+  roleAuth("ADMIN"),
   upload.single("uploaded_file"),
   controllers.cars.createBrand
 );
@@ -129,11 +131,15 @@ app.get(
 
 app.get("/branch", controllers.branch.getAllBranch);
 app.get("/branch/create", renderView("branch/branchAdd"));
-app.get("/branch/delete/:id", controllers.branch.delete);
-app.get("/branch/update/:id", controllers.branch.getByIdEdit);
+app.get("/branch/delete/:id", roleAuth("ADMIN"), controllers.branch.delete);
+app.get(
+  "/branch/update/:id",
+  roleAuth("ADMIN"),
+  controllers.branch.getByIdEdit
+);
 
-app.post("/branch/create", controllers.branch.create);
-app.post("/branch/update/:id", controllers.branch.update);
+app.post("/branch/create", roleAuth("ADMIN"), controllers.branch.create);
+app.post("/branch/update/:id", roleAuth("ADMIN"), controllers.branch.update);
 
 app.get("/branch/:id", controllers.branch.getByIdDetail);
 
@@ -145,6 +151,7 @@ app.get("/users/profile", controllers.users.profile);
 
 app.post(
   "/cars/create",
+  roleAuth("ADMIN"),
   upload.single("uploaded_file"),
   [
     body("model").isString(),
@@ -173,6 +180,7 @@ app.post(
 
 app.post(
   "/cars/update/:id",
+  roleAuth("ADMIN"),
   upload.single("uploaded_file"),
   /*
     [
@@ -196,7 +204,7 @@ app.post(
   controllers.cars.update
 );
 
-app.get("/cars/delete/:id", controllers.cars.delete);
+app.get("/cars/delete/:id", roleAuth("ADMIN"), controllers.cars.delete);
 
 app.post(
   "/users/login",
