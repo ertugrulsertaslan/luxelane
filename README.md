@@ -13,9 +13,16 @@ LuxeLane is a web application that allows users to rent luxury cars.
 
 ## Technologies Used 💻
 
-- **Backend:** Express.js
-- **Frontend:** Handlebars (JS Templates)
-- **Database:** Sqlite
+- 💻 [JavaScript](https://tr.javascript.info/) - A versatile language for building dynamic and interactive web applications.
+- 🗄️ [Sqlite](https://sqlite.org/) - Serverless relational database management system.
+- 🔧 [Handlebars](https://handlebarsjs.com/) - A simple templating language
+- 🌐 [Express.js](https://expressjs.com/) - Web framework for Node.js 
+- 🎨 [Bootstrap](https://getbootstrap.com/) - Powerful, extensible, and feature-packed frontend toolkit
+- ⏲️ [Express Validation](https://express-validator.github.io/docs/) - Validation middleware for Express.js
+- ✅ [Express Session](https://www.npmjs.com/package/express-session/) - An "express session" is a quick, focused meeting for achieving specific goals.
+- 🔒 [Bcrypt](https://www.npmjs.com/package/bcrypt/) - A library to help you hash passwords.
+- 📂 [Multer](https://www.npmjs.com/package/multer/) - A middleware for handling multipart/form-data in Node.js, primarily used for uploading files.
+
 
 ## Installation and Running 🏃
 
