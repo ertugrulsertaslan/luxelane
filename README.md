@@ -1,6 +1,16 @@
 # LuxeLane 🚗✨
 
 LuxeLane is a web application that allows users to rent luxury cars.
+
+## Screenshots 📸
+
+### Home Page 🏠
+![Home Page](screenshots/homepage.png)
+
+### Admin Car List 🛠️
+![Home Page](screenshots/admincarlist.png)
+
+
 ## Features 🌟 
 
 - 🔒 User registration and login
@@ -66,13 +76,7 @@ To run the project locally, follow these steps:
 - Administrators can delete cars, brands and branches from the list.
 - Administrators can edit the details of the current car, brand and branch.
 
-## Screenshots 📸
 
-### Home Page 🏠
-![Home Page](screenshots/homepage.png)
-
-### Admin Car List 🛠️
-![Home Page](screenshots/admincarlist.png)
 
 
 ## License 📜
